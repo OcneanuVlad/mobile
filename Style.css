@@ -316,7 +316,7 @@ body #ocn {
 body #fade {
   position: fixed;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   background-color: var(--colorBody);
   opacity: 0.6;
   z-index: 4;
