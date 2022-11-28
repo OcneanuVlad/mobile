@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>My universe - Ocneanu Vlad</title>
+    <link rel="stylesheet" href="Style.css"/>
+</head>
+<body>
+    <div id="buttonContainer">
+
+    </div>
+    <video autoplay muted loop id="video">
+        <source src="Elements/background.mp4" type="video/mp4">
+    </video>
+    <span id="spawn11"></span>
+    <span id="spawn12"></span>
+    <span id="spawn21"></span>
+    <span id="spawn22"></span>
+      
+    <p id="ocn">O V</p>
+
+    <div id="slider">
+        <div id="selectors">
+            <span class="selector" id="selector1"></span>
+        </div>
+        <div id="pages">
+            <p id="slide0">HOME</p>
+            <p id="slide3">WORK</p>
+            <p id="slide1">ABOUT</p>
+            <p id="slide2">HOME</p>
+            <p id="slide3">WORK</p>
+            <p id="slide1">ABOUT</p>
+            <p id="slide2">HOME</p>
+        </div>
+    </div>
+
+    <div id="transition">
+        <div id="transition1" class="transitioning"></div>
+        <div id="transition2" class="transitioning"></div>
+        <div id="transition3" class="transitioning"></div>
+    </div>
+    <div id="projectsContainer">
+        <div id="projectNav">
+            <button onclick="Work(-2), changeColors()" class="projectButton" id="previous"><p style="margin: 0; margin-right: 1vw"><</p><p style="margin: 0;">PREVIOUS PROJECT</p></button>
+            <button onclick="Work(-1), changeColors()" class="projectButton" id="next"><p style="margin: 0;">NEXT PROJECT</p><p style="margin: 0; margin-left: 1vw">></p></button>
+            <button onclick="Work(-10), changeColors()" id="close"><p>GO BACK</p></button>
+        </div>
+        <div id="project1" class="project">
+            <h1 id="title1">First Experiment</h1>
+            <div class="placeholder1"></div>
+            <p class="projectText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+        <div id="project2" class="project">
+            <img id="solariumTitle" src="./Videos/SolariumTitle.png">
+            <div class="placeholder1"></div>
+            <p class="projectText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+        <div id="project3" class="project">
+            <h1 id="universeText">MY UNIVERSE</h1>
+            <div class="placeholder1"></div>
+            <p class="projectText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+    </div>
+    
+    <div id="fade"></div>
+    <div id="pageContainer">
+        <div id="about">
+            <h1 class="backText">ABOUT</h1>
+    
+            <div id="mePhoto">
+                <hr id="photoHr1">
+                <div id="shadow"></div>
+                <hr id="photoHr2"> 
+            </div>
+            
+            <p id="description">My name is James Willer. I graduated from MIT a month ago. Now, I am looking for my first full-time job. I have been working as a freelance web developer for the last three years and cooperated with several startups. I cannot say with 100% confidence where I see myself in five years or what my big career goal is. The world is changing rapidly, and I don’t have enough professional experience to be certain about such things. However, I know that I can provide a fresh take and an extraordinary approach to every project. I am always open to challenges and constructive feedback. I am open-minded and learn new things quickly. I want to become a team player and dedicate all my skills and talents to develop high-quality and unique products.
+                <hr id="descriptionHr">
+            </p>
+            <div id="contact">
+                <img class="contactImg" src="Elements/facebook.png" alt="Facebook">
+                <img class="contactImg" src="Elements/insta.png" alt="Instagram">
+                <img class="contactImg" src="Elements/gmail.png" alt="Gmail">
+            </div>
+        </div>
+        <div id="home">
+            <h1 class="backText">HOME</h1>
+            <div id="welcome">
+                <h2>WELCOME TO</h2>
+                <hr id="welcomeHr" />
+            </div>
+            <h1 id="universe">MY UNIVERSE!</h1>
+            <div id="lines">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+                <hr class="line">
+            </div>
+            <div id="grid">
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+                <span class="point1"></span>
+
+            </div>
+        </div>
+        <div id="projects">
+            <h1 class="backText">WORK</h1>
+
+            <div id="workContainer">
+                <div id="works">
+                    <div onclick="Work(3)" class="work" id="work3">
+                        <div id="universeShadow"></div>
+                        <h1 id="universeText">MY UNIVERSE</h1>
+                        <div class="imgContainer first"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                        <div class="imgContainer"></div>
+                    </div>
+                    <div onclick="Work(2)" class="work" id="work2">
+                        <img id="solariumTitle" src="./Videos/SolariumTitle1.png">
+                        <div id="solariumShadow"></div>
+                        <div id="first2" class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/Solarium1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video1">
+                                <source src="Videos/Solarium2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/Solarium3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video1">
+                                <source src="Videos/Solarium4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video1">
+                                <source src="Videos/Solarium5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/Solarium1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video1">
+                                <source src="Videos/Solarium2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/Solarium3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video1">
+                                <source src="Videos/Solarium4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video1">
+                                <source src="Videos/Solarium5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div onclick="Work(1)" class="work" id="work1">
+                        <div id="experimentShadow"></div>
+                        <h1 id="experimentText">First Experiment</h1>
+                        <div class="imgContainer first" style="animation-delay: -1.25s;">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="imgContainer">
+                            <video autoplay muted loop class="video2">
+                                <source src="Videos/First5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="Script.js"></script>
+</body>
+</html>
