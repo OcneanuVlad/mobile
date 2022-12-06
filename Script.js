@@ -6,6 +6,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Main pages navigation
+
+
 var Button = function (_React$Component) {
     _inherits(Button, _React$Component);
 
@@ -393,7 +397,8 @@ var store = document.querySelector(':root');
 var container = document.querySelector('#buttonContainer');
 ReactDOM.render(React.createElement(Button, null), container);
 
-////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Work pages 
 
 
 var page = 0;
@@ -493,8 +498,6 @@ function Work(index) {
         }, 600);
 
         function t() {
-            transition3.removeEventListener('transitionend', t);
-
             document.getElementById("work1").classList.remove('disable');
             document.getElementById("work2").classList.remove('disable');
             document.getElementById("work3").classList.remove('disable');
@@ -505,8 +508,79 @@ function Work(index) {
             document.getElementById("previous").classList.remove('disable');
             document.getElementById("next").classList.remove('disable');
             document.getElementById("close").classList.remove('disable');
+
+            transition3.removeEventListener('transitionend', t);
         }
-        transition3.addEventListener('transitionend', t);
+        setTimeout(function () {
+            transition3.addEventListener('transitionend', t);
+        }, 600);
     }
     transition3.addEventListener('transitionend', secondSwipe);
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Cursor
+
+
+gsap.set('#cursorCont', { xPercent: -50, yPercent: -50 });
+
+var cursorCont = document.querySelector('#cursorCont');
+var cursor = document.querySelector('#cursor');
+var mouseX = void 0;
+var mouseY = void 0;
+
+window.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    gsap.to(cursorCont, 0.01, { x: mouseX, y: mouseY });
+});
+window.addEventListener('mouseup', function () {
+    cursor.style.width = "12px";
+    cursor.style.height = "12px";
+    cursor.style.borderRadius = "50%";
+});
+
+var buttons = [document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+
+buttons.forEach(function (button) {
+    button.addEventListener('mouseenter', function () {
+        cursor.style.width = "30px";
+        cursor.style.height = "30px";
+        cursor.style.borderRadius = "15%";
+    });
+    button.addEventListener('mouseleave', function () {
+        cursor.style.width = "12px";
+        cursor.style.height = "12px";
+        cursor.style.borderRadius = "50%";
+    });
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Page Rotation
+
+var constrainX = 125;
+var constrainY = 300;
+var mouseOverContainer = document.querySelector('body');
+var ex1Layer = document.getElementById("pageContainer");
+
+function transforms(x, y, el) {
+    var box = el.getBoundingClientRect();
+    var calcX = -(y - box.y - box.height / 2) / constrainX;
+    var calcY = (x - box.x - box.width / 2) / constrainY;
+
+    return "perspective(100vw) " + "   rotateX(" + calcX + "deg) " + "   rotateY(" + calcY + "deg) ";
+};
+
+function transformElement(el, xyEl) {
+    el.style.transform = transforms.apply(null, xyEl);
+}
+
+mouseOverContainer.onmousemove = function (e) {
+    var xy = [e.clientX, e.clientY];
+    var position = xy.concat([ex1Layer]);
+
+    window.requestAnimationFrame(function () {
+        transformElement(ex1Layer, position);
+    });
+};

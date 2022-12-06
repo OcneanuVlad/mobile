@@ -59,6 +59,7 @@ body {
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    cursor: none;
 
     #spawn21, #spawn22 {
         position: absolute;
@@ -143,15 +144,15 @@ body {
             background-color: var(--colorBack);
             border-bottom: 1px solid var(--colorFront);
             width: 100vw;
-            height: 15vh;
+            height: 12vh;
             z-index: 11;
             top: -2vh;
             transition: background-color 2s, border 2s;
 
             #close {
-                bottom: 2vh;
-                height: 4vh;
-                width: 5vw;
+                bottom: 1.45vh;
+                height: 3vh;
+                width: 4vw;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -165,15 +166,15 @@ body {
                 color: var(--colorFront);
                 z-index: 11;
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 55%;
+                font-size: 45%;
+                cursor: none;
             }
             #close:hover {
                 background-color: rgba(128, 128, 128, 0.2);
-                cursor: pointer;
             }
     
             .projectButton {
-                height: 4vh;
+                height: 3vh;
                 margin: 0px;
                 background-color: transparent;
                 color: var(--colorFront);
@@ -186,13 +187,13 @@ body {
                 align-items: center;
                 border-top: 1px solid var(--colorFront);
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 55%;
-                width: 8vw;
-                bottom: 2vh;
+                font-size: 45%;
+                width: 7vw;
+                bottom: 1.45vh;
+                cursor: none;
             }
             .projectButton:hover {
                 background-color: rgba(128, 128, 128, 0.2);
-                cursor: pointer;
             }
     
             #previous {
@@ -212,7 +213,7 @@ body {
         .project {
             position: absolute;
             width: 70vw;
-            height: 100vw;
+            height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -235,12 +236,67 @@ body {
         #project1 {
             display: none;
 
+            hr {
+                height: 2px;
+                border: none;
+                background-color: var(--colorFront);
+                transition: background-color 2s;
+                margin: 0px;
+            }
+
             #title1 {
-                color: rgb(124, 190, 241);
+                color: var(--colorFront);
                 font-family: shadows;
-                font-size: 225%;
+                font-size: 400%;
                 position: relative;
-                margin-top: -5vh; 
+                margin-top: 20vh; 
+                transition: color 2s;
+            }
+
+            #connect1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+
+                .vertical {
+                    width: 3vw;
+                }
+
+                #horizontal1 {
+                    width: 78.55vh;
+                    transform: rotate(90deg);
+                    margin-top: 39vh;
+                    margin-bottom: 39vh;
+                }
+            }
+
+            #connect2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: visible;
+
+                #horizontal2 {
+                    width: 95vh;
+                    transform: rotate(90deg);
+                }
+
+                #vertical2 {
+                    position: absolute;
+                    left: 35vw;
+                    width: 15vw;
+                    margin-bottom: 40vh;
+                }
+                #vertical3 {
+                    position: absolute;
+                    right: 35vw;
+                    width: 15vw;
+                    margin-bottom: -30vh;
+                }
             }
         }
 
@@ -467,16 +523,9 @@ body {
         flex-direction: column;
         transition: background-color 2s, color 2s, height 1s, opacity 0.6s;
         overflow: hidden;
-        
-            .invis {
-                position: absolute;
-                width: 10vw;
-                height: 10vh;
-                opacity: 0;
-            }
 
             #welcome {
-                font-size: 1.25vh;
+                font-size: 70%;
                 position: absolute;
                 bottom: 60vh;
                 transform: scale(0.8);
@@ -493,7 +542,7 @@ body {
             }
 
             #universe {
-                font-size: 450%;
+                font-size: 500%;
                 font-family: 'Pacifico';
                 animation-name: fontChange;
                 animation-duration: 1.7s;
@@ -540,7 +589,7 @@ body {
             #lines {
                 position: absolute;
                 top: 55vh;
-                left: 44vh;
+                left: 20vw;
                 transform: rotate(90deg);
                 opacity: 0.15;
 
@@ -561,7 +610,7 @@ body {
                 grid-gap: 4vh;
                 position: absolute;
                 bottom: 45vh;
-                right: 35vh;
+                right: 15vw;
                 z-index: 3;
 
                 .point1 {
@@ -607,20 +656,29 @@ body {
                 align-items: center;
                 transform: rotate(90deg);
 
+                hr {
+                    width: 15vh;
+                    height: 3px;
+                    border: none;
+                    background-color: var(--colorFront);
+                    transition: background-color 2s;
+                }
+
                 .imgContainer {
                     height: 100%;
                     width: 25vh;
                     transform: skew(15deg);
                     overflow: hidden;
                     display: flex;
-                    border-left: 2px solid var(--colorFront);
-                    border-right: 2px solid var(--colorFront);
                     align-items: center;
                     justify-content: center;
                     margin-left: 1vw;
                     margin-right: 1vw;
                     background-color: transparent;
                     transition: border 2s;
+                }
+                .skew2 {
+                    transform: skew(-15deg);
                 }
 
                 .work:hover {
@@ -656,16 +714,6 @@ body {
                         font-family: Shadows;
                         transform: rotate(-90deg);
                     }
-                    #experimentShadow {
-                        position: absolute;
-                        display: block;
-                        background-color: rgb(0, 0, 0);
-                        height: 1px;
-                        width: 19vw;
-                        box-shadow: 0 0 8vw 6vw black;
-                        z-index: 11;
-                        transform: rotate(-90deg);
-                    }
                 }
 
                 #work3 {
@@ -679,17 +727,6 @@ body {
                         line-height: 90%;
                         font-size: 270%;
                         font-family: ElMessiri;
-                        transform: rotate(-90deg);
-                    }
-
-                    #universeShadow {
-                        position: absolute;
-                        display: block;
-                        background-color: rgb(0, 0, 0);
-                        height: 1px;
-                        width: 18vw;
-                        box-shadow: 0 0 8vw 6vw black;
-                        z-index: 11;
                         transform: rotate(-90deg);
                     }
                 }
@@ -707,7 +744,7 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    cursor: pointer;
+                    cursor: none;
                     transition: border 2s, filter 0.4s;
                     transform: scale(0.85);
 
@@ -744,13 +781,13 @@ body {
                     .video2 {
                         height: 40vh;
                         transform: skew(-15deg) rotate(-90deg);
-                        filter: saturate(0%) blur(4px);
+                        filter: saturate(0%) blur(7px);
                         transition: filter 0.4s;
                     }
                     .video1 {
                         height: 40vh;
-                        transform: skew(-15deg) rotate(-90deg);
-                        filter: saturate(0%) blur(4px);
+                        transform: skew(15deg) rotate(-90deg);
+                        filter: saturate(0%) blur(7px);
                         transition: filter 0.4s;
                     }
 
@@ -760,12 +797,11 @@ body {
                         height: 10vh;
                         transform: rotate(-90deg);
                     }
-                    #solariumShadow {
+                    .titleShadow {
                         position: absolute;
                         display: block;
-                        background-color: rgb(0, 0, 0);
-                        height: 1px;
-                        width: 25vw;
+                        height: 0px;
+                        width: 19vw;
                         box-shadow: 0 0 8vw 6vw black;
                         z-index: 11;
                         transform: rotate(-90deg);
@@ -790,6 +826,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: border 2s, transform 0.2s, background-color 0.5s;
+    cursor: none;
 
     #points1 {
         position: absolute;
@@ -835,10 +872,8 @@ body {
 }  
 #leftButton:hover {
     transform: scale(1.08);
-    cursor: pointer;
 
     #points1 {
-        cursor: pointer;
         transform: scale(0.75);
     }
 }
@@ -874,6 +909,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: border 2s, transform 0.2s, background-color 0.5s;
+    cursor: none;
 
         #points2 {
             position: absolute;
@@ -919,10 +955,8 @@ body {
 }
 #rightButton:hover {
     transform: scale(1.08);
-    cursor: pointer;
 
     #points2 {
-        cursor: pointer;
         transform: scale(0.75);
     }
 }
@@ -954,6 +988,40 @@ body {
     margin-left: 0.5vh;
     margin-right: 0.5vh;
     transition: background-color 2s;
+}
+
+#cursorCont {
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #cursor {
+        width: 12px;
+        height: 12px;
+        background-color: var(--colorFront);
+        border-radius: 50%;
+        pointer-events: none;
+        transition: width 0.2s, height 0.2s, background-color 2s, border-radius 0.2s, border 2s;
+        animation-name: 'rotate';
+        animation-timing-function: linear;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        border: 1px solid var(--colorBack);
+    }
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 }
 
 ::-webkit-scrollbar {

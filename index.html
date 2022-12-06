@@ -3,10 +3,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>My universe - Ocneanu Vlad</title>
     <link rel="stylesheet" href="Style.css"/>
 </head>
 <body>
+
     <div id="buttonContainer">
 
     </div>
@@ -48,7 +50,18 @@
         </div>
         <div id="project1" class="project">
             <h1 id="title1">First Experiment</h1>
+            <div id="connect1">
+                <hr class="vertical">
+                <hr id="horizontal1">
+                <hr class="vertical">
+            </div>
+            
             <div class="placeholder1"></div>
+            <div id="connect2">
+                <hr id="horizontal2">
+                <hr id="vertical2">
+                <hr id="vertical3">
+            </div>
             <p class="projectText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
         </div>
         <div id="project2" class="project">
@@ -147,7 +160,7 @@
             <div id="workContainer">
                 <div id="works">
                     <div onclick="Work(3)" class="work" id="work3">
-                        <div id="universeShadow"></div>
+                        <div class="titleShadow"></div>
                         <h1 id="universeText">MY UNIVERSE</h1>
                         <div class="imgContainer first"></div>
                         <div class="imgContainer"></div>
@@ -162,62 +175,64 @@
                         <div class="imgContainer"></div>
                         <div class="imgContainer"></div>
                     </div>
+                    <hr>
                     <div onclick="Work(2)" class="work" id="work2">
                         <img id="solariumTitle" src="./Videos/SolariumTitle1.png">
-                        <div id="solariumShadow"></div>
-                        <div id="first2" class="imgContainer">
-                            <video autoplay muted loop class="video2">
+                        <div class="titleShadow"></div>
+                        <div id="first2" class="imgContainer skew2">
+                            <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium1.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
+                        <div class="imgContainer skew2">
                             <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium2.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
-                            <video autoplay muted loop class="video2">
+                        <div class="imgContainer skew2">
+                            <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium3.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
+                        <div class="imgContainer skew2">
                             <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium4.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
+                        <div class="imgContainer skew2">
                             <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium5.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
-                            <video autoplay muted loop class="video2">
+                        <div class="imgContainer skew2">
+                            <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium1.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
+                        <div class="imgContainer skew2">
                             <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium2.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
-                            <video autoplay muted loop class="video2">
+                        <div class="imgContainer skew2">
+                            <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium3.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
+                        <div class="imgContainer skew2">
                             <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium4.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <div class="imgContainer">
+                        <div class="imgContainer skew2">
                             <video autoplay muted loop class="video1">
                                 <source src="Videos/Solarium5.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
+                    <hr>
                     <div onclick="Work(1)" class="work" id="work1">
-                        <div id="experimentShadow"></div>
+                        <div class="titleShadow"></div>
                         <h1 id="experimentText">First Experiment</h1>
                         <div class="imgContainer first" style="animation-delay: -1.25s;">
                             <video autoplay muted loop class="video2">
@@ -276,9 +291,13 @@
     </div>
 
 
+    <div id="cursorCont">
+        <div id="cursor"></div>
+    </div>
 
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="Script.js"></script>
 </body>
 </html>

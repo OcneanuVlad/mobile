@@ -61,6 +61,7 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  cursor: none;
 }
 body #spawn21, body #spawn22 {
   position: absolute;
@@ -140,15 +141,15 @@ body #projectsContainer #projectNav {
   background-color: var(--colorBack);
   border-bottom: 1px solid var(--colorFront);
   width: 100vw;
-  height: 15vh;
+  height: 12vh;
   z-index: 11;
   top: -2vh;
   transition: background-color 2s, border 2s;
 }
 body #projectsContainer #projectNav #close {
-  bottom: 2vh;
-  height: 4vh;
-  width: 5vw;
+  bottom: 1.45vh;
+  height: 3vh;
+  width: 4vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -162,14 +163,14 @@ body #projectsContainer #projectNav #close {
   color: var(--colorFront);
   z-index: 11;
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 55%;
+  font-size: 45%;
+  cursor: none;
 }
 body #projectsContainer #projectNav #close:hover {
   background-color: rgba(128, 128, 128, 0.2);
-  cursor: pointer;
 }
 body #projectsContainer #projectNav .projectButton {
-  height: 4vh;
+  height: 3vh;
   margin: 0px;
   background-color: transparent;
   color: var(--colorFront);
@@ -182,13 +183,13 @@ body #projectsContainer #projectNav .projectButton {
   align-items: center;
   border-top: 1px solid var(--colorFront);
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 55%;
-  width: 8vw;
-  bottom: 2vh;
+  font-size: 45%;
+  width: 7vw;
+  bottom: 1.45vh;
+  cursor: none;
 }
 body #projectsContainer #projectNav .projectButton:hover {
   background-color: rgba(128, 128, 128, 0.2);
-  cursor: pointer;
 }
 body #projectsContainer #projectNav #previous {
   position: absolute;
@@ -203,7 +204,7 @@ body #projectsContainer #projectNav #next {
 body #projectsContainer .project {
   position: absolute;
   width: 70vw;
-  height: 100vw;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,12 +224,60 @@ body #projectsContainer .project .placeholder1 {
 body #projectsContainer #project1 {
   display: none;
 }
+body #projectsContainer #project1 hr {
+  height: 2px;
+  border: none;
+  background-color: var(--colorFront);
+  transition: background-color 2s;
+  margin: 0px;
+}
 body #projectsContainer #project1 #title1 {
-  color: rgb(124, 190, 241);
+  color: var(--colorFront);
   font-family: shadows;
-  font-size: 225%;
+  font-size: 400%;
   position: relative;
-  margin-top: -5vh;
+  margin-top: 20vh;
+  transition: color 2s;
+}
+body #projectsContainer #project1 #connect1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+body #projectsContainer #project1 #connect1 .vertical {
+  width: 3vw;
+}
+body #projectsContainer #project1 #connect1 #horizontal1 {
+  width: 78.55vh;
+  transform: rotate(90deg);
+  margin-top: 39vh;
+  margin-bottom: 39vh;
+}
+body #projectsContainer #project1 #connect2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: visible;
+}
+body #projectsContainer #project1 #connect2 #horizontal2 {
+  width: 95vh;
+  transform: rotate(90deg);
+}
+body #projectsContainer #project1 #connect2 #vertical2 {
+  position: absolute;
+  left: 35vw;
+  width: 15vw;
+  margin-bottom: 40vh;
+}
+body #projectsContainer #project1 #connect2 #vertical3 {
+  position: absolute;
+  right: 35vw;
+  width: 15vw;
+  margin-bottom: -30vh;
 }
 body #projectsContainer #project2 {
   display: none;
@@ -436,14 +485,8 @@ body #pageContainer #home {
   transition: background-color 2s, color 2s, height 1s, opacity 0.6s;
   overflow: hidden;
 }
-body #pageContainer #home .invis {
-  position: absolute;
-  width: 10vw;
-  height: 10vh;
-  opacity: 0;
-}
 body #pageContainer #home #welcome {
-  font-size: 1.25vh;
+  font-size: 70%;
   position: absolute;
   bottom: 60vh;
   transform: scale(0.8);
@@ -458,7 +501,7 @@ body #pageContainer #home #welcome #welcomeHr {
   border: none;
 }
 body #pageContainer #home #universe {
-  font-size: 450%;
+  font-size: 500%;
   font-family: "Pacifico";
   -webkit-animation-name: fontChange;
           animation-name: fontChange;
@@ -541,7 +584,7 @@ body #pageContainer #home #universe {
 body #pageContainer #home #lines {
   position: absolute;
   top: 55vh;
-  left: 44vh;
+  left: 20vw;
   transform: rotate(90deg);
   opacity: 0.15;
 }
@@ -560,7 +603,7 @@ body #pageContainer #home #grid {
   grid-gap: 4vh;
   position: absolute;
   bottom: 45vh;
-  right: 35vh;
+  right: 15vw;
   z-index: 3;
 }
 body #pageContainer #home #grid .point1 {
@@ -603,20 +646,28 @@ body #pageContainer #projects #workContainer #works {
   align-items: center;
   transform: rotate(90deg);
 }
+body #pageContainer #projects #workContainer #works hr {
+  width: 15vh;
+  height: 3px;
+  border: none;
+  background-color: var(--colorFront);
+  transition: background-color 2s;
+}
 body #pageContainer #projects #workContainer #works .imgContainer {
   height: 100%;
   width: 25vh;
   transform: skew(15deg);
   overflow: hidden;
   display: flex;
-  border-left: 2px solid var(--colorFront);
-  border-right: 2px solid var(--colorFront);
   align-items: center;
   justify-content: center;
   margin-left: 1vw;
   margin-right: 1vw;
   background-color: transparent;
   transition: border 2s;
+}
+body #pageContainer #projects #workContainer #works .skew2 {
+  transform: skew(-15deg);
 }
 body #pageContainer #projects #workContainer #works .work:hover .first {
   -webkit-animation-play-state: paused;
@@ -645,16 +696,6 @@ body #pageContainer #projects #workContainer #works #work1 #experimentText {
   font-family: Shadows;
   transform: rotate(-90deg);
 }
-body #pageContainer #projects #workContainer #works #work1 #experimentShadow {
-  position: absolute;
-  display: block;
-  background-color: rgb(0, 0, 0);
-  height: 1px;
-  width: 19vw;
-  box-shadow: 0 0 8vw 6vw black;
-  z-index: 11;
-  transform: rotate(-90deg);
-}
 body #pageContainer #projects #workContainer #works #work3 #universeText {
   position: absolute;
   z-index: 12;
@@ -664,16 +705,6 @@ body #pageContainer #projects #workContainer #works #work3 #universeText {
   line-height: 90%;
   font-size: 270%;
   font-family: ElMessiri;
-  transform: rotate(-90deg);
-}
-body #pageContainer #projects #workContainer #works #work3 #universeShadow {
-  position: absolute;
-  display: block;
-  background-color: rgb(0, 0, 0);
-  height: 1px;
-  width: 18vw;
-  box-shadow: 0 0 8vw 6vw black;
-  z-index: 11;
   transform: rotate(-90deg);
 }
 body #pageContainer #projects #workContainer #works .work {
@@ -689,7 +720,7 @@ body #pageContainer #projects #workContainer #works .work {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: none;
   transition: border 2s, filter 0.4s;
   transform: scale(0.85);
 }
@@ -748,13 +779,13 @@ body #pageContainer #projects #workContainer #works .work #first2 {
 body #pageContainer #projects #workContainer #works .work .video2 {
   height: 40vh;
   transform: skew(-15deg) rotate(-90deg);
-  filter: saturate(0%) blur(4px);
+  filter: saturate(0%) blur(7px);
   transition: filter 0.4s;
 }
 body #pageContainer #projects #workContainer #works .work .video1 {
   height: 40vh;
-  transform: skew(-15deg) rotate(-90deg);
-  filter: saturate(0%) blur(4px);
+  transform: skew(15deg) rotate(-90deg);
+  filter: saturate(0%) blur(7px);
   transition: filter 0.4s;
 }
 body #pageContainer #projects #workContainer #works .work #solariumTitle {
@@ -763,12 +794,11 @@ body #pageContainer #projects #workContainer #works .work #solariumTitle {
   height: 10vh;
   transform: rotate(-90deg);
 }
-body #pageContainer #projects #workContainer #works .work #solariumShadow {
+body #pageContainer #projects #workContainer #works .work .titleShadow {
   position: absolute;
   display: block;
-  background-color: rgb(0, 0, 0);
-  height: 1px;
-  width: 25vw;
+  height: 0px;
+  width: 19vw;
   box-shadow: 0 0 8vw 6vw black;
   z-index: 11;
   transform: rotate(-90deg);
@@ -787,6 +817,7 @@ body #leftButton {
   justify-content: center;
   align-items: center;
   transition: border 2s, transform 0.2s, background-color 0.5s;
+  cursor: none;
 }
 body #leftButton #points1 {
   position: absolute;
@@ -825,10 +856,8 @@ body #leftButton #points1 #point14 {
 }
 body #leftButton:hover {
   transform: scale(1.08);
-  cursor: pointer;
 }
 body #leftButton:hover #points1 {
-  cursor: pointer;
   transform: scale(0.75);
 }
 body #leftButton:active {
@@ -863,6 +892,7 @@ body #rightButton {
   justify-content: center;
   align-items: center;
   transition: border 2s, transform 0.2s, background-color 0.5s;
+  cursor: none;
 }
 body #rightButton #points2 {
   position: absolute;
@@ -900,10 +930,8 @@ body #rightButton #points2 #point24 {
 }
 body #rightButton:hover {
   transform: scale(1.08);
-  cursor: pointer;
 }
 body #rightButton:hover #points2 {
-  cursor: pointer;
   transform: scale(0.75);
 }
 body #rightButton:active {
@@ -931,6 +959,50 @@ body .point {
   margin-left: 0.5vh;
   margin-right: 0.5vh;
   transition: background-color 2s;
+}
+body #cursorCont {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #cursorCont #cursor {
+  width: 12px;
+  height: 12px;
+  background-color: var(--colorFront);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: width 0.2s, height 0.2s, background-color 2s, border-radius 0.2s, border 2s;
+  -webkit-animation-name: "rotate";
+          animation-name: "rotate";
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  border: 1px solid var(--colorBack);
+}
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 body ::-webkit-scrollbar {
   width: 10px;
