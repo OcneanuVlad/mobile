@@ -68,10 +68,14 @@ body {
         left: 0;
         top: 0;
         background-color: black;
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         z-index: 998;
+
+        h1 {
+            font-size: 4vh;
+        }
     }
 
     #spawn21, #spawn22 {

@@ -70,10 +70,13 @@ body #mobileLock {
   left: 0;
   top: 0;
   background-color: black;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 998;
+}
+body #mobileLock h1 {
+  font-size: 4vh;
 }
 body #spawn21, body #spawn22 {
   position: absolute;
