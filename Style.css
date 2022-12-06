@@ -73,10 +73,10 @@ body #mobileLock {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 998;
+  z-index: 9999;
 }
 body #mobileLock h1 {
-  font-size: 4vh;
+  font-size: 500%;
 }
 body #spawn21, body #spawn22 {
   position: absolute;
