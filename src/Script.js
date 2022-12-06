@@ -1,3 +1,6 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Main pages navigation
+
 
 class Button extends React.Component {
     constructor(props){
@@ -343,7 +346,8 @@ let container = document.querySelector('#buttonContainer');
 ReactDOM.render(<Button />, container);
 
 
-////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Work pages 
 
 
 let page = 0;
@@ -443,8 +447,6 @@ function Work(index) {
         }, 600);
 
         function t() {
-            transition3.removeEventListener('transitionend', t);
-
             document.getElementById("work1").classList.remove('disable');
             document.getElementById("work2").classList.remove('disable');
             document.getElementById("work3").classList.remove('disable');
@@ -455,8 +457,83 @@ function Work(index) {
             document.getElementById("previous").classList.remove('disable');
             document.getElementById("next").classList.remove('disable');
             document.getElementById("close").classList.remove('disable');
+
+            transition3.removeEventListener('transitionend', t);
         }
-        transition3.addEventListener('transitionend', t);
+        setTimeout(() => {
+            transition3.addEventListener('transitionend', t);
+        }, 600);
     }
     transition3.addEventListener('transitionend', secondSwipe);
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Cursor
+
+
+gsap.set('#cursorCont',{xPercent:-50, yPercent:-50});
+
+let cursorCont = document.querySelector('#cursorCont')
+let cursor = document.querySelector('#cursor')
+let mouseX;
+let mouseY;
+
+window.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    gsap.to(cursorCont, 0.01, {x: mouseX, y: mouseY});
+});
+window.addEventListener('mouseup', () => {
+    cursor.style.width = "12px";
+    cursor.style.height = "12px";
+    cursor.style.borderRadius = "50%";
+});
+
+let buttons = [document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+
+buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        cursor.style.width = "30px";
+        cursor.style.height = "30px";
+        cursor.style.borderRadius = "15%";
+    });
+    button.addEventListener('mouseleave', () => {
+        cursor.style.width = "12px";
+        cursor.style.height = "12px";
+        cursor.style.borderRadius = "50%";
+    });
+});
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Page Rotation
+
+let constrainX = 125;
+let constrainY = 300;
+let mouseOverContainer = document.querySelector('body')
+let ex1Layer = document.getElementById("pageContainer");
+
+function transforms(x, y, el) {
+  let box = el.getBoundingClientRect();
+  let calcX = -(y - box.y - (box.height / 2)) / constrainX;
+  let calcY = (x - box.x - (box.width / 2)) / constrainY;
+  
+  return "perspective(100vw) "
+    + "   rotateX("+ calcX +"deg) "
+    + "   rotateY("+ calcY +"deg) ";
+};
+
+ function transformElement(el, xyEl) {
+  el.style.transform  = transforms.apply(null, xyEl);
+}
+
+mouseOverContainer.onmousemove = function(e) {
+  let xy = [e.clientX, e.clientY];
+  let position = xy.concat([ex1Layer]);
+
+  window.requestAnimationFrame(function(){
+    transformElement(ex1Layer, position);
+  });
+};
