@@ -63,6 +63,16 @@ body {
   height: 100vh;
   cursor: none;
 }
+body #mobileLock {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
 body #spawn21, body #spawn22 {
   position: absolute;
   height: 5px;
