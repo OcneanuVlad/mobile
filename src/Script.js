@@ -2,7 +2,8 @@ if (/Android|iPhone/i.test(navigator.userAgent)) {
     document.querySelector('#mobileLock').style.display = "flex";
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Main pages navigation
 
 
@@ -28,6 +29,9 @@ class Button extends React.Component {
     }
 
     handleLeft() {
+        document.querySelector('#ocn').style.width = "0.8vw";
+        document.querySelector('#vld').style.width = "0.7vw";
+
         document.getElementById("slide0").style.transition = "margin-left 2s";
 
         document.querySelector('#about').style.opacity = "0";
@@ -77,6 +81,9 @@ class Button extends React.Component {
     }
 
     handleRight() {
+        document.querySelector('#ocn').style.width = "0.8vw";
+        document.querySelector('#vld').style.width = "0.7vw";
+
         document.getElementById("slide0").style.transition = "margin-left 2s";
 
         document.querySelector('#about').style.opacity = "0";
@@ -495,7 +502,21 @@ window.addEventListener('mouseup', () => {
     cursor.style.borderRadius = "50%";
 });
 
-let buttons = [document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+let videos = [document.querySelector('#redTrailer')];
+
+videos.forEach(video => {
+    video.addEventListener('mouseenter', () => {
+        cursor.style.display = "none";
+    });
+});
+
+videos.forEach(video => {
+    video.addEventListener('mouseleave', () => {
+        cursor.style.display = "block";
+    })
+})
+
+let buttons = [document.querySelector('#name'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
 
 buttons.forEach(button => {
     button.addEventListener('mouseenter', () => {
@@ -541,3 +562,22 @@ mouseOverContainer.onmousemove = function(e) {
     transformElement(ex1Layer, position);
   });
 };
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//projectPage Parallax
+
+
+document.querySelector('#projectsContainer').addEventListener('scroll', () => {
+    if (document.querySelector('#verticalTop').getBoundingClientRect().top < document.querySelector('#detector').getBoundingClientRect().top) {
+        document.querySelector('#section1').classList.add('sticky');
+        document.querySelector('#section1').style.marginTop = "-79vh"
+        document.querySelector('#section1').style.pointerEvents = "none"
+        document.querySelector('#section2').style.marginTop = "238.5vh";
+    }   else {
+        document.querySelector('#section1').classList.remove('sticky');
+        document.querySelector('#section1').style.marginTop = "90vh"
+        document.querySelector('#section1').style.pointerEvents = "auto"
+        document.querySelector('#section2').style.marginTop = "0px";
+    }
+});

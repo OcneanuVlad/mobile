@@ -159,7 +159,7 @@ body #projectsContainer #projectNav {
   border-bottom: 1px solid var(--colorFront);
   width: 100vw;
   height: 12vh;
-  z-index: 11;
+  z-index: 100;
   top: -2vh;
   transition: background-color 2s, border 2s;
 }
@@ -180,7 +180,7 @@ body #projectsContainer #projectNav #close {
   color: var(--colorFront);
   z-index: 11;
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 45%;
+  font-size: 5px;
   cursor: none;
 }
 body #projectsContainer #projectNav #close:hover {
@@ -200,7 +200,7 @@ body #projectsContainer #projectNav .projectButton {
   align-items: center;
   border-top: 1px solid var(--colorFront);
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 45%;
+  font-size: 5px;
   width: 7vw;
   bottom: 1.45vh;
   cursor: none;
@@ -229,17 +229,100 @@ body #projectsContainer .project {
   padding-top: 10vw;
 }
 body #projectsContainer .project .projectText {
+  display: none;
   width: 50vw;
   font-size: 100%;
 }
-body #projectsContainer .project .placeholder1 {
-  width: 20vw;
-  height: 20vh;
-  background-color: var(--colorFront);
-  transition: background-color 2s;
-}
 body #projectsContainer #project1 {
   display: none;
+}
+body #projectsContainer #project1 #section1 {
+  margin-top: 90vh;
+  width: 100vw;
+  background-color: var(--colorBack);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: visible;
+}
+body #projectsContainer #project1 #section1 #redTrailer {
+  height: 57.5vh;
+  cursor: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  pointer-events: auto;
+}
+body #projectsContainer #project1 #section1 #connect1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  margin: 0px;
+}
+body #projectsContainer #project1 #section1 #connect1 .vertical {
+  width: 60vw;
+}
+body #projectsContainer #project1 #section1 #connect1 #horizontal1 {
+  height: 80vh;
+  width: 2px;
+  background-color: var(--colorFront);
+  display: block;
+  transition: background-color 2s;
+}
+body #projectsContainer #project1 #detector {
+  opacity: 1;
+  display: block;
+  height: 1px;
+  background-color: red;
+  width: 100vw;
+  position: fixed;
+  bottom: 10vh;
+  z-index: 55;
+  pointer-events: none;
+  opacity: 0;
+}
+body #projectsContainer #project1 #section2 {
+  width: 100vw;
+  background-color: var(--colorBack);
+  z-index: 51;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: visible;
+}
+body #projectsContainer #project1 #section2 #connect2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: visible;
+}
+body #projectsContainer #project1 #section2 #connect2 #horizontal2 {
+  height: 100vh;
+  width: 2px;
+  background-color: var(--colorFront);
+  display: block;
+  transition: background-color 2s;
+}
+body #projectsContainer #project1 #section2 #connect2 #verticalTop {
+  width: 60vw;
+}
+body #projectsContainer #project1 #section2 #connect2 #vertical2 {
+  position: absolute;
+  left: 35vw;
+  width: 15vw;
+  margin-bottom: 40vh;
+}
+body #projectsContainer #project1 #section2 #connect2 #vertical3 {
+  position: absolute;
+  right: 35vw;
+  width: 15vw;
+  margin-bottom: -30vh;
 }
 body #projectsContainer #project1 hr {
   height: 2px;
@@ -251,50 +334,12 @@ body #projectsContainer #project1 hr {
 body #projectsContainer #project1 #title1 {
   color: var(--colorFront);
   font-family: shadows;
-  font-size: 400%;
+  font-size: 80px;
   position: relative;
-  margin-top: 20vh;
+  top: 40vh;
   transition: color 2s;
-}
-body #projectsContainer #project1 #connect1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-}
-body #projectsContainer #project1 #connect1 .vertical {
-  width: 3vw;
-}
-body #projectsContainer #project1 #connect1 #horizontal1 {
-  width: 78.55vh;
-  transform: rotate(90deg);
-  margin-top: 39vh;
-  margin-bottom: 39vh;
-}
-body #projectsContainer #project1 #connect2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: visible;
-}
-body #projectsContainer #project1 #connect2 #horizontal2 {
-  width: 95vh;
-  transform: rotate(90deg);
-}
-body #projectsContainer #project1 #connect2 #vertical2 {
-  position: absolute;
-  left: 35vw;
-  width: 15vw;
-  margin-bottom: 40vh;
-}
-body #projectsContainer #project1 #connect2 #vertical3 {
-  position: absolute;
-  right: 35vw;
-  width: 15vw;
-  margin-bottom: -30vh;
+  position: fixed;
+  pointer-events: none;
 }
 body #projectsContainer #project2 {
   display: none;
@@ -370,7 +415,7 @@ body #slider #pages #slide0 {
   margin-left: -8.55vw;
   transition: margin-left 1.8s;
 }
-body #ocn {
+body #name {
   position: fixed;
   z-index: 7;
   left: 4vw;
@@ -378,6 +423,27 @@ body #ocn {
   font-size: 2.1vh;
   font-weight: bold;
   transition: color 2s;
+  display: flex;
+  width: 9vw;
+  justify-content: center;
+  align-items: center;
+}
+body #name #ocn {
+  margin-right: 10px;
+  overflow: hidden;
+  width: 5.2vw;
+  transition: width 0.5s;
+}
+body #name #vld {
+  overflow: hidden;
+  width: 3vw;
+  transition: width 0.5s;
+}
+body #name:hover #ocn {
+  width: 5.2vw !important;
+}
+body #name:hover #vld {
+  width: 3vw !important;
 }
 body #fade {
   position: fixed;
@@ -878,7 +944,7 @@ body #leftButton:hover #points1 {
   transform: scale(0.75);
 }
 body #leftButton:active {
-  background-color: rgba(108, 108, 108, 0.281);
+  background-color: rgba(108, 108, 108, 0.404);
   transition: 0s;
 }
 body .buttonBackground {
@@ -952,7 +1018,7 @@ body #rightButton:hover #points2 {
   transform: scale(0.75);
 }
 body #rightButton:active {
-  background-color: rgba(108, 108, 108, 0.281);
+  background-color: rgba(108, 108, 108, 0.404);
   transition: 0s;
 }
 body .disable {
@@ -1004,6 +1070,7 @@ body #cursorCont #cursor {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   border: 1px solid var(--colorBack);
+  display: block;
 }
 @-webkit-keyframes rotate {
   0% {
@@ -1029,4 +1096,7 @@ body ::-webkit-scrollbar-track {
 }
 body ::-webkit-scrollbar-thumb {
   background: var(--colorFront);
+}
+body .sticky {
+  position: fixed;
 }/*# sourceMappingURL=Style.css.map */

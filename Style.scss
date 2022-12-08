@@ -164,7 +164,7 @@ body {
             border-bottom: 1px solid var(--colorFront);
             width: 100vw;
             height: 12vh;
-            z-index: 11;
+            z-index: 100;
             top: -2vh;
             transition: background-color 2s, border 2s;
 
@@ -185,7 +185,7 @@ body {
                 color: var(--colorFront);
                 z-index: 11;
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 45%;
+                font-size: 5px;
                 cursor: none;
             }
             #close:hover {
@@ -206,7 +206,7 @@ body {
                 align-items: center;
                 border-top: 1px solid var(--colorFront);
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 45%;
+                font-size: 5px;
                 width: 7vw;
                 bottom: 1.45vh;
                 cursor: none;
@@ -240,20 +240,113 @@ body {
             padding-top: 10vw;
 
             .projectText {
+                display: none;
                 width: 50vw;
                 font-size: 100%;
-            }
-
-            .placeholder1 {
-                width: 20vw;
-                height: 20vh;
-                background-color: var(--colorFront);
-                transition: background-color 2s;
             }
         }
 
         #project1 {
             display: none;
+
+            #section1 {
+                margin-top: 90vh;
+                width: 100vw;
+                background-color: var(--colorBack);
+                z-index: 50;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                overflow: visible;
+                 
+                #redTrailer {
+                    height: 57.5vh;
+                    cursor: auto;
+                    margin-top: 5vh;
+                    margin-bottom: 5vh;
+                    pointer-events: auto;
+                }
+
+                #connect1 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: visible;
+                    margin: 0px;
+    
+                    .vertical {
+                        width: 60vw;
+                    }
+    
+                    #horizontal1 {
+                        height: 80vh;
+                        width: 2px;
+                        background-color: var(--colorFront);
+                        display: block;
+                        transition: background-color 2s;
+                    }
+                }
+            }
+
+            #detector {
+                opacity: 1;
+                display: block;
+                height: 1px;
+                background-color: red;
+                width: 100vw;
+                position: fixed;
+                bottom: 10vh;
+                z-index: 55;
+                pointer-events: none;
+                opacity: 0;
+            }
+
+            #section2 {
+                width: 100vw;
+                background-color: var(--colorBack);
+                z-index: 51;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                overflow: visible;
+
+                #connect2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    overflow: visible;
+    
+                    #horizontal2 {
+                        height: 100vh;
+                        width: 2px;
+                        background-color: var(--colorFront);
+                        display: block;
+                        transition: background-color 2s;
+                    }
+                    
+                    #verticalTop {
+                        width: 60vw;
+                    }
+                    #vertical2 {
+                        position: absolute;
+                        left: 35vw;
+                        width: 15vw;
+                        margin-bottom: 40vh;
+                    }
+                    #vertical3 {
+                        position: absolute;
+                        right: 35vw;
+                        width: 15vw;
+                        margin-bottom: -30vh;
+                    }
+                }
+            }
+
 
             hr {
                 height: 2px;
@@ -266,56 +359,12 @@ body {
             #title1 {
                 color: var(--colorFront);
                 font-family: shadows;
-                font-size: 400%;
+                font-size: 80px;
                 position: relative;
-                margin-top: 20vh; 
+                top: 40vh; 
                 transition: color 2s;
-            }
-
-            #connect1 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 80vh;
-
-                .vertical {
-                    width: 3vw;
-                }
-
-                #horizontal1 {
-                    width: 78.55vh;
-                    transform: rotate(90deg);
-                    margin-top: 39vh;
-                    margin-bottom: 39vh;
-                }
-            }
-
-            #connect2 {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                overflow: visible;
-
-                #horizontal2 {
-                    width: 95vh;
-                    transform: rotate(90deg);
-                }
-
-                #vertical2 {
-                    position: absolute;
-                    left: 35vw;
-                    width: 15vw;
-                    margin-bottom: 40vh;
-                }
-                #vertical3 {
-                    position: absolute;
-                    right: 35vw;
-                    width: 15vw;
-                    margin-bottom: -30vh;
-                }
+                position: fixed;
+                pointer-events: none;
             }
         }
 
@@ -401,7 +450,7 @@ body {
         }
     }
 
-    #ocn {
+    #name {
         position: fixed;
         z-index: 7;
         left: 4vw;
@@ -409,6 +458,31 @@ body {
         font-size: 2.1vh;
         font-weight: bold;
         transition: color 2s;
+        display: flex;
+        width: 9vw;
+        justify-content: center;
+        align-items: center;
+
+        #ocn {
+            margin-right: 10px;
+            overflow: hidden;
+            width: 5.2vw;
+            transition: width .5s;
+        }
+        #vld {
+            overflow: hidden;
+            width: 3vw;
+            transition: width .5s;
+        }
+    }
+    #name:hover {
+
+        #ocn {
+            width: 5.2vw !important;
+        }
+        #vld {
+            width: 3vw !important;
+        }
     }
 
     #fade {
@@ -897,7 +971,7 @@ body {
     }
 }
 #leftButton:active {
-    background-color: rgba(108, 108, 108, 0.281);
+    background-color: rgba(108, 108, 108, 0.404);
     transition: 0s;
 }
 .buttonBackground {
@@ -980,7 +1054,7 @@ body {
     }
 }
 #rightButton:active {
-    background-color: rgba(108, 108, 108, 0.281);
+    background-color: rgba(108, 108, 108, 0.404);
     transition: 0s;
 }
 
@@ -1032,6 +1106,7 @@ body {
         animation-duration: 4s;
         animation-iteration-count: infinite;
         border: 1px solid var(--colorBack);
+        display: block;
     }
     @keyframes rotate {
         0% {
@@ -1051,6 +1126,10 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     background: var(--colorFront);
+}
+
+.sticky {
+    position: fixed;
 }
 
 }
