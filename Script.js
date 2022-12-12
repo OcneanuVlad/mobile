@@ -583,7 +583,7 @@ buttons.forEach(function (button) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Page Rotation
 
-if (user.browser.family !== 'Safari') {
+if (navigator.userAgent.match(/safari/i)) {
     var transforms = function transforms(x, y, el) {
         var box = el.getBoundingClientRect();
         var calcX = -(y - box.y - box.height / 2) / constrainX;

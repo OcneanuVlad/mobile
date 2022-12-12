@@ -535,7 +535,7 @@ buttons.forEach(button => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Page Rotation
 
-if (user.browser.family !== 'Safari') {
+if(navigator.userAgent.match(/safari/i)) {
     let constrainX = 125;
     let constrainY = 300;
     let mouseOverContainer = document.querySelector('body')
