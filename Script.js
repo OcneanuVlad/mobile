@@ -583,31 +583,35 @@ buttons.forEach(function (button) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Page Rotation
 
-var constrainX = 125;
-var constrainY = 300;
-var mouseOverContainer = document.querySelector('body');
-var ex1Layer = document.getElementById("pageContainer");
+if (user.browser.family !== 'Safari') {
+    var transforms = function transforms(x, y, el) {
+        var box = el.getBoundingClientRect();
+        var calcX = -(y - box.y - box.height / 2) / constrainX;
+        var calcY = (x - box.x - box.width / 2) / constrainY;
 
-function transforms(x, y, el) {
-    var box = el.getBoundingClientRect();
-    var calcX = -(y - box.y - box.height / 2) / constrainX;
-    var calcY = (x - box.x - box.width / 2) / constrainY;
+        return "perspective(100vw) " + "   rotateX(" + calcX + "deg) " + "   rotateY(" + calcY + "deg) ";
+    };
 
-    return "perspective(100vw) " + "   rotateX(" + calcX + "deg) " + "   rotateY(" + calcY + "deg) ";
-};
+    var transformElement = function transformElement(el, xyEl) {
+        el.style.transform = transforms.apply(null, xyEl);
+    };
 
-function transformElement(el, xyEl) {
-    el.style.transform = transforms.apply(null, xyEl);
+    var constrainX = 125;
+    var constrainY = 300;
+    var mouseOverContainer = document.querySelector('body');
+    var ex1Layer = document.getElementById("pageContainer");
+
+    ;
+
+    mouseOverContainer.onmousemove = function (e) {
+        var xy = [e.clientX, e.clientY];
+        var position = xy.concat([ex1Layer]);
+
+        window.requestAnimationFrame(function () {
+            transformElement(ex1Layer, position);
+        });
+    };
 }
-
-mouseOverContainer.onmousemove = function (e) {
-    var xy = [e.clientX, e.clientY];
-    var position = xy.concat([ex1Layer]);
-
-    window.requestAnimationFrame(function () {
-        transformElement(ex1Layer, position);
-    });
-};
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //projectPage Parallax

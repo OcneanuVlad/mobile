@@ -585,7 +585,7 @@ body #pageContainer #home #welcome #welcomeHr {
 }
 body #pageContainer #home #universe {
   font-size: 500%;
-  font-family: "Pacifico";
+  font-family: "Pacifico", sans-serif;
   -webkit-animation-name: fontChange;
           animation-name: fontChange;
   -webkit-animation-duration: 1.7s;
