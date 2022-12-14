@@ -228,7 +228,6 @@ body {
             }
         }
 
-
         .project {
             position: absolute;
             width: 70vw;
@@ -244,12 +243,8 @@ body {
                 width: 50vw;
                 font-size: 100%;
             }
-        }
 
-        #project1 {
-            display: none;
-
-            #section1 {
+            .section1 {
                 margin-top: 90vh;
                 width: 100vw;
                 background-color: var(--colorBack);
@@ -259,6 +254,7 @@ body {
                 align-items: center;
                 flex-direction: column;
                 overflow: visible;
+                transition: background-color 2s;
                  
                 #redTrailer {
                     height: 57.5vh;
@@ -290,7 +286,7 @@ body {
                 }
             }
 
-            #detector {
+            .detector {
                 opacity: 1;
                 display: block;
                 height: 1px;
@@ -303,7 +299,7 @@ body {
                 opacity: 0;
             }
 
-            #section2 {
+            .section2 {
                 width: 100vw;
                 background-color: var(--colorBack);
                 z-index: 51;
@@ -312,37 +308,67 @@ body {
                 align-items: center;
                 flex-direction: column;
                 overflow: visible;
+                transition: background-color 2s;
 
                 #connect2 {
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
                     align-items: center;
-                    height: 100vh;
                     overflow: visible;
     
                     #horizontal2 {
-                        height: 100vh;
+                        height: 230vh;
                         width: 2px;
                         background-color: var(--colorFront);
                         display: block;
                         transition: background-color 2s;
                     }
                     
-                    #verticalTop {
+                    .vertical {
                         width: 60vw;
                     }
-                    #vertical2 {
+                    .square {
+                        display: inline-block;
                         position: absolute;
-                        left: 35vw;
-                        width: 15vw;
-                        margin-bottom: 40vh;
+                        width: 30vw;
+                        height: 40vh;
+                        border: 2px solid var(--colorFront);
+                        background-color: transparent;
+                        transition: border 2s;
                     }
-                    #vertical3 {
+                    .info {
                         position: absolute;
+                        display: flex;
+                        align-items: center;
+                        width: 41vw;
+                        height: 41vh;
+                        overflow: hidden;
+                    }
+                    #info1 {
+                        margin-top: 100vh;
+                        left: 35vw;
+                        justify-content: flex-start;
+
+                        #vertical2 {
+                            width: 10vw;
+                            position: absolute;
+                        }
+                        #square1 {
+                            left: 10vw;
+                        }
+                    }
+                    #info2 {
+                        margin-top: 30vh;
                         right: 35vw;
-                        width: 15vw;
-                        margin-bottom: -30vh;
+                        justify-content: flex-end;
+
+                        #vertical3 {
+                            position: absolute;
+                            width: 10vw;
+                        }
+                        #square2 {
+                            right: 10vw;
+                        }
                     }
                 }
             }
@@ -355,13 +381,16 @@ body {
                 transition: background-color 2s;
                 margin: 0px;
             }
+        }
+
+        #project1 {
+            display: none;
 
             #title1 {
                 color: var(--colorFront);
                 font-family: shadows;
-                font-size: 80px;
-                position: relative;
-                top: 40vh; 
+                font-size: 5vw;
+                top: 37vh; 
                 transition: color 2s;
                 position: fixed;
                 pointer-events: none;
@@ -370,9 +399,26 @@ body {
 
         #project2 {
             display: none;
+
+            #title2 {
+                width: 50vw;
+                position: fixed;
+                top: 0vh;
+                pointer-events: none;
+            }
         }
         #project3 {
-            display: flex;
+            display: none;
+
+            #title3 {
+                font-family: ElMessiri;
+                font-size: 5vw;
+                color: var(--colorFront);
+                top: 19vw;
+                transition: color 2s;
+                pointer-events: none;
+                position: fixed;
+            }
         }
     }
 
@@ -455,33 +501,34 @@ body {
         z-index: 7;
         left: 4vw;
         top: 3vh;
-        font-size: 2.1vh;
+        font-size: 15px;
         font-weight: bold;
         transition: color 2s;
         display: flex;
-        width: 9vw;
-        justify-content: center;
+        width: 140px;
+        justify-content: flex-start;
         align-items: center;
 
         #ocn {
-            margin-right: 10px;
+            margin-right: 6px;
             overflow: hidden;
-            width: 5.2vw;
+            width: 76px;
             transition: width .5s;
         }
         #vld {
+            margin-left: -3px;
             overflow: hidden;
-            width: 3vw;
+            width: 42px;
             transition: width .5s;
         }
     }
     #name:hover {
 
         #ocn {
-            width: 5.2vw !important;
+            width: 76px !important;
         }
         #vld {
-            width: 3vw !important;
+            width: 42px !important;
         }
     }
 
@@ -685,6 +732,7 @@ body {
                 left: 20vw;
                 transform: rotate(90deg);
                 opacity: 0.15;
+                display: none;
 
                 .line {
                     background-color: var(--colorFront);
@@ -699,12 +747,13 @@ body {
             #grid {
                 grid-template-columns: 20px 20px 20px 20px 20px;
                 grid-template-rows: 20px 20px 20px 20px 20px;
-                display: grid;
+                //display: grid;
                 grid-gap: 4vh;
                 position: absolute;
                 bottom: 45vh;
                 right: 15vw;
                 z-index: 3;
+                display: none;
 
                 .point1 {
                     height: 0.4vh;

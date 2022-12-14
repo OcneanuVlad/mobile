@@ -46,8 +46,8 @@ var Button = function (_React$Component) {
         value: function handleLeft() {
             var _this2 = this;
 
-            document.querySelector('#ocn').style.width = "0.8vw";
-            document.querySelector('#vld').style.width = "0.7vw";
+            document.querySelector('#ocn').style.width = "12px";
+            document.querySelector('#vld').style.width = "11px";
 
             document.getElementById("slide0").style.transition = "margin-left 2s";
 
@@ -100,8 +100,8 @@ var Button = function (_React$Component) {
         value: function handleRight() {
             var _this3 = this;
 
-            document.querySelector('#ocn').style.width = "0.8vw";
-            document.querySelector('#vld').style.width = "0.7vw";
+            document.querySelector('#ocn').style.width = "12px";
+            document.querySelector('#vld').style.width = "11px";
 
             document.getElementById("slide0").style.transition = "margin-left 2s";
 
@@ -453,6 +453,8 @@ function Work(index) {
     function secondSwipe() {
         document.querySelector('#projects').style.height = "0vh";
 
+        document.querySelector('#projectsContainer').scrollTop = 0;
+
         transition3.removeEventListener('transitionend', secondSwipe);
 
         if (index == -10) {
@@ -618,15 +620,40 @@ if (navigator.userAgent.match(/safari/i)) {
 
 
 document.querySelector('#projectsContainer').addEventListener('scroll', function () {
-    if (document.querySelector('#verticalTop').getBoundingClientRect().top < document.querySelector('#detector').getBoundingClientRect().top) {
-        document.querySelector('#section1').classList.add('sticky');
-        document.querySelector('#section1').style.marginTop = "-79vh";
-        document.querySelector('#section1').style.pointerEvents = "none";
-        document.querySelector('#section2').style.marginTop = "238.5vh";
+    if (document.querySelector('#verticalTop1').getBoundingClientRect().top < document.querySelector('#detector1').getBoundingClientRect().top) {
+        console.log("bun");
+        document.querySelector('#section11').classList.add('sticky');
+        document.querySelector('#section11').style.marginTop = "-79vh";
+        document.querySelector('#section11').style.pointerEvents = "none";
+        document.querySelector('#section12').style.marginTop = "238.5vh";
     } else {
-        document.querySelector('#section1').classList.remove('sticky');
-        document.querySelector('#section1').style.marginTop = "90vh";
-        document.querySelector('#section1').style.pointerEvents = "auto";
-        document.querySelector('#section2').style.marginTop = "0px";
+        document.querySelector('#section11').classList.remove('sticky');
+        document.querySelector('#section11').style.marginTop = "90vh";
+        document.querySelector('#section11').style.pointerEvents = "auto";
+        document.querySelector('#section12').style.marginTop = "0px";
+    }
+
+    if (document.querySelector('#verticalTop2').getBoundingClientRect().top < document.querySelector('#detector2').getBoundingClientRect().top) {
+        document.querySelector('#section21').classList.add('sticky');
+        document.querySelector('#section21').style.marginTop = "-79vh";
+        document.querySelector('#section21').style.pointerEvents = "none";
+        document.querySelector('#section22').style.marginTop = "238.5vh";
+    } else {
+        document.querySelector('#section21').classList.remove('sticky');
+        document.querySelector('#section21').style.marginTop = "90vh";
+        document.querySelector('#section21').style.pointerEvents = "auto";
+        document.querySelector('#section22').style.marginTop = "0px";
+    }
+
+    if (document.querySelector('#verticalTop3').getBoundingClientRect().top < document.querySelector('#detector3').getBoundingClientRect().top) {
+        document.querySelector('#section31').classList.add('sticky');
+        document.querySelector('#section31').style.marginTop = "-79vh";
+        document.querySelector('#section31').style.pointerEvents = "none";
+        document.querySelector('#section32').style.marginTop = "238.5vh";
+    } else {
+        document.querySelector('#section31').classList.remove('sticky');
+        document.querySelector('#section31').style.marginTop = "90vh";
+        document.querySelector('#section31').style.pointerEvents = "auto";
+        document.querySelector('#section32').style.marginTop = "0px";
     }
 });
