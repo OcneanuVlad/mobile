@@ -87,6 +87,7 @@ body #spawn21, body #spawn22 {
   background-color: var(--colorFront);
   display: inline-block;
   transition: background-color 2s, width 1s, opacity 1s, top 1s, bottom 1s;
+  transition-timing-function: ease;
   opacity: 0;
   z-index: 50;
   right: 0vw;
@@ -102,6 +103,7 @@ body #spawn11, body #spawn12 {
   background-color: var(--colorFront);
   display: inline-block;
   transition: background-color 2s, width 1s, opacity 1s, top 1s, bottom 1s;
+  transition-timing-function: ease;
   opacity: 0;
   z-index: 50;
   left: 0vw;
@@ -310,21 +312,51 @@ body #projectsContainer .project .section2 #connect2 .vertical {
   width: 60vw;
 }
 body #projectsContainer .project .section2 #connect2 .square {
-  display: inline-block;
-  position: absolute;
+  display: flex;
   width: 30vw;
   height: 40vh;
-  border: 2px solid var(--colorFront);
+  border-top: 2px solid var(--colorFront);
+  border-bottom: 2px solid var(--colorFront);
+  border-right: 1px solid var(--colorFront);
+  border-left: 1px solid var(--colorFront);
   background-color: transparent;
   transition: border 2s;
+  align-items: center;
 }
 body #projectsContainer .project .section2 #connect2 .info {
   position: absolute;
   display: flex;
   align-items: center;
-  width: 41vw;
+  width: 0;
   height: 41vh;
   overflow: hidden;
+  transition: width 1.2s;
+  transition-timing-function: ease-in;
+}
+body #projectsContainer .project .section2 #connect2 .info .textAnim {
+  position: relative;
+  height: 100%;
+  width: 0%;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  transition: width 1s, border 2s;
+  transition-timing-function: ease-out;
+  border-right: 1px solid var(--colorFront);
+  border-left: 1px solid var(--colorFront);
+}
+body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo {
+  position: absolute;
+  left: 12vw;
+  width: 10vw;
+  transition: color 2s;
+}
+body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo1 {
+  position: absolute;
+  right: 12vw;
+  width: 10vw;
+  transition: color 2s;
 }
 body #projectsContainer .project .section2 #connect2 #info1 {
   margin-top: 100vh;
@@ -336,7 +368,7 @@ body #projectsContainer .project .section2 #connect2 #info1 #vertical2 {
   position: absolute;
 }
 body #projectsContainer .project .section2 #connect2 #info1 #square1 {
-  left: 10vw;
+  margin-left: 10vw !important;
 }
 body #projectsContainer .project .section2 #connect2 #info2 {
   margin-top: 30vh;
@@ -348,7 +380,7 @@ body #projectsContainer .project .section2 #connect2 #info2 #vertical3 {
   width: 10vw;
 }
 body #projectsContainer .project .section2 #connect2 #info2 #square2 {
-  right: 10vw;
+  margin-right: 10vw !important;
 }
 body #projectsContainer .project hr {
   height: 2px;

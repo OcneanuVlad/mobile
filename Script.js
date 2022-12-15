@@ -453,6 +453,11 @@ function Work(index) {
     function secondSwipe() {
         document.querySelector('#projects').style.height = "0vh";
 
+        infoElements.forEach(function (e) {
+            e.style.width = "0px";
+            e.lastElementChild.firstElementChild.style.width = "0px";
+        });
+
         document.querySelector('#projectsContainer').scrollTop = 0;
 
         transition3.removeEventListener('transitionend', secondSwipe);
@@ -656,4 +661,24 @@ document.querySelector('#projectsContainer').addEventListener('scroll', function
         document.querySelector('#section31').style.pointerEvents = "auto";
         document.querySelector('#section32').style.marginTop = "0px";
     }
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//project scroll animation
+
+
+var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.style.width = "41vw";
+            setTimeout(function () {
+                entry.target.lastElementChild.firstElementChild.style.width = "100%";
+            }, 1200);
+        }
+    });
+});
+
+var infoElements = document.querySelectorAll('.info');
+infoElements.forEach(function (el) {
+    return observer.observe(el);
 });

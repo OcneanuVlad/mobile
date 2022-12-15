@@ -403,6 +403,11 @@ function Work(index) {
     function secondSwipe() {
         document.querySelector('#projects').style.height = "0vh";
 
+        infoElements.forEach( e => {
+            e.style.width = "0px";
+            e.lastElementChild.firstElementChild.style.width = "0px";
+        });
+
         document.querySelector('#projectsContainer').scrollTop = 0;
 
         transition3.removeEventListener('transitionend', secondSwipe);
@@ -610,3 +615,22 @@ document.querySelector('#projectsContainer').addEventListener('scroll', () => {
         document.querySelector('#section32').style.marginTop = "0px";
     }
 });
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//project scroll animation
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.style.width = "41vw";
+            setTimeout(() => {
+                entry.target.lastElementChild.firstElementChild.style.width = "100%";
+            }, 1200);
+        }
+    });
+});
+
+const infoElements = document.querySelectorAll('.info');
+infoElements.forEach((el) => observer.observe(el));
