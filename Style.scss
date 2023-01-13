@@ -258,7 +258,7 @@ body {
                 overflow: visible;
                 transition: background-color 2s;
                  
-                #redTrailer {
+                .trailer {
                     height: 57.5vh;
                     cursor: auto;
                     margin-top: 5vh;
@@ -275,7 +275,10 @@ body {
                     margin: 0px;
     
                     .vertical {
-                        width: 60vw;
+                        width: 0vw;
+                        transition: width 0.8s, background-color 2s;
+                        transition-timing-function: ease-out;
+
                     }
     
                     #horizontal1 {
@@ -327,7 +330,9 @@ body {
                     }
                     
                     .vertical {
-                        width: 60vw;
+                        width: 0vw;
+                        transition: width 0.8s, background-color 2s;
+                        transition-timing-function: ease-out;
                     }
                     .square {
                         display: flex;

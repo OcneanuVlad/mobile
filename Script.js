@@ -457,6 +457,9 @@ function Work(index) {
             e.style.width = "0px";
             e.lastElementChild.firstElementChild.style.width = "0px";
         });
+        lines.forEach(function (e) {
+            e.style.width = "0vw";
+        });
 
         document.querySelector('#projectsContainer').scrollTop = 0;
 
@@ -558,7 +561,7 @@ window.addEventListener('mouseup', function () {
     cursor.style.borderRadius = "50%";
 });
 
-var videos = [document.querySelector('#redTrailer')];
+var videos = document.querySelectorAll('.trailer');
 
 videos.forEach(function (video) {
     video.addEventListener('mouseenter', function () {
@@ -626,7 +629,6 @@ if (navigator.userAgent.match(/safari/i)) {
 
 document.querySelector('#projectsContainer').addEventListener('scroll', function () {
     if (document.querySelector('#verticalTop1').getBoundingClientRect().top < document.querySelector('#detector1').getBoundingClientRect().top) {
-        console.log("bun");
         document.querySelector('#section11').classList.add('sticky');
         document.querySelector('#section11').style.marginTop = "-79vh";
         document.querySelector('#section11').style.pointerEvents = "none";
@@ -664,7 +666,7 @@ document.querySelector('#projectsContainer').addEventListener('scroll', function
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//project scroll animation
+//project scroll text animation
 
 
 var observer = new IntersectionObserver(function (entries) {
@@ -681,4 +683,20 @@ var observer = new IntersectionObserver(function (entries) {
 var infoElements = document.querySelectorAll('.info');
 infoElements.forEach(function (el) {
     return observer.observe(el);
+});
+
+//project scroll line animation
+
+
+var observer2 = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.style.width = "60vw";
+        }
+    });
+});
+
+var lines = document.querySelectorAll('.vertical');
+lines.forEach(function (el) {
+    return observer2.observe(el);
 });

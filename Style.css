@@ -247,7 +247,7 @@ body #projectsContainer .project .section1 {
   overflow: visible;
   transition: background-color 2s;
 }
-body #projectsContainer .project .section1 #redTrailer {
+body #projectsContainer .project .section1 .trailer {
   height: 57.5vh;
   cursor: auto;
   margin-top: 5vh;
@@ -263,7 +263,9 @@ body #projectsContainer .project .section1 #connect1 {
   margin: 0px;
 }
 body #projectsContainer .project .section1 #connect1 .vertical {
-  width: 60vw;
+  width: 0vw;
+  transition: width 0.8s, background-color 2s;
+  transition-timing-function: ease-out;
 }
 body #projectsContainer .project .section1 #connect1 #horizontal1 {
   height: 80vh;
@@ -309,7 +311,9 @@ body #projectsContainer .project .section2 #connect2 #horizontal2 {
   transition: background-color 2s;
 }
 body #projectsContainer .project .section2 #connect2 .vertical {
-  width: 60vw;
+  width: 0vw;
+  transition: width 0.8s, background-color 2s;
+  transition-timing-function: ease-out;
 }
 body #projectsContainer .project .section2 #connect2 .square {
   display: flex;

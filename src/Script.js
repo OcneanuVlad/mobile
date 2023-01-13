@@ -407,6 +407,9 @@ function Work(index) {
             e.style.width = "0px";
             e.lastElementChild.firstElementChild.style.width = "0px";
         });
+        lines.forEach( e => {
+            e.style.width = "0vw";
+        })
 
         document.querySelector('#projectsContainer').scrollTop = 0;
 
@@ -509,7 +512,7 @@ window.addEventListener('mouseup', () => {
     cursor.style.borderRadius = "50%";
 });
 
-let videos = [document.querySelector('#redTrailer')];
+let videos = document.querySelectorAll('.trailer');
 
 videos.forEach(video => {
     video.addEventListener('mouseenter', () => {
@@ -579,7 +582,6 @@ if(navigator.userAgent.match(/safari/i)) {
 
 document.querySelector('#projectsContainer').addEventListener('scroll', () => {
     if (document.querySelector('#verticalTop1').getBoundingClientRect().top < document.querySelector('#detector1').getBoundingClientRect().top) {
-        console.log("bun");
         document.querySelector('#section11').classList.add('sticky');
         document.querySelector('#section11').style.marginTop = "-79vh";
         document.querySelector('#section11').style.pointerEvents = "none";
@@ -618,7 +620,7 @@ document.querySelector('#projectsContainer').addEventListener('scroll', () => {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//project scroll animation
+//project scroll text animation
 
 
 const observer = new IntersectionObserver((entries) => {
@@ -634,3 +636,17 @@ const observer = new IntersectionObserver((entries) => {
 
 const infoElements = document.querySelectorAll('.info');
 infoElements.forEach((el) => observer.observe(el));
+
+//project scroll line animation
+
+
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.style.width = "60vw";
+        }
+    });
+});
+
+const lines = document.querySelectorAll('.vertical');
+lines.forEach((el) => observer2.observe(el));
