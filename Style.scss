@@ -246,6 +246,36 @@ body {
                 font-size: 100%;
             }
 
+            .arrowCont {
+                position: fixed;
+                top: 93vh;
+                animation-name: scroll;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease;
+
+                .arrow {
+                    display: inline-block;
+                    margin: 8px;
+                    height: 30px;
+                    width: 2px;
+                    background-color: var(--colorFront);
+                    transition: background-color 2s;
+                }
+            }
+            @keyframes scroll {
+                0% {
+                    top: 91vh;
+                }
+                50% {
+                    top: 93vh;
+                }
+                100% {
+                    top: 91vh;
+                }
+            }
+            
+
             .section1 {
                 margin-top: 90vh;
                 width: 100vw;
@@ -459,6 +489,16 @@ body {
                 pointer-events: none;
                 position: fixed;
             }
+
+            #interactive {
+                height: 57.5vh;
+                width: 50vw;
+                background-color: white;
+                border: 1px solid black;
+                margin-top: 5vh;
+                margin-bottom: 5vh;
+                pointer-events: auto;
+            }
         }
     }
 
@@ -536,11 +576,11 @@ body {
         }
     }
 
-    #name {
-        position: fixed;
+    .name {
+        position: absolute;
         z-index: 7;
-        left: 4vw;
-        top: 3vh;
+        left: 2vw;
+        bottom: 88vh;
         font-size: 15px;
         font-weight: bold;
         transition: color 2s;
@@ -549,25 +589,25 @@ body {
         justify-content: flex-start;
         align-items: center;
 
-        #ocn {
+        .ocn {
             margin-right: 6px;
             overflow: hidden;
             width: 76px;
             transition: width .5s;
         }
-        #vld {
+        .vld {
             margin-left: -3px;
             overflow: hidden;
             width: 42px;
             transition: width .5s;
         }
     }
-    #name:hover {
+    .name:hover {
 
-        #ocn {
+        .ocn {
             width: 76px !important;
         }
-        #vld {
+        .vld {
             width: 42px !important;
         }
     }
@@ -684,7 +724,7 @@ body {
                 height: 4vh;
                 margin-left: 1vw;
                 margin-right: 1vw;
-                filter: invert(51%) sepia(58%) saturate(3592%) hue-rotate(162deg) brightness(95%) contrast(103%);
+                filter: invert(69%) sepia(87%) saturate(6938%) hue-rotate(341deg) brightness(95%) contrast(91%);
                 transition: filter 2s;
             }
         }

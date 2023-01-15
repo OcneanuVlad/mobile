@@ -29,8 +29,12 @@ class Button extends React.Component {
     }
 
     handleLeft() {
-        document.querySelector('#ocn').style.width = "12px";
-        document.querySelector('#vld').style.width = "11px";
+        document.querySelectorAll('.ocn').forEach( e => {
+            e.style.width = "12px";
+        });
+        document.querySelectorAll('.vld').forEach( e => {
+            e.style.width = "11px";
+        });
 
         document.getElementById("slide0").style.transition = "margin-left 2s";
 
@@ -81,8 +85,12 @@ class Button extends React.Component {
     }
 
     handleRight() {
-        document.querySelector('#ocn').style.width = "12px";
-        document.querySelector('#vld').style.width = "11px";
+        document.querySelectorAll('.ocn').forEach( e => {
+            e.style.width = "12px";
+        });
+        document.querySelectorAll('.vld').forEach( e => {
+            e.style.width = "11px";
+        });
 
         document.getElementById("slide0").style.transition = "margin-left 2s";
 
@@ -282,6 +290,9 @@ class Button extends React.Component {
         store.style.setProperty('--colorBack', pallete[colorPallete][1]);
         store.style.setProperty('--colorBody', pallete[colorPallete][0]);
         store.style.setProperty('--colorFront', pallete[colorPallete][2]);
+        document.querySelectorAll('.contactImg').forEach( e => {
+            e.style.filter = pallete[colorPallete][3];
+        })
         if (colorPallete >= pallete.length - 1) {
             colorPallete = 0;
         } else {
@@ -340,16 +351,16 @@ class Button extends React.Component {
 
 let colorPallete = 0;
 const pallete = [
-    ['rgb(0,161,154)','rgb(0,161,154)','rgb(235,237,237)'],
-    ['rgb(40,43,41)','rgb(40,43,41)','rgb(166,209,201)'],
-    ['rgb(166,209,201)','rgb(166,209,201)','rgb(232,60,56)'],
-    ['rgb(244,196,196)','rgb(244,196,196)','rgb(40,43,41)'],
-    ['rgb(235,237,237)','rgb(235,237,237)','rgb(232,69,65)'],
-    ['rgb(246, 247, 245)','rgb(168, 173, 165)','rgb(36, 62, 54)'],
-    ['rgb(1, 87, 83)','rgb(0, 70, 67)','rgb(250, 244, 211)'],
-    ['rgb(143, 126, 247)','rgb(93, 82, 163)','rgb(248, 247, 255)'],
-    ['rgb(215, 250, 241)','rgb(173, 201, 195)','black'],
-    ['rgb(72, 78, 82)','rgb(57, 62, 65)','rgb(246, 247, 235)']
+    ['rgb(0,161,154)','rgb(0,161,154)','rgb(235,237,237)','invert(100%) sepia(5%) saturate(100%) hue-rotate(119deg) brightness(93%) contrast(100%)'],
+    ['rgb(40,43,41)','rgb(40,43,41)','rgb(166,209,201)','invert(88%) sepia(26%) saturate(261%) hue-rotate(116deg) brightness(91%) contrast(81%)'],
+    ['rgb(166,209,201)','rgb(166,209,201)','rgb(232,60,56)','invert(69%) sepia(87%) saturate(6938%) hue-rotate(341deg) brightness(95%) contrast(91%)'],
+    ['rgb(244,196,196)','rgb(244,196,196)','rgb(40,43,41)','invert(16%) sepia(5%) saturate(452%) hue-rotate(87deg) brightness(94%) contrast(96%)'],
+    ['rgb(235,237,237)','rgb(235,237,237)','rgb(232,69,65)','invert(45%) sepia(18%) saturate(2671%) hue-rotate(320deg) brightness(90%) contrast(105%)'],
+    ['rgb(246, 247, 245)','rgb(168, 173, 165)','rgb(36, 62, 54)','invert(18%) sepia(33%) saturate(515%) hue-rotate(110deg) brightness(97%) contrast(88%)'],
+    ['rgb(1, 87, 83)','rgb(0, 70, 67)','rgb(250, 244, 211)','invert(94%) sepia(2%) saturate(2444%) hue-rotate(5deg) brightness(103%) contrast(96%)'],
+    ['rgb(143, 126, 247)','rgb(93, 82, 163)','rgb(248, 247, 255)','invert(99%) sepia(93%) saturate(1496%) hue-rotate(180deg) brightness(104%) contrast(116%)'],
+    ['rgb(215, 250, 241)','rgb(173, 201, 195)','black','invert(0%) sepia(96%) saturate(7435%) hue-rotate(131deg) brightness(89%) contrast(92%)'],
+    ['rgb(72, 78, 82)','rgb(57, 62, 65)','rgb(246, 247, 235)','invert(99%) sepia(81%) saturate(179%) hue-rotate(23deg) brightness(105%) contrast(93%)']
 ]
 const store = document.querySelector(':root');
 
@@ -366,16 +377,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#video').playbackRate = 1;
 });
 
+function ColorChange() {
+    store.style.setProperty('--colorBack', pallete[colorPallete][1]);
+    store.style.setProperty('--colorBody', pallete[colorPallete][0]);
+    store.style.setProperty('--colorFront', pallete[colorPallete][2]);
+    if (colorPallete >= pallete.length - 1) {
+        colorPallete = 0;
+    } else {
+        colorPallete++;
+    }
+}
+
 function Work(index) {
 
-        store.style.setProperty('--colorBack', pallete[colorPallete][1]);
-        store.style.setProperty('--colorBody', pallete[colorPallete][0]);
-        store.style.setProperty('--colorFront', pallete[colorPallete][2]);
-        if (colorPallete >= pallete.length - 1) {
-            colorPallete = 0;
-        } else {
-            colorPallete++;
-        }
+    ColorChange();
 
     const transition1 = document.querySelector('#transition1');
     const transition2 = document.querySelector('#transition2');
@@ -506,11 +521,6 @@ window.addEventListener('mousemove', e => {
 
     gsap.to(cursorCont, 0.01, {x: mouseX, y: mouseY});
 });
-window.addEventListener('mouseup', () => {
-    cursor.style.width = "12px";
-    cursor.style.height = "12px";
-    cursor.style.borderRadius = "50%";
-});
 
 let videos = document.querySelectorAll('.trailer');
 
@@ -526,9 +536,10 @@ videos.forEach(video => {
     })
 })
 
-let buttons = [document.querySelector('#name'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+let buttons1 = [document.querySelector('#interactive'),document.querySelector('#name1'),document.querySelector('#name2'),document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+let buttons2 = [document.querySelector('#name1'),document.querySelector('#name2'),document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
 
-buttons.forEach(button => {
+buttons1.forEach(button => {
     button.addEventListener('mouseenter', () => {
         cursor.style.width = "30px";
         cursor.style.height = "30px";
@@ -539,6 +550,13 @@ buttons.forEach(button => {
         cursor.style.height = "12px";
         cursor.style.borderRadius = "50%";
     });
+});
+buttons2.forEach( button => {
+    button.addEventListener('mouseup', () => {
+    cursor.style.width = "12px";
+    cursor.style.height = "12px";
+    cursor.style.borderRadius = "50%";
+    })
 });
 
 

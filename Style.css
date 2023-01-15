@@ -235,6 +235,48 @@ body #projectsContainer .project .projectText {
   width: 50vw;
   font-size: 100%;
 }
+body #projectsContainer .project .arrowCont {
+  position: fixed;
+  top: 93vh;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+body #projectsContainer .project .arrowCont .arrow {
+  display: inline-block;
+  margin: 8px;
+  height: 30px;
+  width: 2px;
+  background-color: var(--colorFront);
+  transition: background-color 2s;
+}
+@-webkit-keyframes scroll {
+  0% {
+    top: 91vh;
+  }
+  50% {
+    top: 93vh;
+  }
+  100% {
+    top: 91vh;
+  }
+}
+@keyframes scroll {
+  0% {
+    top: 91vh;
+  }
+  50% {
+    top: 93vh;
+  }
+  100% {
+    top: 91vh;
+  }
+}
 body #projectsContainer .project .section1 {
   margin-top: 90vh;
   width: 100vw;
@@ -426,6 +468,15 @@ body #projectsContainer #project3 #title3 {
   pointer-events: none;
   position: fixed;
 }
+body #projectsContainer #project3 #interactive {
+  height: 57.5vh;
+  width: 50vw;
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  pointer-events: auto;
+}
 body #slider:after {
   content: "";
   height: 50%;
@@ -494,11 +545,11 @@ body #slider #pages #slide0 {
   margin-left: -8.55vw;
   transition: margin-left 1.8s;
 }
-body #name {
-  position: fixed;
+body .name {
+  position: absolute;
   z-index: 7;
-  left: 4vw;
-  top: 3vh;
+  left: 2vw;
+  bottom: 88vh;
   font-size: 15px;
   font-weight: bold;
   transition: color 2s;
@@ -507,22 +558,22 @@ body #name {
   justify-content: flex-start;
   align-items: center;
 }
-body #name #ocn {
+body .name .ocn {
   margin-right: 6px;
   overflow: hidden;
   width: 76px;
   transition: width 0.5s;
 }
-body #name #vld {
+body .name .vld {
   margin-left: -3px;
   overflow: hidden;
   width: 42px;
   transition: width 0.5s;
 }
-body #name:hover #ocn {
+body .name:hover .ocn {
   width: 76px !important;
 }
-body #name:hover #vld {
+body .name:hover .vld {
   width: 42px !important;
 }
 body #fade {
@@ -631,7 +682,7 @@ body #pageContainer #about #contact .contactImg {
   height: 4vh;
   margin-left: 1vw;
   margin-right: 1vw;
-  filter: invert(51%) sepia(58%) saturate(3592%) hue-rotate(162deg) brightness(95%) contrast(103%);
+  filter: invert(69%) sepia(87%) saturate(6938%) hue-rotate(341deg) brightness(95%) contrast(91%);
   transition: filter 2s;
 }
 body #pageContainer #home {
