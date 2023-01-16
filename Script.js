@@ -585,7 +585,7 @@ videos.forEach(function (video) {
     });
 });
 
-var buttons1 = [document.querySelector('#interactive'), document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+var buttons1 = [document.querySelector('#color'), document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
 var buttons2 = [document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
 
 buttons1.forEach(function (button) {
@@ -690,10 +690,10 @@ document.querySelector('#projectsContainer').addEventListener('scroll', function
 var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-            entry.target.style.width = "41vw";
+            entry.target.style.width = "50vw";
             setTimeout(function () {
                 entry.target.lastElementChild.firstElementChild.style.width = "100%";
-            }, 1200);
+            }, 1000);
         }
     });
 });
@@ -717,4 +717,22 @@ var observer2 = new IntersectionObserver(function (entries) {
 var lines = document.querySelectorAll('.vertical');
 lines.forEach(function (el) {
     return observer2.observe(el);
+});
+
+//project change color animation
+
+
+document.querySelector('#color').addEventListener('mouseenter', function () {
+    document.querySelector('#right').style.height = "10vh";
+    document.querySelector('#left').style.height = "10vh";
+    document.querySelector('#topCont').style.width = "43vw";
+    document.querySelector('#top').style.boxShadow = "0 0px 70px 15px var(--colorFront)";
+    document.querySelector('#bottom').style.boxShadow = "0 0px 70px 15px var(--colorFront)";
+});
+document.querySelector('#color').addEventListener('mouseleave', function () {
+    document.querySelector('#top').style.boxShadow = "0 0px 0px 0px var(--colorFront)";
+    document.querySelector('#bottom').style.boxShadow = "0 0px 0px 0px var(--colorFront)";
+    document.querySelector('#topCont').style.width = "0vw";
+    document.querySelector('#right').style.height = "0vh";
+    document.querySelector('#left').style.height = "0vh";
 });

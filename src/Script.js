@@ -536,7 +536,7 @@ videos.forEach(video => {
     })
 })
 
-let buttons1 = [document.querySelector('#interactive'),document.querySelector('#name1'),document.querySelector('#name2'),document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+let buttons1 = [document.querySelector('#color'),document.querySelector('#name1'),document.querySelector('#name2'),document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
 let buttons2 = [document.querySelector('#name1'),document.querySelector('#name2'),document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
 
 buttons1.forEach(button => {
@@ -644,16 +644,17 @@ document.querySelector('#projectsContainer').addEventListener('scroll', () => {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.style.width = "41vw";
+            entry.target.style.width = "50vw";
             setTimeout(() => {
                 entry.target.lastElementChild.firstElementChild.style.width = "100%";
-            }, 1200);
+            }, 1000);
         }
     });
 });
 
 const infoElements = document.querySelectorAll('.info');
 infoElements.forEach((el) => observer.observe(el));
+
 
 //project scroll line animation
 
@@ -668,3 +669,22 @@ const observer2 = new IntersectionObserver((entries) => {
 
 const lines = document.querySelectorAll('.vertical');
 lines.forEach((el) => observer2.observe(el));
+
+
+//project change color animation
+
+
+document.querySelector('#color').addEventListener('mouseenter', () => {
+    document.querySelector('#right').style.height = "10vh";
+    document.querySelector('#left').style.height = "10vh";
+    document.querySelector('#topCont').style.width = "43vw";
+        document.querySelector('#top').style.boxShadow = "0 0px 70px 15px var(--colorFront)"
+        document.querySelector('#bottom').style.boxShadow = "0 0px 70px 15px var(--colorFront)"
+})
+document.querySelector('#color').addEventListener('mouseleave', () => {
+    document.querySelector('#top').style.boxShadow = "0 0px 0px 0px var(--colorFront)"
+    document.querySelector('#bottom').style.boxShadow = "0 0px 0px 0px var(--colorFront)"
+        document.querySelector('#topCont').style.width = "0vw";
+        document.querySelector('#right').style.height = "0vh";
+        document.querySelector('#left').style.height = "0vh";
+})

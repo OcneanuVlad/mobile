@@ -246,6 +246,25 @@ body {
                 font-size: 100%;
             }
 
+            .lines {
+                position: fixed;
+                top: 40vh;
+                left: 55vw;
+                transform: rotate(90deg);
+                opacity: 0.15;
+                display: inline-block;
+                z-index: -1;
+
+                .line {
+                    background-color: var(--colorFront);
+                    transition: background-color 2s, border 2s;
+                    width: 25vh;
+                    height: 1px;
+                    border: none;
+                    margin: 0.6vw;
+                }
+            }
+
             .arrowCont {
                 position: fixed;
                 top: 93vh;
@@ -288,6 +307,28 @@ body {
                 overflow: visible;
                 transition: background-color 2s;
                  
+                .grid {
+                    grid-template-columns: 20px 20px 20px 20px 20px;
+                    grid-template-rows: 20px 20px 20px 20px 20px;
+                    display: grid;
+                    grid-gap: 4vh;
+                    position: absolute;
+                    margin-top: 20vh;
+                    margin-right: 35vw;
+                    z-index: -1;
+    
+                    .point1 {
+                        height: 0.5vh;
+                        width: 0.5vh;
+                        background-color: var(--colorFront);
+                        border-radius: 50%;
+                        display: inline-block;
+                        margin-left: 0.5vh;
+                        margin-right: 0.5vh;
+                        opacity: 0.3;
+                    }
+                }
+
                 .trailer {
                     height: 57.5vh;
                     cursor: auto;
@@ -376,13 +417,14 @@ body {
                         background-color: transparent;
                         transition: border 2s;
                         align-items: center;
+                        box-shadow: -50px -50px 0px 0px rgba(0, 0, 0, 0.112);
                     }
                     .info {
                         position: absolute;
                         display: flex;
                         align-items: center;
                         width: 0;
-                        height: 41vh;
+                        height: 55vh;
                         overflow: hidden;
                         transition: width 1.2s;
                         transition-timing-function: ease-in;
@@ -493,11 +535,91 @@ body {
             #interactive {
                 height: 57.5vh;
                 width: 50vw;
-                background-color: white;
-                border: 1px solid black;
+                background-color: transparent;
                 margin-top: 5vh;
                 margin-bottom: 5vh;
                 pointer-events: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                #color {
+                    font-size: 300%;
+                    color: var(--colorFront);
+                    transition: color 2s;
+                    font-family: ElMessiri;
+                    margin-top: 10vh;
+                }
+
+                .colorLine {
+                    display: block;
+                    background-color: var(--colorFront);
+                    transition: background-color 2s;
+                }
+
+                #bottomCont {
+                    position: absolute;
+                    margin-top: 40vh;
+                    width: 43vw;
+                    height: 30vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    overflow: hidden;
+
+                    #bottom {
+                        width: 45vw;
+                        height: 2px;
+                        box-shadow: 0 0px 0px 0px var(--colorFront);
+                        transition: box-shadow 0.7s, background-color 2s;
+                    }
+                }
+                #leftCont {
+                    position: absolute;
+                    margin-right: 42.9vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    height: 10vh;
+
+                    #left {
+                        width: 2px;
+                        height: 0vh;
+                        transition: height 0.7s, background-color 2s;
+                    }
+                }
+                #rightCont {
+                    position: absolute;
+                    margin-left: 42.9vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    height: 10vh;
+
+                    #right {
+                        width: 2px;
+                        height: 0vh;
+                        transition: height 0.7s, background-color 2s;
+                    }
+                }
+                #topCont {
+                    position: absolute;
+                    margin-bottom: 40vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    width: 0vw;
+                    height: 30vh;
+                    overflow: hidden;
+                    transition: width 0.7s;
+
+                    #top {
+                        width: 43vw;
+                        height: 2px;
+                        box-shadow: 0 0px 0px 0px var(--colorFront);
+                        transition: box-shadow 0.7s, background-color 2s;
+                    }
+                }
             }
         }
     }
@@ -772,37 +894,37 @@ body {
 
             @keyframes fontChange {
                 0% {
-                    font-family: 'ElMessiri';
+                    font-family: 'ElMessiri', sans-serif;
                 }
                 10% {
-                    font-family: 'DancingScript';
+                    font-family: 'DancingScript', sans-serif;
                 }
                 20% {
-                    font-family: 'Griffy';
+                    font-family: 'Griffy', sans-serif;
                 } 
                 30% {
-                    font-family: 'Lobster';
+                    font-family: 'Lobster', sans-serif;
                 }
                 40% {
-                    font-family: 'Calligraffitti';
+                    font-family: 'Calligraffitti', sans-serif;
                 }
                 50% {
-                    font-family: 'Playfair';
+                    font-family: 'Playfair', sans-serif;
                 }
                 60% {
-                    font-family: 'PoorStory';
+                    font-family: 'PoorStory', sans-serif;
                 }
                 70% {
-                    font-family: 'Courgette';
+                    font-family: 'Courgette', sans-serif;
                 }
                 80% {
-                    font-family: 'Raleway';
+                    font-family: 'Raleway', sans-serif;
                 }
                 90% {
-                    font-family: 'Shadows';
+                    font-family: 'Shadows', sans-serif;
                 }
                 100% {
-                    font-family: 'ElMessiri';
+                    font-family: 'ElMessiri', sans-serif;
                 }
             }
 
