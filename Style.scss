@@ -822,8 +822,8 @@ body {
             position: absolute;
             width: 50%;
             font-size: 120%;
-            text-align: left;
-            bottom: 42vh;
+            text-align: center;
+            bottom: 17.5vh;
         }
         #descriptionHr {
             position: absolute;
@@ -831,21 +831,38 @@ body {
             background-color: var(--colorFront);
             height: 1px;
             border: none;
-            top: 55vh;
+            top: 78vh;
             transition: background-color 2s;
         }
 
         #contact {
             position: absolute;
-            top: 60vh;
+            top: 82vh;
             display: flex;
             justify-content: center;
+
+            #gmailLink {
+                cursor: none;
+                width: 2vw;
+                margin-left: 2vw;
+                margin-right: 2vw;
+            }
+            #facebookLink {
+                cursor: none;
+                width: 2vw;
+                margin-left: 2vw;
+                margin-right: 2vw;
+            }
+            #instagramLink {
+                cursor: none;
+                width: 2vw;
+                margin-left: 2vw;
+                margin-right: 2vw;
+            }
 
             .contactImg {
                 width: 2vw;
                 height: 4vh;
-                margin-left: 1vw;
-                margin-right: 1vw;
                 filter: invert(69%) sepia(87%) saturate(6938%) hue-rotate(341deg) brightness(95%) contrast(91%);
                 transition: filter 2s;
             }
@@ -1082,8 +1099,8 @@ body {
                     margin-bottom: 2.5%;
                     background-color: transparent;
                     overflow: hidden;
-                    border-top: 3px solid var(--colorFront);
-                    border-bottom: 3px solid var(--colorFront);
+                    border-top: 5px solid var(--colorFront);
+                    border-bottom: 5px solid var(--colorFront);
                     transition: border 2s;
                     display: flex;
                     justify-content: center;

@@ -585,8 +585,8 @@ videos.forEach(function (video) {
     });
 });
 
-var buttons1 = [document.querySelector('#color'), document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
-var buttons2 = [document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+var buttons1 = [document.querySelector('#gmailLink'), document.querySelector('#instagramLink'), document.querySelector('#facebookLink'), document.querySelector('#color'), document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
+var buttons2 = [document.querySelector('#gmailLink'), document.querySelector('#instagramLink'), document.querySelector('#facebookLink'), document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
 
 buttons1.forEach(function (button) {
     button.addEventListener('mouseenter', function () {
@@ -736,3 +736,50 @@ document.querySelector('#color').addEventListener('mouseleave', function () {
     document.querySelector('#right').style.height = "0vh";
     document.querySelector('#left').style.height = "0vh";
 });
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//project page video optimization
+
+
+// document.querySelector('#work2').addEventListener('mouseenter', () => {
+//     console.log('1')
+//     videos2.forEach( (e) => {
+//         if (e.classList.contains('play')) {
+//             e.play();
+//         }
+//     })
+// })
+// console.log('2')
+// document.querySelector('#work2').addEventListener('mouseleave', () => {
+//     console.log('2')
+//     videos2.forEach( (e) => {
+//         e.pause();
+//     })
+// })
+// document.querySelector('#work1').addEventListener('mouseenter', () => {
+//     videos1.forEach( (e) => {
+//         if (e.classList.contains('play')) {
+//             e.play();
+//         }
+//     })
+// })
+// document.querySelector('#work1').addEventListener('mouseleave', () => {
+//     videos1.forEach( (e) => {
+//         e.pause();
+//     })
+// })
+// let observer3 = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         if(entry.isIntersecting) {
+//             entry.style.border = "10px solid black";
+//         } else {
+//             entry.style.border = "10px solid white";
+//         }
+//     })
+// });
+// let videos2 = document.querySelectorAll('.video1')
+// let videos1 = document.querySelectorAll('.video2')
+// videos1.forEach((el) => observer3.observe(el));
+// videos2.forEach((el) => observer3.observe(el));
+
+// console.log('works');
