@@ -315,9 +315,11 @@ var Button = function (_React$Component) {
             store.style.setProperty('--colorBack', pallete[colorPallete][1]);
             store.style.setProperty('--colorBody', pallete[colorPallete][0]);
             store.style.setProperty('--colorFront', pallete[colorPallete][2]);
+            document.querySelector('#denimBack').style.filter = pallete[colorPallete][3];
             document.querySelectorAll('.contactImg').forEach(function (e) {
                 e.style.filter = pallete[colorPallete][3];
             });
+
             if (colorPallete >= pallete.length - 1) {
                 colorPallete = 0;
             } else {
@@ -431,6 +433,12 @@ function ColorChange() {
     store.style.setProperty('--colorBack', pallete[colorPallete][1]);
     store.style.setProperty('--colorBody', pallete[colorPallete][0]);
     store.style.setProperty('--colorFront', pallete[colorPallete][2]);
+    document.querySelector('#denimBack').style.filter = pallete[colorPallete][3];
+
+    document.querySelectorAll('.contactImg').forEach(function (e) {
+        e.style.filter = pallete[colorPallete][3];
+    });
+
     if (colorPallete >= pallete.length - 1) {
         colorPallete = 0;
     } else {
