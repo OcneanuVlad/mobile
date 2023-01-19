@@ -152,6 +152,7 @@ body #projectsContainer {
   overflow-y: overlay;
   overflow-x: hidden;
   transition: background-color 2s;
+  font-family: ElMessiri;
 }
 body #projectsContainer #denimBack {
   width: 100vw;
@@ -159,7 +160,7 @@ body #projectsContainer #denimBack {
   top: 0vh;
   left: 0vw;
   position: fixed;
-  z-index: 999999;
+  z-index: 101;
   opacity: 1.5%;
   background-image: url(Elements/lines.png);
   background-position: center;
@@ -169,6 +170,7 @@ body #projectsContainer #denimBack {
   transition: filter 2s;
 }
 body #projectsContainer #projectNav {
+  font-family: ElMessiri;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -176,9 +178,81 @@ body #projectsContainer #projectNav {
   border-bottom: 1px solid var(--colorFront);
   width: 100vw;
   height: 12vh;
-  z-index: 100;
+  z-index: 110;
   top: -2vh;
   transition: background-color 2s, border 2s;
+}
+body #projectsContainer #projectNav .leftArrow {
+  position: absolute;
+  margin: 0px;
+  margin-right: 5vw;
+  font-size: 140%;
+  -webkit-animation-name: swipeleft;
+          animation-name: swipeleft;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes swipeleft {
+  0% {
+    margin-right: 4.3vw;
+  }
+  50% {
+    margin-right: 5vw;
+  }
+  100% {
+    margin-right: 4.3vw;
+  }
+}
+@keyframes swipeleft {
+  0% {
+    margin-right: 4.3vw;
+  }
+  50% {
+    margin-right: 5vw;
+  }
+  100% {
+    margin-right: 4.3vw;
+  }
+}
+body #projectsContainer #projectNav .rightArrow {
+  position: absolute;
+  margin: 0px;
+  margin-left: 5vw;
+  font-size: 140%;
+  -webkit-animation-name: swiperight;
+          animation-name: swiperight;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes swiperight {
+  0% {
+    margin-left: 4.3vw;
+  }
+  50% {
+    margin-left: 5vw;
+  }
+  100% {
+    margin-left: 4.3vw;
+  }
+}
+@keyframes swiperight {
+  0% {
+    margin-left: 4.3vw;
+  }
+  50% {
+    margin-left: 5vw;
+  }
+  100% {
+    margin-left: 4.3vw;
+  }
 }
 body #projectsContainer #projectNav #close {
   bottom: 1.45vh;
@@ -197,13 +271,15 @@ body #projectsContainer #projectNav #close {
   color: var(--colorFront);
   z-index: 11;
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 5px;
+  font-size: 50%;
   cursor: none;
+  font-family: ElMessiri;
 }
 body #projectsContainer #projectNav #close:hover {
   background-color: rgba(128, 128, 128, 0.2);
 }
 body #projectsContainer #projectNav .projectButton {
+  font-family: ElMessiri;
   height: 3vh;
   margin: 0px;
   background-color: transparent;
@@ -217,10 +293,11 @@ body #projectsContainer #projectNav .projectButton {
   align-items: center;
   border-top: 1px solid var(--colorFront);
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 5px;
+  font-size: 50%;
   width: 7vw;
   bottom: 1.45vh;
   cursor: none;
+  overflow: visible;
 }
 body #projectsContainer #projectNav .projectButton:hover {
   background-color: rgba(128, 128, 128, 0.2);
@@ -327,7 +404,7 @@ body #projectsContainer .project .section1 .grid {
   display: grid;
   grid-gap: 4vh;
   position: absolute;
-  margin-top: 20vh;
+  margin-top: -5vh;
   margin-right: 35vw;
   z-index: -1;
 }
@@ -356,6 +433,23 @@ body #projectsContainer .project .section1 #connect1 {
   align-items: center;
   overflow: visible;
   margin: 0px;
+}
+body #projectsContainer .project .section1 #connect1 .descCont {
+  overflow: hidden;
+  width: 16vw;
+  height: 30vh;
+  position: absolute;
+  margin-left: 16vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+body #projectsContainer .project .section1 #connect1 .descCont .leftDesc {
+  font-size: 170%;
+  width: 5vw;
+  text-align: left;
+  margin-left: -10vw;
+  transition: margin-left 1.25s, color 2s;
 }
 body #projectsContainer .project .section1 #connect1 .vertical {
   width: 0vw;
@@ -399,7 +493,7 @@ body #projectsContainer .project .section2 #connect2 {
   overflow: visible;
 }
 body #projectsContainer .project .section2 #connect2 #horizontal2 {
-  height: 230vh;
+  height: 195vh;
   width: 2px;
   background-color: var(--colorFront);
   display: block;
@@ -448,7 +542,7 @@ body #projectsContainer .project .section2 #connect2 .info .textAnim {
   border-left: 1px solid var(--colorFront);
 }
 body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo {
-  font-size: 90%;
+  font-size: 80%;
   text-align: center;
   position: absolute;
   left: 3.5vw;
@@ -456,7 +550,7 @@ body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo {
   transition: color 2s;
 }
 body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo1 {
-  font-size: 90%;
+  font-size: 80%;
   text-align: center;
   position: absolute;
   right: 3.5vw;
@@ -464,7 +558,7 @@ body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo1 
   transition: color 2s;
 }
 body #projectsContainer .project .section2 #connect2 #info1 {
-  margin-top: 100vh;
+  margin-top: 70vh;
   left: 35vw;
   justify-content: flex-start;
 }
@@ -476,7 +570,7 @@ body #projectsContainer .project .section2 #connect2 #info1 #square1 {
   margin-left: 10vw !important;
 }
 body #projectsContainer .project .section2 #connect2 #info2 {
-  margin-top: 30vh;
+  margin-top: 20vh;
   right: 35vw;
   justify-content: flex-end;
 }

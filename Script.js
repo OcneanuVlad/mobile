@@ -483,6 +483,9 @@ function Work(index) {
         lines.forEach(function (e) {
             e.style.width = "0vw";
         });
+        descriptions.forEach(function (e) {
+            e.firstElementChild.style.marginLeft = "-10vw";
+        });
 
         document.querySelector('#projectsContainer').scrollTop = 0;
 
@@ -727,6 +730,22 @@ lines.forEach(function (el) {
     return observer2.observe(el);
 });
 
+//project leftDesc scroll animation
+
+
+var descObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.firstElementChild.style.marginLeft = "2vw";
+        }
+    });
+});
+
+var descriptions = document.querySelectorAll('.descCont');
+descriptions.forEach(function (el) {
+    return descObserver.observe(el);
+});
+
 //project change color animation
 
 
@@ -749,45 +768,44 @@ document.querySelector('#color').addEventListener('mouseleave', function () {
 //project page video optimization
 
 
-// document.querySelector('#work2').addEventListener('mouseenter', () => {
-//     console.log('1')
-//     videos2.forEach( (e) => {
-//         if (e.classList.contains('play')) {
-//             e.play();
-//         }
-//     })
-// })
-// console.log('2')
-// document.querySelector('#work2').addEventListener('mouseleave', () => {
-//     console.log('2')
-//     videos2.forEach( (e) => {
-//         e.pause();
-//     })
-// })
-// document.querySelector('#work1').addEventListener('mouseenter', () => {
-//     videos1.forEach( (e) => {
-//         if (e.classList.contains('play')) {
-//             e.play();
-//         }
-//     })
-// })
-// document.querySelector('#work1').addEventListener('mouseleave', () => {
-//     videos1.forEach( (e) => {
-//         e.pause();
-//     })
-// })
-// let observer3 = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//         if(entry.isIntersecting) {
-//             entry.style.border = "10px solid black";
-//         } else {
-//             entry.style.border = "10px solid white";
-//         }
-//     })
-// });
-// let videos2 = document.querySelectorAll('.video1')
-// let videos1 = document.querySelectorAll('.video2')
-// videos1.forEach((el) => observer3.observe(el));
-// videos2.forEach((el) => observer3.observe(el));
-
-// console.log('works');
+document.querySelector('#work2').addEventListener('mouseenter', function () {
+    videos2.forEach(function (e) {
+        if (e.classList.contains('play')) {
+            e.play();
+        }
+    });
+});
+document.querySelector('#work2').addEventListener('mouseleave', function () {
+    videos2.forEach(function (e) {
+        e.pause();
+    });
+});
+document.querySelector('#work1').addEventListener('mouseenter', function () {
+    videos1.forEach(function (e) {
+        if (e.classList.contains('play')) {
+            e.play();
+        }
+    });
+});
+document.querySelector('#work1').addEventListener('mouseleave', function () {
+    videos1.forEach(function (e) {
+        e.pause();
+    });
+});
+var observer3 = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('play');
+        } else {
+            entry.target.classList.remove('play');
+        }
+    });
+});
+var videos2 = document.querySelectorAll('.video1');
+var videos1 = document.querySelectorAll('.video2');
+videos1.forEach(function (el) {
+    return observer3.observe(el);
+});
+videos2.forEach(function (el) {
+    return observer3.observe(el);
+});
