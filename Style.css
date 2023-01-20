@@ -169,6 +169,26 @@ body #projectsContainer #denimBack {
   pointer-events: none;
   transition: filter 2s;
 }
+body #projectsContainer .download {
+  position: absolute;
+  bottom: 2vh;
+  font-size: 50%;
+  font-family: sans-serif;
+  text-align: center;
+  z-index: 100;
+}
+body #projectsContainer .download #firstLink:link, body #projectsContainer .download #firstLink:visited, body #projectsContainer .download #firstLink:active, body #projectsContainer .download #firstLink:hover {
+  color: rgb(51, 116, 165);
+}
+body #projectsContainer .download #firstLink {
+  cursor: none;
+}
+body #projectsContainer .download #secondLink:link, body #projectsContainer .download #secondLink:visited, body #projectsContainer .download #secondLink:active, body #projectsContainer .download #secondLink:hover {
+  color: rgb(51, 116, 165);
+}
+body #projectsContainer .download #secondLink {
+  cursor: none;
+}
 body #projectsContainer #projectNav {
   font-family: ElMessiri;
   position: fixed;
@@ -271,7 +291,7 @@ body #projectsContainer #projectNav #close {
   color: var(--colorFront);
   z-index: 11;
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 50%;
+  font-size: 40%;
   cursor: none;
   font-family: ElMessiri;
 }
@@ -293,7 +313,7 @@ body #projectsContainer #projectNav .projectButton {
   align-items: center;
   border-top: 1px solid var(--colorFront);
   transition: background-color 0.2s, border 2s, color 2s;
-  font-size: 50%;
+  font-size: 40%;
   width: 7vw;
   bottom: 1.45vh;
   cursor: none;
@@ -1142,6 +1162,10 @@ body #pageContainer #projects #workContainer #works .work:hover .video1 {
   filter: blur(0px);
   filter: saturate(100%);
 }
+body #pageContainer #projects #workContainer #works .work:hover .img1 {
+  filter: blur(0px);
+  filter: saturate(100%);
+}
 body #pageContainer #projects #workContainer #works #work1 #experimentText {
   position: absolute;
   z-index: 12;
@@ -1193,7 +1217,7 @@ body #pageContainer #projects #workContainer #works .work .first {
 }
 @-webkit-keyframes slide {
   0% {
-    margin-left: -135vh;
+    margin-left: -130vh;
   }
   100% {
     margin-left: 160vh;
@@ -1201,7 +1225,7 @@ body #pageContainer #projects #workContainer #works .work .first {
 }
 @keyframes slide {
   0% {
-    margin-left: -135vh;
+    margin-left: -130vh;
   }
   100% {
     margin-left: 160vh;
@@ -1219,7 +1243,7 @@ body #pageContainer #projects #workContainer #works .work #first2 {
 }
 @-webkit-keyframes slideReverse {
   0% {
-    margin-left: 135vh;
+    margin-left: 130vh;
   }
   100% {
     margin-left: -160vh;
@@ -1227,11 +1251,18 @@ body #pageContainer #projects #workContainer #works .work #first2 {
 }
 @keyframes slideReverse {
   0% {
-    margin-left: 135vh;
+    margin-left: 130vh;
   }
   100% {
     margin-left: -160vh;
   }
+}
+body #pageContainer #projects #workContainer #works .work .img1 {
+  height: 35vh;
+  width: auto;
+  transform: skew(-15deg) rotate(-90deg);
+  filter: saturate(0%) blur(7px);
+  transition: filter 0.4s;
 }
 body #pageContainer #projects #workContainer #works .work .video2 {
   height: 40vh;

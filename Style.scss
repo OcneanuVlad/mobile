@@ -175,6 +175,28 @@ body {
             transition: filter 2s;
         }
 
+        .download {
+            position: absolute;
+            bottom: 2vh;
+            font-size: 50%;
+            font-family: sans-serif;
+            text-align: center;
+            z-index: 100;
+
+            #firstLink:link, #firstLink:visited, #firstLink:active, #firstLink:hover {
+                color: rgb(51, 116, 165)
+            }
+            #firstLink {
+                cursor: none;
+            }
+            #secondLink:link, #secondLink:visited, #secondLink:active, #secondLink:hover {
+                color: rgb(51, 116, 165)
+            }
+            #secondLink {
+                cursor: none;
+            }
+        }
+
         #projectNav {
             font-family: ElMessiri;
             position: fixed;
@@ -248,7 +270,7 @@ body {
                 color: var(--colorFront);
                 z-index: 11;
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 50%;
+                font-size: 40%;
                 cursor: none;
                 font-family: ElMessiri;
             }
@@ -271,7 +293,7 @@ body {
                 align-items: center;
                 border-top: 1px solid var(--colorFront);
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 50%;
+                font-size: 40%;
                 width: 7vw;
                 bottom: 1.45vh;
                 cursor: none;
@@ -1149,6 +1171,10 @@ body {
                         filter: blur(0px);
                         filter: saturate(100%);
                     }
+                    .img1 {
+                        filter: blur(0px);
+                        filter: saturate(100%);
+                    }
                 }
 
                 #work1 {
@@ -1206,7 +1232,7 @@ body {
                     }
                     @keyframes slide {
                         0% {
-                            margin-left: -135vh;
+                            margin-left: -130vh;
                         }
                         100% {
                             margin-left: 160vh;
@@ -1221,13 +1247,20 @@ body {
                     }
                     @keyframes slideReverse {
                         0% {
-                            margin-left: 135vh;
+                            margin-left: 130vh;
                         }
                         100% {
                             margin-left: -160vh;
                         }
                     }
 
+                    .img1 {
+                        height: 35vh;
+                        width: auto;
+                        transform: skew(-15deg) rotate(-90deg);
+                        filter: saturate(0%) blur(7px);
+                        transition: filter 0.4s;
+                    }
                     .video2 {
                         height: 40vh;
                         transform: skew(-15deg) rotate(-90deg);
