@@ -720,60 +720,64 @@ document.querySelector('#color').addEventListener('mouseleave', () => {
 //project page video optimization
 
 
-if (document.readyState === 'complete') {
+window.onload = function() {
+    console.log('1');
     videos1.forEach( e => {
         e.pause();
         setTimeout(() => {
             e.play();
-        }, 1000);
+        }, 100);
     })
     videos2.forEach( e => {
         e.pause();
         setTimeout(() => {
             e.play();
-        }, 1000);
+        }, 100);
     })
     document.querySelector('#video').pause();
     setTimeout(() => {
         document.querySelector('#video').play();
-    }, 1000);
+    }, 250);
+    console.log('2');
 }
 
 
-document.querySelector('#work2').addEventListener('mouseenter', () => {
-    videos2.forEach( (e) => {
-        if (e.classList.contains('play')) {
-            e.play();
-        }
-    })
-})
-// document.querySelector('#work2').addEventListener('mouseleave', () => {
+// document.querySelector('#work2').addEventListener('mouseenter', () => {
 //     videos2.forEach( (e) => {
-//         e.pause();
+//         if (e.classList.contains('play')) {
+//             e.pause()
+//             e.play();
+//         }
 //     })
 // })
-document.querySelector('#work1').addEventListener('mouseenter', () => {
-    videos1.forEach( (e) => {
-        if (e.classList.contains('play')) {
-            e.play();
-        }
-    })
-})
-// document.querySelector('#work1').addEventListener('mouseleave', () => {
+// // document.querySelector('#work2').addEventListener('mouseleave', () => {
+// //     videos2.forEach( (e) => {
+// //         e.pause();
+// //     })
+// // })
+// document.querySelector('#work1').addEventListener('mouseenter', () => {
 //     videos1.forEach( (e) => {
-//         e.pause();
+//         if (e.classList.contains('play')) {
+//             e.pause()
+//             e.play();
+//         }
 //     })
 // })
-let observer3 = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('play');
-        } else {
-            entry.target.classList.remove('play');
-        }
-    })
-});
+// // document.querySelector('#work1').addEventListener('mouseleave', () => {
+// //     videos1.forEach( (e) => {
+// //         e.pause();
+// //     })
+// // })
+// let observer3 = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         if(entry.isIntersecting) {
+//             entry.target.classList.add('play');
+//         } else {
+//             entry.target.classList.remove('play');
+//         }
+//     })
+// });
 let videos2 = document.querySelectorAll('.video1')
 let videos1 = document.querySelectorAll('.video2')
- videos1.forEach((el) => observer3.observe(el));
- videos2.forEach((el) => observer3.observe(el));
+//  videos1.forEach((el) => observer3.observe(el));
+//  videos2.forEach((el) => observer3.observe(el));
