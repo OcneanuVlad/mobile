@@ -725,14 +725,18 @@ if (document.readyState === 'complete') {
         e.pause();
         setTimeout(() => {
             e.play();
-        }, 500);
+        }, 1000);
     })
     videos2.forEach( e => {
         e.pause();
         setTimeout(() => {
             e.play();
-        }, 500);
+        }, 1000);
     })
+    document.querySelector('#video').pause();
+    setTimeout(() => {
+        document.querySelector('#video').play();
+    }, 1000);
 }
 
 

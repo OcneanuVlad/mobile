@@ -773,14 +773,18 @@ if (document.readyState === 'complete') {
         e.pause();
         setTimeout(function () {
             e.play();
-        }, 500);
+        }, 1000);
     });
     videos2.forEach(function (e) {
         e.pause();
         setTimeout(function () {
             e.play();
-        }, 500);
+        }, 1000);
     });
+    document.querySelector('#video').pause();
+    setTimeout(function () {
+        document.querySelector('#video').play();
+    }, 1000);
 }
 
 // document.querySelector('#work2').addEventListener('mouseenter', () => {
