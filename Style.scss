@@ -1155,22 +1155,6 @@ body {
 
                 .work:hover {
 
-                    .first {
-                        animation-play-state: paused;
-                    }
-
-                    #first2 {
-                        animation-play-state: paused;
-                    }
-
-                    .video2 {
-                        filter: blur(0px);
-                        filter: saturate(100%);
-                    }
-                    .video1 {
-                        filter: blur(0px);
-                        filter: saturate(100%);
-                    }
                     .img1 {
                         filter: blur(0px);
                         filter: saturate(100%);
@@ -1221,7 +1205,7 @@ body {
                     justify-content: center;
                     align-items: center;
                     cursor: none;
-                    transition: border 2s, filter 0.4s;
+                    transition: border 2s, filter 0.4s, height 0.6s;
                     transform: scale(0.85);
 
                     .first {
@@ -1258,18 +1242,6 @@ body {
                         height: 35vh;
                         width: auto;
                         transform: skew(-15deg) rotate(-90deg);
-                        filter: saturate(0%) blur(7px);
-                        transition: filter 0.4s;
-                    }
-                    .video2 {
-                        height: 40vh;
-                        transform: skew(-15deg) rotate(-90deg);
-                        filter: saturate(0%) blur(7px);
-                        transition: filter 0.4s;
-                    }
-                    .video1 {
-                        height: 40vh;
-                        transform: skew(15deg) rotate(-90deg);
                         filter: saturate(0%) blur(7px);
                         transition: filter 0.4s;
                     }
