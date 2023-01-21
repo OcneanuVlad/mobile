@@ -1,5 +1,5 @@
 if (/Android|iPhone/i.test(navigator.userAgent)) {
-    document.querySelector('#mobileLock').style.display = "flex";
+    location.replace("https://ocneanuvlad.com/mobile/");
 }
 
 
