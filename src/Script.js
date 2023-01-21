@@ -1,42 +1,13 @@
-if (/Android|iPhone/i.test(navigator.userAgent)) {
-    location.replace("https://ocneanuvlad.com/mobile/");
-}
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Main pages navigation
 
 
-class Button extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            activePage: 1,
-            leftButton: 'ABOUT',
-            rightButton: 'WORK',
-        }
+let activePage = 1;
+let leftButton = 'ABOUT';
+let rightButton = 'WORK';
+let activated = true;
 
-        this.handleLeft = this.handleLeft.bind(this);
-        this.handleRight = this.handleRight.bind(this);
-        this.handleFirst = this.handleFirst.bind(this);
-        this.handleLast = this.handleLast.bind(this);
-        this.handleText = this.handleText.bind(this);
-        this.activateButtons = this.activateButtons.bind(this);
-        this.disableButtons = this.disableButtons.bind(this);
-        this.handleColors = this.handleColors.bind(this);
-        this.handleSlide = this.handleSlide.bind(this);
-        this.handleBars = this.handleBars.bind(this);
-    }
-
-    handleLeft() {
-        document.querySelectorAll('.ocn').forEach( e => {
-            e.style.width = "12px";
-        });
-        document.querySelectorAll('.vld').forEach( e => {
-            e.style.width = "11px";
-        });
-
-        document.getElementById("slide0").style.transition = "margin-left 2s";
+    function handleLeft() {
 
         document.querySelector('#about').style.opacity = "0";
         document.querySelector('#home').style.opacity = "0";
@@ -52,47 +23,16 @@ class Button extends React.Component {
             document.querySelector('#spawn12').style.width = "100vw";
             document.querySelector('#spawn11').style.opacity = "1";
             document.querySelector('#spawn12').style.opacity = "1";
-            document.querySelector('#spawn11').addEventListener('transitionend', this.handleSlide);
-
-            this.setState({
-                activePage: this.state.activePage - 1,
-            });
-
-            const slider = document.getElementById("slide0");
             setTimeout(() => {
-                switch (this.state.activePage % 3) {
-                    case -1:
-                        slider.style.marginLeft = "1.3vw"
-                        slider.addEventListener('transitionend', this.handleFirst);
-                        break;
-                    case 0:
-                        slider.style.marginLeft = "-3.6vw";
-                        break;
-                    case 1:
-                        slider.style.marginLeft = "-8.55vw";
-                        break;
-                    case 2:
-                        slider.style.marginLeft = "-13.3vw";
-                        break;
-                    case -2:
-                        slider.style.marginLeft = "-18.2vw";
-                        slider.addEventListener('transitionend', this.handleLast);
-                        break;
-                }
-            }, 10);
-        }, 300);
+                handleSlide();
+            }, 1100);
 
+            activePage = activePage - 1;
+
+        }, 300);
     }
 
-    handleRight() {
-        document.querySelectorAll('.ocn').forEach( e => {
-            e.style.width = "12px";
-        });
-        document.querySelectorAll('.vld').forEach( e => {
-            e.style.width = "11px";
-        });
-
-        document.getElementById("slide0").style.transition = "margin-left 2s";
+    function handleRight() {
 
         document.querySelector('#about').style.opacity = "0";
         document.querySelector('#home').style.opacity = "0";
@@ -108,64 +48,38 @@ class Button extends React.Component {
             document.querySelector('#spawn22').style.width = "100vw";
             document.querySelector('#spawn21').style.opacity = "1";
             document.querySelector('#spawn22').style.opacity = "1";
-            document.querySelector('#spawn21').addEventListener('transitionend', this.handleSlide);
-    
-            this.setState({
-                activePage: this.state.activePage + 1,
-            });
-    
             setTimeout(() => {
-                if (this.state.activePage == 3){
-                    this.setState({
-                    activePage: -2, 
-                    });
-                } 
-            }, 10);
-            const slider = document.getElementById("slide0");
-            setTimeout(() => {
-                switch (this.state.activePage % 3) {
-                    case -1:
-                        slider.style.marginLeft = "1.3vw"
-                        slider.addEventListener('transitionend', this.handleFirst);
-                        break;
-                    case 0:
-                        slider.style.marginLeft = "-3.6vw";
-                        break;
-                    case 1:
-                        slider.style.marginLeft = "-8.55vw";
-                        break;
-                    case 2:
-                        slider.style.marginLeft = "-13.3vw";
-                        break;
-                    case -2:
-                        slider.style.marginLeft = "-18.2vw";
-                        slider.addEventListener('transitionend', this.handleLast);
-                        break;
-                }
-            }, 10);
+                handleSlide();
+            }, 1100);
+    
+            activePage = activePage + 1;
+            if (activePage == 3){
+                activePage = -2;
+            };
+
         }, 300);
 
     }
 
-    handleSlide() {
-        if (this.state.activePage == 3){
-            this.setState({
-               activePage: -2, 
-            });
+    function handleSlide() {
+        if (activePage == 3){
+            activePage = activePage - 2;
         }
-        this.handleText();
+        handleText();
         document.getElementById("buttonText1").style.opacity = "1";
         document.getElementById("buttonText2").style.opacity = "1";
-
-        document.querySelector('#spawn21').removeEventListener('transitionend', this.handleSlide);
-        document.querySelector('#spawn11').removeEventListener('transitionend', this.handleSlide);
 
         document.querySelector('#spawn11').style.top = "2.5vh";
         document.querySelector('#spawn12').style.bottom = "2.5vh";
         document.querySelector('#spawn21').style.top = "2.5vh";
         document.querySelector('#spawn22').style.bottom = "2.5vh";
-        document.querySelector('#spawn11').addEventListener('transitionend', this.handleBars);
-        document.querySelector('#spawn21').addEventListener('transitionend', this.handleBars);
+        document.querySelector('#spawn11').style.opacity = "0";
+        document.querySelector('#spawn12').style.opacity = "0";
+        document.querySelector('#spawn21').style.opacity = "0";
+        document.querySelector('#spawn22').style.opacity = "0";
+        setTimeout(() => {
+            handleBars();
+        }, 1000);
 
         document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s";
         document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s";
@@ -176,14 +90,13 @@ class Button extends React.Component {
         document.querySelector('#projects').style.height = "0vh";
         document.querySelector('#about').style.height = "0vh";
         document.querySelector('#home').style.height = "0vh";
+        console.log(activePage)
 
-        switch (this.state.activePage % 3) {
+        switch (activePage % 3) {
             case -1:
                 document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s";
                 document.querySelector('#projects').style.height = "95vh";
-                this.setState({
-                    activePage: 2,
-                });
+                activePage = 2;
                 break;
             case 0:
                 document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
@@ -200,9 +113,7 @@ class Button extends React.Component {
             case -2:
                 document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
                 document.querySelector('#about').style.height = "95vh";
-                this.setState({
-                    activePage: 0,
-                });
+                activePage = 0;
                 break;
         }
         setTimeout(() => {
@@ -213,15 +124,8 @@ class Button extends React.Component {
 
     }
 
-    handleBars() {
-        document.querySelector('#spawn11').removeEventListener('transitionend', this.handleBars);
-        document.querySelector('#spawn21').removeEventListener('transitionend', this.handleBars);
-        document.querySelector('#spawn11').style.opacity = "0";
-        document.querySelector('#spawn12').style.opacity = "0";
-        document.querySelector('#spawn21').style.opacity = "0";
-        document.querySelector('#spawn22').style.opacity = "0";
-        setTimeout(() => {
-            this.activateButtons();
+    function handleBars() {
+            activateButtons();
             document.querySelector('#spawn11').style.transition = "0s"
             document.querySelector('#spawn12').style.transition = "0s"
             document.querySelector('#spawn21').style.transition = "0s"
@@ -234,59 +138,34 @@ class Button extends React.Component {
             document.querySelector('#spawn12').style.bottom = "50vh"
             document.querySelector('#spawn21').style.top = "50vh"
             document.querySelector('#spawn22').style.bottom = "50vh"
-        }, 1100);
     }
 
-    handleText() {
-        switch (this.state.activePage % 3){
+    function handleText() {
+        switch (activePage % 3){
             case -1:
-                this.setState({
-                    leftButton: 'HOME',
-                    rightButton: 'ABOUT',
-                });
+                    leftButton = 'HOME';
+                    rightButton = 'ABOUT';
                 break;
             case 0:
-                this.setState({
-                    leftButton: 'WORK',
-                    rightButton: 'HOME',
-                });
+                    leftButton = 'WORK';
+                    rightButton = 'HOME';
                 break;
             case 1:
-                this.setState({
-                    leftButton: 'ABOUT',
-                    rightButton: 'WORK',
-                });
+                    leftButton = 'ABOUT';
+                    rightButton = 'WORK';
                 break;
             case 2:
-                this.setState({
-                    leftButton: 'HOME',
-                    rightButton: 'ABOUT',
-                });
+                    leftButton = 'HOME';
+                    rightButton = 'ABOUT';
                 break;
             case -2:
-                this.setState({
-                    leftButton: 'WORK',
-                    rightButton: 'HOME',
-                });
+                    leftButton = 'WORK';
+                    rightButton = 'HOME';
                 break;
         }
     }
 
-    handleFirst() {
-        document.getElementById("slide0").removeEventListener('transitionend', this.handleFirst);
-
-        document.getElementById("slide0").style.transition = "margin-left 0s";
-        document.getElementById("slide0").style.marginLeft = "-13.3vw";
-    }
-
-    handleLast() {
-        document.getElementById("slide0").removeEventListener('transitionend', this.handleLast);
-
-        document.getElementById("slide0").style.transition = "margin-left 0s";
-        document.getElementById("slide0").style.marginLeft = "-3.6vw";
-    }
-
-    handleColors() {
+    function handleColors() {
         store.style.setProperty('--colorBack', pallete[colorPallete][1]);
         store.style.setProperty('--colorBody', pallete[colorPallete][0]);
         store.style.setProperty('--colorFront', pallete[colorPallete][2]);
@@ -302,9 +181,8 @@ class Button extends React.Component {
         }
     }
 
-    disableButtons() {
-        document.getElementById("leftButton").classList.add('disable');
-        document.getElementById("rightButton").classList.add('disable');
+    function disableButtons() {
+        activated = false;
 
         document.getElementById("work1").classList.add('disable');
         document.getElementById("work2").classList.add('disable');
@@ -312,44 +190,45 @@ class Button extends React.Component {
 
         document.getElementById("buttonText1").style.opacity = "0";
         document.getElementById("buttonText2").style.opacity = "0";
-        this.handleColors();
+        handleColors();
     }
 
-    activateButtons() {
-        document.getElementById("leftButton").classList.remove('disable');
-        document.getElementById("rightButton").classList.remove('disable');
+    function activateButtons() {
+        activated = true;
 
         document.getElementById("work1").classList.remove('disable');
         document.getElementById("work2").classList.remove('disable');
         document.getElementById("work3").classList.remove('disable');
     }
 
-    render() {
-        return (
-            <div>
-                <button onClick={() => {this.handleLeft(); this.disableButtons()}} id="leftButton"><p id="buttonText1">{this.state.leftButton}</p>
-                    <section onClick={() => {this.handleLeft(); this.disableButtons()}} id="points1">
-                        <span onClick={() => {this.handleLeft(); this.disableButtons()}} id="pointLine1"></span>
-                        <span id="point11" class="point"></span>
-                        <span id="point12" class="point"></span>
-                        <span id="point13" class="point"></span>
-                        <span id="point14" class="point"></span>
-                    </section>
-                </button>
+let touchstartX = 0
+let touchendX = 0
+    
+function checkDirection() {
+    if (activated) {
 
-                <button onClick={() => {this.handleRight(); this.disableButtons()}} id="rightButton"><p id="buttonText2">{this.state.rightButton}</p>
-                    <section onClick={() => {this.handleLeft(); this.disableButtons()}} id="points2"> 
-                        <span onClick={() => {this.handleLeft(); this.disableButtons()}} id="pointLine2"></span>
-                        <span id="point21" class="point"></span>
-                        <span id="point22" class="point"></span>
-                        <span id="point23" class="point"></span>
-                        <span id="point24" class="point"></span>
-                    </section>
-                </button>
-            </div>
-        );
+        if (touchendX < touchstartX) {
+            handleRight();
+            handleColors();
+            disableButtons();
+        }
+
+        if (touchendX > touchstartX) {
+            handleLeft();
+            handleColors();
+            disableButtons();
+        }
     }
 }
+
+document.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})
 
 let colorPallete = 0;
 const pallete = [
@@ -365,9 +244,6 @@ const pallete = [
     ['rgb(72, 78, 82)','rgb(57, 62, 65)','rgb(246, 247, 235)','invert(99%) sepia(81%) saturate(179%) hue-rotate(23deg) brightness(105%) contrast(93%)']
 ]
 const store = document.querySelector(':root');
-
-let container = document.querySelector('#buttonContainer');
-ReactDOM.render(<Button />, container);
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -407,9 +283,6 @@ function Work(index) {
     document.getElementById("work1").classList.add('disable');
     document.getElementById("work2").classList.add('disable');
     document.getElementById("work3").classList.add('disable');
-
-    document.getElementById("leftButton").classList.add('disable');
-    document.getElementById("rightButton").classList.add('disable');
 
     document.getElementById("previous").classList.add('disable');
     document.getElementById("next").classList.add('disable');
@@ -497,9 +370,6 @@ function Work(index) {
             document.getElementById("work1").classList.remove('disable');
             document.getElementById("work2").classList.remove('disable');
             document.getElementById("work3").classList.remove('disable');
-    
-            document.getElementById("leftButton").classList.remove('disable');
-            document.getElementById("rightButton").classList.remove('disable');
 
             document.getElementById("previous").classList.remove('disable');
             document.getElementById("next").classList.remove('disable');
@@ -512,96 +382,6 @@ function Work(index) {
         }, 600);
     }
     transition3.addEventListener('transitionend', secondSwipe);
-}
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Cursor
-
-
-gsap.set('#cursorCont',{xPercent:-50, yPercent:-50});
-
-let cursorCont = document.querySelector('#cursorCont')
-let cursor = document.querySelector('#cursor')
-let mouseX;
-let mouseY;
-
-window.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    gsap.to(cursorCont, 0.01, {x: mouseX, y: mouseY});
-});
-
-let videos = document.querySelectorAll('.trailer');
-
-videos.forEach(video => {
-    video.addEventListener('mouseenter', () => {
-        cursor.style.display = "none";
-    });
-});
-
-videos.forEach(video => {
-    video.addEventListener('mouseleave', () => {
-        cursor.style.display = "block";
-    })
-})
-
-let buttons1 = [document.querySelector('#secondLink'),document.querySelector('#firstLink'),document.querySelector('#gmailLink'),document.querySelector('#instagramLink'),document.querySelector('#facebookLink'),document.querySelector('#color'),document.querySelector('#name1'),document.querySelector('#name2'),document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
-let buttons2 = [document.querySelector('#secondLink'),document.querySelector('#firstLink'),document.querySelector('#gmailLink'),document.querySelector('#instagramLink'),document.querySelector('#facebookLink'),document.querySelector('#name1'),document.querySelector('#name2'),document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
-
-buttons1.forEach(button => {
-    button.addEventListener('mouseenter', () => {
-        cursor.style.width = "30px";
-        cursor.style.height = "30px";
-        cursor.style.borderRadius = "15%";
-    });
-    button.addEventListener('mouseleave', () => {
-        cursor.style.width = "12px";
-        cursor.style.height = "12px";
-        cursor.style.borderRadius = "50%";
-    });
-});
-buttons2.forEach( button => {
-    button.addEventListener('mouseup', () => {
-    cursor.style.width = "12px";
-    cursor.style.height = "12px";
-    cursor.style.borderRadius = "50%";
-    })
-});
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Page Rotation
-
-if(navigator.userAgent.match(/safari/i)) {
-    let constrainX = 125;
-    let constrainY = 300;
-    let mouseOverContainer = document.querySelector('body')
-    let ex1Layer = document.getElementById("pageContainer");
-
-    function transforms(x, y, el) {
-    let box = el.getBoundingClientRect();
-    let calcX = -(y - box.y - (box.height / 2)) / constrainX;
-    let calcY = (x - box.x - (box.width / 2)) / constrainY;
-    
-    return "perspective(100vw) "
-        + "   rotateX("+ calcX +"deg) "
-        + "   rotateY("+ calcY +"deg) ";
-    };
-
-    function transformElement(el, xyEl) {
-    el.style.transform  = transforms.apply(null, xyEl);
-    }
-
-    mouseOverContainer.onmousemove = function(e) {
-    let xy = [e.clientX, e.clientY];
-    let position = xy.concat([ex1Layer]);
-
-    window.requestAnimationFrame(function(){
-        transformElement(ex1Layer, position);
-    });
-    };
 }
 
 

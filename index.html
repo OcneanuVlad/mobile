@@ -13,12 +13,29 @@
     <link rel="stylesheet" href="Style.css"/>
 </head>
 <body>
-    <div id="mobileLock">
-        <h1>This website is not available on mobile devices. Please open on another device.</h1>
+
+    <div>
+        
     </div>
-
     <div id="buttonContainer">
-
+        <div id="buttonLeft">
+            <div id="line1" class="buttonLine">
+                <div class="point" style="margin-left: 1.5vw;"></div>
+                <div class="point" style="margin-left: 4vw;"></div>
+                <div class="point" style="margin-left: 6vw;"></div>
+                <div class="point" style="margin-left: 25vw; position: absolute;"></div>
+            </div>
+            <p id="buttonText1">ABOUT</p>
+        </div>
+        <div id="ButtonRight">
+            <div id="line2" class="buttonLine">
+                <div class="point" style="margin-right: 25vw; position: absolute;"></div>
+                <div class="point" style="margin-right: 6vw;"></div>
+                <div class="point" style="margin-right: 4vw;"></div>
+                <div class="point" style="margin-right: 1.5vw;"></div>
+            </div>
+            <p id="buttonText2">WORK</p>
+        </div>
     </div>
     <video autoplay muted loop id="video">
         <source src="Elements/background1.mp4" type="video/mp4">
@@ -27,21 +44,6 @@
     <span id="spawn12"></span>
     <span id="spawn21"></span>
     <span id="spawn22"></span>
-
-    <div id="slider">
-        <div id="selectors">
-            <span class="selector" id="selector1"></span>
-        </div>
-        <div id="pages">
-            <p id="slide0">HOME</p>
-            <p id="slide3">WORK</p>
-            <p id="slide1">ABOUT</p>
-            <p id="slide2">HOME</p>
-            <p id="slide3">WORK</p>
-            <p id="slide1">ABOUT</p>
-            <p id="slide2">HOME</p>
-        </div>
-    </div>
 
     <div id="transition">
         <div id="transition1" class="transitioning"></div>
@@ -413,7 +415,12 @@
             </div>
         </div>
         <div id="home">
-            <h1 class="backText">HOME</h1>
+            <h1 class="backText">
+                <p>H</p>
+                <p>O</p>
+                <p>M</p>
+                <p>E</p>
+            </h1>
             <div id="welcome">
                 <h2>WELCOME TO</h2>
                 <hr id="welcomeHr" />
@@ -424,7 +431,7 @@
                 <p class="vld">VLAD</p>
             </div>
 
-            <h1 id="universe">MOBILE UNIVERSE!</h1>
+            <h1 id="universe">MY UNIVERSE!</h1>
             <div id="lines">
                 <hr class="line">
                 <hr class="line">
@@ -593,10 +600,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="cursorCont">
-        <div id="cursor"></div>
     </div>
 
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>

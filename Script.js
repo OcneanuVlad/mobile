@@ -1,424 +1,234 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-if (/Android|iPhone/i.test(navigator.userAgent)) {
-    location.replace("https://ocneanuvlad.com/mobile/");
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Main pages navigation
 
 
-var Button = function (_React$Component) {
-    _inherits(Button, _React$Component);
+var activePage = 1;
+var leftButton = 'ABOUT';
+var rightButton = 'WORK';
+var activated = true;
 
-    function Button(props) {
-        _classCallCheck(this, Button);
+function handleLeft() {
 
-        var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+    document.querySelector('#about').style.opacity = "0";
+    document.querySelector('#home').style.opacity = "0";
+    document.querySelector('#projects').style.opacity = "0";
 
-        _this.state = {
-            activePage: 1,
-            leftButton: 'ABOUT',
-            rightButton: 'WORK'
+    setTimeout(function () {
+        document.querySelector('#spawn11').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+        document.querySelector('#spawn12').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+        document.querySelector('#spawn21').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+        document.querySelector('#spawn22').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+
+        document.querySelector('#spawn11').style.width = "100vw";
+        document.querySelector('#spawn12').style.width = "100vw";
+        document.querySelector('#spawn11').style.opacity = "1";
+        document.querySelector('#spawn12').style.opacity = "1";
+        setTimeout(function () {
+            handleSlide();
+        }, 1100);
+
+        activePage = activePage - 1;
+    }, 300);
+}
+
+function handleRight() {
+
+    document.querySelector('#about').style.opacity = "0";
+    document.querySelector('#home').style.opacity = "0";
+    document.querySelector('#projects').style.opacity = "0";
+
+    document.querySelector('#spawn11').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+    document.querySelector('#spawn12').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+    document.querySelector('#spawn21').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+    document.querySelector('#spawn22').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+
+    setTimeout(function () {
+        document.querySelector('#spawn21').style.width = "100vw";
+        document.querySelector('#spawn22').style.width = "100vw";
+        document.querySelector('#spawn21').style.opacity = "1";
+        document.querySelector('#spawn22').style.opacity = "1";
+        setTimeout(function () {
+            handleSlide();
+        }, 1100);
+
+        activePage = activePage + 1;
+        if (activePage == 3) {
+            activePage = -2;
         };
+    }, 300);
+}
 
-        _this.handleLeft = _this.handleLeft.bind(_this);
-        _this.handleRight = _this.handleRight.bind(_this);
-        _this.handleFirst = _this.handleFirst.bind(_this);
-        _this.handleLast = _this.handleLast.bind(_this);
-        _this.handleText = _this.handleText.bind(_this);
-        _this.activateButtons = _this.activateButtons.bind(_this);
-        _this.disableButtons = _this.disableButtons.bind(_this);
-        _this.handleColors = _this.handleColors.bind(_this);
-        _this.handleSlide = _this.handleSlide.bind(_this);
-        _this.handleBars = _this.handleBars.bind(_this);
-        return _this;
+function handleSlide() {
+    if (activePage == 3) {
+        activePage = activePage - 2;
     }
+    handleText();
+    document.getElementById("buttonText1").style.opacity = "1";
+    document.getElementById("buttonText2").style.opacity = "1";
 
-    _createClass(Button, [{
-        key: 'handleLeft',
-        value: function handleLeft() {
-            var _this2 = this;
+    document.querySelector('#spawn11').style.top = "2.5vh";
+    document.querySelector('#spawn12').style.bottom = "2.5vh";
+    document.querySelector('#spawn21').style.top = "2.5vh";
+    document.querySelector('#spawn22').style.bottom = "2.5vh";
+    document.querySelector('#spawn11').style.opacity = "0";
+    document.querySelector('#spawn12').style.opacity = "0";
+    document.querySelector('#spawn21').style.opacity = "0";
+    document.querySelector('#spawn22').style.opacity = "0";
+    setTimeout(function () {
+        handleBars();
+    }, 1000);
 
-            document.querySelectorAll('.ocn').forEach(function (e) {
-                e.style.width = "12px";
-            });
-            document.querySelectorAll('.vld').forEach(function (e) {
-                e.style.width = "11px";
-            });
+    document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s";
+    document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s";
+    document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s";
+    document.querySelector('#about').style.opacity = "1";
+    document.querySelector('#home').style.opacity = "1";
+    document.querySelector('#projects').style.opacity = "1";
+    document.querySelector('#projects').style.height = "0vh";
+    document.querySelector('#about').style.height = "0vh";
+    document.querySelector('#home').style.height = "0vh";
+    console.log(activePage);
 
-            document.getElementById("slide0").style.transition = "margin-left 2s";
+    switch (activePage % 3) {
+        case -1:
+            document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s";
+            document.querySelector('#projects').style.height = "95vh";
+            activePage = 2;
+            break;
+        case 0:
+            document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
+            document.querySelector('#about').style.height = "95vh";
+            break;
+        case 1:
+            document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s, height 1s";
+            document.querySelector('#home').style.height = "95vh";
+            break;
+        case 2:
+            document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s";
+            document.querySelector('#projects').style.height = "95vh";
+            break;
+        case -2:
+            document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
+            document.querySelector('#about').style.height = "95vh";
+            activePage = 0;
+            break;
+    }
+    setTimeout(function () {
+        document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s, height 1s, opacity 0.6s";
+        document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s, opacity 0.6s";
+        document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s, opacity 0.6s";
+    }, 1000);
+}
 
-            document.querySelector('#about').style.opacity = "0";
-            document.querySelector('#home').style.opacity = "0";
-            document.querySelector('#projects').style.opacity = "0";
+function handleBars() {
+    activateButtons();
+    document.querySelector('#spawn11').style.transition = "0s";
+    document.querySelector('#spawn12').style.transition = "0s";
+    document.querySelector('#spawn21').style.transition = "0s";
+    document.querySelector('#spawn22').style.transition = "0s";
+    document.querySelector('#spawn11').style.width = "7vw";
+    document.querySelector('#spawn12').style.width = "7vw";
+    document.querySelector('#spawn21').style.width = "7vw";
+    document.querySelector('#spawn22').style.width = "7vw";
+    document.querySelector('#spawn11').style.top = "50vh";
+    document.querySelector('#spawn12').style.bottom = "50vh";
+    document.querySelector('#spawn21').style.top = "50vh";
+    document.querySelector('#spawn22').style.bottom = "50vh";
+}
 
-            setTimeout(function () {
-                document.querySelector('#spawn11').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
-                document.querySelector('#spawn12').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
-                document.querySelector('#spawn21').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
-                document.querySelector('#spawn22').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
+function handleText() {
+    switch (activePage % 3) {
+        case -1:
+            leftButton = 'HOME';
+            rightButton = 'ABOUT';
+            break;
+        case 0:
+            leftButton = 'WORK';
+            rightButton = 'HOME';
+            break;
+        case 1:
+            leftButton = 'ABOUT';
+            rightButton = 'WORK';
+            break;
+        case 2:
+            leftButton = 'HOME';
+            rightButton = 'ABOUT';
+            break;
+        case -2:
+            leftButton = 'WORK';
+            rightButton = 'HOME';
+            break;
+    }
+}
 
-                document.querySelector('#spawn11').style.width = "100vw";
-                document.querySelector('#spawn12').style.width = "100vw";
-                document.querySelector('#spawn11').style.opacity = "1";
-                document.querySelector('#spawn12').style.opacity = "1";
-                document.querySelector('#spawn11').addEventListener('transitionend', _this2.handleSlide);
+function handleColors() {
+    store.style.setProperty('--colorBack', pallete[colorPallete][1]);
+    store.style.setProperty('--colorBody', pallete[colorPallete][0]);
+    store.style.setProperty('--colorFront', pallete[colorPallete][2]);
+    document.querySelector('#denimBack').style.filter = pallete[colorPallete][3];
+    document.querySelectorAll('.contactImg').forEach(function (e) {
+        e.style.filter = pallete[colorPallete][3];
+    });
 
-                _this2.setState({
-                    activePage: _this2.state.activePage - 1
-                });
+    if (colorPallete >= pallete.length - 1) {
+        colorPallete = 0;
+    } else {
+        colorPallete++;
+    }
+}
 
-                var slider = document.getElementById("slide0");
-                setTimeout(function () {
-                    switch (_this2.state.activePage % 3) {
-                        case -1:
-                            slider.style.marginLeft = "1.3vw";
-                            slider.addEventListener('transitionend', _this2.handleFirst);
-                            break;
-                        case 0:
-                            slider.style.marginLeft = "-3.6vw";
-                            break;
-                        case 1:
-                            slider.style.marginLeft = "-8.55vw";
-                            break;
-                        case 2:
-                            slider.style.marginLeft = "-13.3vw";
-                            break;
-                        case -2:
-                            slider.style.marginLeft = "-18.2vw";
-                            slider.addEventListener('transitionend', _this2.handleLast);
-                            break;
-                    }
-                }, 10);
-            }, 300);
+function disableButtons() {
+    activated = false;
+
+    document.getElementById("work1").classList.add('disable');
+    document.getElementById("work2").classList.add('disable');
+    document.getElementById("work3").classList.add('disable');
+
+    document.getElementById("buttonText1").style.opacity = "0";
+    document.getElementById("buttonText2").style.opacity = "0";
+    handleColors();
+}
+
+function activateButtons() {
+    activated = true;
+
+    document.getElementById("work1").classList.remove('disable');
+    document.getElementById("work2").classList.remove('disable');
+    document.getElementById("work3").classList.remove('disable');
+}
+
+var touchstartX = 0;
+var touchendX = 0;
+
+function checkDirection() {
+    if (activated) {
+
+        if (touchendX < touchstartX) {
+            handleRight();
+            handleColors();
+            disableButtons();
         }
-    }, {
-        key: 'handleRight',
-        value: function handleRight() {
-            var _this3 = this;
 
-            document.querySelectorAll('.ocn').forEach(function (e) {
-                e.style.width = "12px";
-            });
-            document.querySelectorAll('.vld').forEach(function (e) {
-                e.style.width = "11px";
-            });
-
-            document.getElementById("slide0").style.transition = "margin-left 2s";
-
-            document.querySelector('#about').style.opacity = "0";
-            document.querySelector('#home').style.opacity = "0";
-            document.querySelector('#projects').style.opacity = "0";
-
-            document.querySelector('#spawn11').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
-            document.querySelector('#spawn12').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
-            document.querySelector('#spawn21').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
-            document.querySelector('#spawn22').style.transition = "background-color 1.4s, width 1s, opacity 1.1s, top 1s, bottom 1s";
-
-            setTimeout(function () {
-                document.querySelector('#spawn21').style.width = "100vw";
-                document.querySelector('#spawn22').style.width = "100vw";
-                document.querySelector('#spawn21').style.opacity = "1";
-                document.querySelector('#spawn22').style.opacity = "1";
-                document.querySelector('#spawn21').addEventListener('transitionend', _this3.handleSlide);
-
-                _this3.setState({
-                    activePage: _this3.state.activePage + 1
-                });
-
-                setTimeout(function () {
-                    if (_this3.state.activePage == 3) {
-                        _this3.setState({
-                            activePage: -2
-                        });
-                    }
-                }, 10);
-                var slider = document.getElementById("slide0");
-                setTimeout(function () {
-                    switch (_this3.state.activePage % 3) {
-                        case -1:
-                            slider.style.marginLeft = "1.3vw";
-                            slider.addEventListener('transitionend', _this3.handleFirst);
-                            break;
-                        case 0:
-                            slider.style.marginLeft = "-3.6vw";
-                            break;
-                        case 1:
-                            slider.style.marginLeft = "-8.55vw";
-                            break;
-                        case 2:
-                            slider.style.marginLeft = "-13.3vw";
-                            break;
-                        case -2:
-                            slider.style.marginLeft = "-18.2vw";
-                            slider.addEventListener('transitionend', _this3.handleLast);
-                            break;
-                    }
-                }, 10);
-            }, 300);
+        if (touchendX > touchstartX) {
+            handleLeft();
+            handleColors();
+            disableButtons();
         }
-    }, {
-        key: 'handleSlide',
-        value: function handleSlide() {
-            if (this.state.activePage == 3) {
-                this.setState({
-                    activePage: -2
-                });
-            }
-            this.handleText();
-            document.getElementById("buttonText1").style.opacity = "1";
-            document.getElementById("buttonText2").style.opacity = "1";
+    }
+}
 
-            document.querySelector('#spawn21').removeEventListener('transitionend', this.handleSlide);
-            document.querySelector('#spawn11').removeEventListener('transitionend', this.handleSlide);
+document.addEventListener('touchstart', function (e) {
+    touchstartX = e.changedTouches[0].screenX;
+});
 
-            document.querySelector('#spawn11').style.top = "2.5vh";
-            document.querySelector('#spawn12').style.bottom = "2.5vh";
-            document.querySelector('#spawn21').style.top = "2.5vh";
-            document.querySelector('#spawn22').style.bottom = "2.5vh";
-            document.querySelector('#spawn11').addEventListener('transitionend', this.handleBars);
-            document.querySelector('#spawn21').addEventListener('transitionend', this.handleBars);
-
-            document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s";
-            document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s";
-            document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s";
-            document.querySelector('#about').style.opacity = "1";
-            document.querySelector('#home').style.opacity = "1";
-            document.querySelector('#projects').style.opacity = "1";
-            document.querySelector('#projects').style.height = "0vh";
-            document.querySelector('#about').style.height = "0vh";
-            document.querySelector('#home').style.height = "0vh";
-
-            switch (this.state.activePage % 3) {
-                case -1:
-                    document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                    document.querySelector('#projects').style.height = "95vh";
-                    this.setState({
-                        activePage: 2
-                    });
-                    break;
-                case 0:
-                    document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                    document.querySelector('#about').style.height = "95vh";
-                    break;
-                case 1:
-                    document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                    document.querySelector('#home').style.height = "95vh";
-                    break;
-                case 2:
-                    document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                    document.querySelector('#projects').style.height = "95vh";
-                    break;
-                case -2:
-                    document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                    document.querySelector('#about').style.height = "95vh";
-                    this.setState({
-                        activePage: 0
-                    });
-                    break;
-            }
-            setTimeout(function () {
-                document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s, height 1s, opacity 0.6s";
-                document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s, opacity 0.6s";
-                document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s, opacity 0.6s";
-            }, 1000);
-        }
-    }, {
-        key: 'handleBars',
-        value: function handleBars() {
-            var _this4 = this;
-
-            document.querySelector('#spawn11').removeEventListener('transitionend', this.handleBars);
-            document.querySelector('#spawn21').removeEventListener('transitionend', this.handleBars);
-            document.querySelector('#spawn11').style.opacity = "0";
-            document.querySelector('#spawn12').style.opacity = "0";
-            document.querySelector('#spawn21').style.opacity = "0";
-            document.querySelector('#spawn22').style.opacity = "0";
-            setTimeout(function () {
-                _this4.activateButtons();
-                document.querySelector('#spawn11').style.transition = "0s";
-                document.querySelector('#spawn12').style.transition = "0s";
-                document.querySelector('#spawn21').style.transition = "0s";
-                document.querySelector('#spawn22').style.transition = "0s";
-                document.querySelector('#spawn11').style.width = "7vw";
-                document.querySelector('#spawn12').style.width = "7vw";
-                document.querySelector('#spawn21').style.width = "7vw";
-                document.querySelector('#spawn22').style.width = "7vw";
-                document.querySelector('#spawn11').style.top = "50vh";
-                document.querySelector('#spawn12').style.bottom = "50vh";
-                document.querySelector('#spawn21').style.top = "50vh";
-                document.querySelector('#spawn22').style.bottom = "50vh";
-            }, 1100);
-        }
-    }, {
-        key: 'handleText',
-        value: function handleText() {
-            switch (this.state.activePage % 3) {
-                case -1:
-                    this.setState({
-                        leftButton: 'HOME',
-                        rightButton: 'ABOUT'
-                    });
-                    break;
-                case 0:
-                    this.setState({
-                        leftButton: 'WORK',
-                        rightButton: 'HOME'
-                    });
-                    break;
-                case 1:
-                    this.setState({
-                        leftButton: 'ABOUT',
-                        rightButton: 'WORK'
-                    });
-                    break;
-                case 2:
-                    this.setState({
-                        leftButton: 'HOME',
-                        rightButton: 'ABOUT'
-                    });
-                    break;
-                case -2:
-                    this.setState({
-                        leftButton: 'WORK',
-                        rightButton: 'HOME'
-                    });
-                    break;
-            }
-        }
-    }, {
-        key: 'handleFirst',
-        value: function handleFirst() {
-            document.getElementById("slide0").removeEventListener('transitionend', this.handleFirst);
-
-            document.getElementById("slide0").style.transition = "margin-left 0s";
-            document.getElementById("slide0").style.marginLeft = "-13.3vw";
-        }
-    }, {
-        key: 'handleLast',
-        value: function handleLast() {
-            document.getElementById("slide0").removeEventListener('transitionend', this.handleLast);
-
-            document.getElementById("slide0").style.transition = "margin-left 0s";
-            document.getElementById("slide0").style.marginLeft = "-3.6vw";
-        }
-    }, {
-        key: 'handleColors',
-        value: function handleColors() {
-            store.style.setProperty('--colorBack', pallete[colorPallete][1]);
-            store.style.setProperty('--colorBody', pallete[colorPallete][0]);
-            store.style.setProperty('--colorFront', pallete[colorPallete][2]);
-            document.querySelector('#denimBack').style.filter = pallete[colorPallete][3];
-            document.querySelectorAll('.contactImg').forEach(function (e) {
-                e.style.filter = pallete[colorPallete][3];
-            });
-
-            if (colorPallete >= pallete.length - 1) {
-                colorPallete = 0;
-            } else {
-                colorPallete++;
-            }
-        }
-    }, {
-        key: 'disableButtons',
-        value: function disableButtons() {
-            document.getElementById("leftButton").classList.add('disable');
-            document.getElementById("rightButton").classList.add('disable');
-
-            document.getElementById("work1").classList.add('disable');
-            document.getElementById("work2").classList.add('disable');
-            document.getElementById("work3").classList.add('disable');
-
-            document.getElementById("buttonText1").style.opacity = "0";
-            document.getElementById("buttonText2").style.opacity = "0";
-            this.handleColors();
-        }
-    }, {
-        key: 'activateButtons',
-        value: function activateButtons() {
-            document.getElementById("leftButton").classList.remove('disable');
-            document.getElementById("rightButton").classList.remove('disable');
-
-            document.getElementById("work1").classList.remove('disable');
-            document.getElementById("work2").classList.remove('disable');
-            document.getElementById("work3").classList.remove('disable');
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this5 = this;
-
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'button',
-                    { onClick: function onClick() {
-                            _this5.handleLeft();_this5.disableButtons();
-                        }, id: 'leftButton' },
-                    React.createElement(
-                        'p',
-                        { id: 'buttonText1' },
-                        this.state.leftButton
-                    ),
-                    React.createElement(
-                        'section',
-                        { onClick: function onClick() {
-                                _this5.handleLeft();_this5.disableButtons();
-                            }, id: 'points1' },
-                        React.createElement('span', { onClick: function onClick() {
-                                _this5.handleLeft();_this5.disableButtons();
-                            }, id: 'pointLine1' }),
-                        React.createElement('span', { id: 'point11', 'class': 'point' }),
-                        React.createElement('span', { id: 'point12', 'class': 'point' }),
-                        React.createElement('span', { id: 'point13', 'class': 'point' }),
-                        React.createElement('span', { id: 'point14', 'class': 'point' })
-                    )
-                ),
-                React.createElement(
-                    'button',
-                    { onClick: function onClick() {
-                            _this5.handleRight();_this5.disableButtons();
-                        }, id: 'rightButton' },
-                    React.createElement(
-                        'p',
-                        { id: 'buttonText2' },
-                        this.state.rightButton
-                    ),
-                    React.createElement(
-                        'section',
-                        { onClick: function onClick() {
-                                _this5.handleLeft();_this5.disableButtons();
-                            }, id: 'points2' },
-                        React.createElement('span', { onClick: function onClick() {
-                                _this5.handleLeft();_this5.disableButtons();
-                            }, id: 'pointLine2' }),
-                        React.createElement('span', { id: 'point21', 'class': 'point' }),
-                        React.createElement('span', { id: 'point22', 'class': 'point' }),
-                        React.createElement('span', { id: 'point23', 'class': 'point' }),
-                        React.createElement('span', { id: 'point24', 'class': 'point' })
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Button;
-}(React.Component);
+document.addEventListener('touchend', function (e) {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection();
+});
 
 var colorPallete = 0;
 var pallete = [['rgb(0,161,154)', 'rgb(0,161,154)', 'rgb(235,237,237)', 'invert(100%) sepia(5%) saturate(100%) hue-rotate(119deg) brightness(93%) contrast(100%)'], ['rgb(40,43,41)', 'rgb(40,43,41)', 'rgb(166,209,201)', 'invert(88%) sepia(26%) saturate(261%) hue-rotate(116deg) brightness(91%) contrast(81%)'], ['rgb(166,209,201)', 'rgb(166,209,201)', 'rgb(232,60,56)', 'invert(69%) sepia(87%) saturate(6938%) hue-rotate(341deg) brightness(95%) contrast(91%)'], ['rgb(244,196,196)', 'rgb(244,196,196)', 'rgb(40,43,41)', 'invert(16%) sepia(5%) saturate(452%) hue-rotate(87deg) brightness(94%) contrast(96%)'], ['rgb(235,237,237)', 'rgb(235,237,237)', 'rgb(232,69,65)', 'invert(45%) sepia(18%) saturate(2671%) hue-rotate(320deg) brightness(90%) contrast(105%)'], ['rgb(246, 247, 245)', 'rgb(168, 173, 165)', 'rgb(36, 62, 54)', 'invert(18%) sepia(33%) saturate(515%) hue-rotate(110deg) brightness(97%) contrast(88%)'], ['rgb(1, 87, 83)', 'rgb(0, 70, 67)', 'rgb(250, 244, 211)', 'invert(94%) sepia(2%) saturate(2444%) hue-rotate(5deg) brightness(103%) contrast(96%)'], ['rgb(143, 126, 247)', 'rgb(93, 82, 163)', 'rgb(248, 247, 255)', 'invert(99%) sepia(93%) saturate(1496%) hue-rotate(180deg) brightness(104%) contrast(116%)'], ['rgb(215, 250, 241)', 'rgb(173, 201, 195)', 'black', 'invert(0%) sepia(96%) saturate(7435%) hue-rotate(131deg) brightness(89%) contrast(92%)'], ['rgb(72, 78, 82)', 'rgb(57, 62, 65)', 'rgb(246, 247, 235)', 'invert(99%) sepia(81%) saturate(179%) hue-rotate(23deg) brightness(105%) contrast(93%)']];
 var store = document.querySelector(':root');
-
-var container = document.querySelector('#buttonContainer');
-ReactDOM.render(React.createElement(Button, null), container);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Work pages 
@@ -457,9 +267,6 @@ function Work(index) {
     document.getElementById("work1").classList.add('disable');
     document.getElementById("work2").classList.add('disable');
     document.getElementById("work3").classList.add('disable');
-
-    document.getElementById("leftButton").classList.add('disable');
-    document.getElementById("rightButton").classList.add('disable');
 
     document.getElementById("previous").classList.add('disable');
     document.getElementById("next").classList.add('disable');
@@ -548,9 +355,6 @@ function Work(index) {
             document.getElementById("work2").classList.remove('disable');
             document.getElementById("work3").classList.remove('disable');
 
-            document.getElementById("leftButton").classList.remove('disable');
-            document.getElementById("rightButton").classList.remove('disable');
-
             document.getElementById("previous").classList.remove('disable');
             document.getElementById("next").classList.remove('disable');
             document.getElementById("close").classList.remove('disable');
@@ -562,94 +366,6 @@ function Work(index) {
         }, 600);
     }
     transition3.addEventListener('transitionend', secondSwipe);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Cursor
-
-
-gsap.set('#cursorCont', { xPercent: -50, yPercent: -50 });
-
-var cursorCont = document.querySelector('#cursorCont');
-var cursor = document.querySelector('#cursor');
-var mouseX = void 0;
-var mouseY = void 0;
-
-window.addEventListener('mousemove', function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    gsap.to(cursorCont, 0.01, { x: mouseX, y: mouseY });
-});
-
-var videos = document.querySelectorAll('.trailer');
-
-videos.forEach(function (video) {
-    video.addEventListener('mouseenter', function () {
-        cursor.style.display = "none";
-    });
-});
-
-videos.forEach(function (video) {
-    video.addEventListener('mouseleave', function () {
-        cursor.style.display = "block";
-    });
-});
-
-var buttons1 = [document.querySelector('#secondLink'), document.querySelector('#firstLink'), document.querySelector('#gmailLink'), document.querySelector('#instagramLink'), document.querySelector('#facebookLink'), document.querySelector('#color'), document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
-var buttons2 = [document.querySelector('#secondLink'), document.querySelector('#firstLink'), document.querySelector('#gmailLink'), document.querySelector('#instagramLink'), document.querySelector('#facebookLink'), document.querySelector('#name1'), document.querySelector('#name2'), document.querySelector('#name3'), document.querySelector('#leftButton'), document.querySelector('#rightButton'), document.querySelector('#close'), document.querySelector('#next'), document.querySelector('#previous'), document.querySelector('#work1'), document.querySelector('#work2'), document.querySelector('#work3')];
-
-buttons1.forEach(function (button) {
-    button.addEventListener('mouseenter', function () {
-        cursor.style.width = "30px";
-        cursor.style.height = "30px";
-        cursor.style.borderRadius = "15%";
-    });
-    button.addEventListener('mouseleave', function () {
-        cursor.style.width = "12px";
-        cursor.style.height = "12px";
-        cursor.style.borderRadius = "50%";
-    });
-});
-buttons2.forEach(function (button) {
-    button.addEventListener('mouseup', function () {
-        cursor.style.width = "12px";
-        cursor.style.height = "12px";
-        cursor.style.borderRadius = "50%";
-    });
-});
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Page Rotation
-
-if (navigator.userAgent.match(/safari/i)) {
-    var transforms = function transforms(x, y, el) {
-        var box = el.getBoundingClientRect();
-        var calcX = -(y - box.y - box.height / 2) / constrainX;
-        var calcY = (x - box.x - box.width / 2) / constrainY;
-
-        return "perspective(100vw) " + "   rotateX(" + calcX + "deg) " + "   rotateY(" + calcY + "deg) ";
-    };
-
-    var transformElement = function transformElement(el, xyEl) {
-        el.style.transform = transforms.apply(null, xyEl);
-    };
-
-    var constrainX = 125;
-    var constrainY = 300;
-    var mouseOverContainer = document.querySelector('body');
-    var ex1Layer = document.getElementById("pageContainer");
-
-    ;
-
-    mouseOverContainer.onmousemove = function (e) {
-        var xy = [e.clientX, e.clientY];
-        var position = xy.concat([ex1Layer]);
-
-        window.requestAnimationFrame(function () {
-            transformElement(ex1Layer, position);
-        });
-    };
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

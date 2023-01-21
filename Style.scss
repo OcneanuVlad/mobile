@@ -61,25 +61,6 @@ body {
     height: 100vh;
     cursor: none;
 
-    #mobileLock {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        left: 0;
-        top: 0;
-        background-color: black;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-
-        h1 {
-            font-size: 4vh;
-            width: 70vw;
-            text-align: center;
-        }
-    }
-
     #spawn21, #spawn22 {
         position: absolute;
         height: 5px;
@@ -735,86 +716,12 @@ body {
         }
     }
 
-    #slider:after {
-        content: '';
-        height: 50%;
-        width: 1px;
-        position: absolute;
-        right: 0;
-        top: 3.2vh;
-        background-color: var(--colorFront);
-        transition: background-color 2s;
-
-    }
-    #slider:before {
-        content: '';
-        height: 50%;
-        width: 1px;
-        position: absolute;
-        right: -0.1;
-        top: 3.2vh;
-        background-color: var(--colorFront);
-        transition: background-color 2s;
-    }
-    #slider {
-        position: fixed;
-        z-index: 8;
-        display: flex;
-        flex-direction: column;
-        margin: 0px;
-        left: 42.7vw;
-        right: 42.7vw;
-        width: 14.6vw;
-        height: 7vh;
-        overflow: hidden;
-        bottom: 3vh;
-        opacity: 1;
-        transition: color 2s, background-color 2s;
-        transform: scale(0.85);
-
-        #selectors {
-            position: relative;
-            margin: 0;
-            padding: 0;
-            top: 5.1vh;
-
-            #selector1 {
-                width: 15%;
-                height: 1px;
-                background-color: var(--colorFront);
-                display: inline-block;
-                margin-left: 43.5%;
-                transition: background-color 2s, border 2s;
-            }
-        }
-
-        #pages {
-            display: flex;
-            flex-direction: row;
-
-            #slide1 {
-                margin-left: 1vw;
-            }
-            #slide2 {
-                margin-left: 2vw;
-            }
-            #slide3 {
-                margin-right: 1vw;
-                margin-left: 2vw;
-            }
-            #slide0 {
-                margin-left: -8.55vw;
-                transition: margin-left 1.8s;
-            }
-        }
-    }
-
     .name {
         position: absolute;
         z-index: 7;
-        left: 2vw;
-        bottom: 88vh;
-        font-size: 15px;
+        left: 6vw;
+        bottom: 90vh;
+        font-size: 10px;
         font-weight: bold;
         transition: color 2s;
         display: flex;
@@ -823,9 +730,9 @@ body {
         align-items: center;
 
         .ocn {
-            margin-right: 6px;
+            margin-right: 1px;
             overflow: hidden;
-            width: 76px;
+            width: 58px;
             transition: width .5s;
         }
         .vld {
@@ -855,6 +762,8 @@ body {
         transition: background-color 2s;
     }
 
+
+
 #pageContainer {
     margin: 0vh;
     width: 100vw;
@@ -867,7 +776,16 @@ body {
     .backText {
         position: absolute;
         font-size: 22vw;
-        opacity: 0.04;
+        opacity: 0.06;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+            margin: 2vh;
+        }
     }
 
     #about {
@@ -981,10 +899,10 @@ body {
     }
 
     #home {
-        width: 95vw;
+        width: 90vw;
         height: 95vh;
-        margin-left: 2.5vw;
-        margin-right: 2.5vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
         position: absolute;
         justify-content: center;
         align-items: center;
@@ -995,13 +913,13 @@ body {
         overflow: hidden;
 
             #welcome {
-                font-size: 70%;
+                font-size: 250%;
                 position: absolute;
                 bottom: 60vh;
                 transform: scale(0.8);
 
                 #welcomeHr {
-                    width: 3vw;
+                    width: 13vw;
                     background-color: var(--colorFront);
                     margin-top: 0.5%;
                     margin-bottom: 4%;
@@ -1012,7 +930,7 @@ body {
             }
 
             #universe {
-                font-size: 500%;
+                font-size: 1100%;
                 font-family: 'Pacifico', sans-serif;
                 animation-name: fontChange;
                 animation-duration: 1.7s;
@@ -1267,159 +1185,6 @@ body {
     }
 }
 
-#leftButton {
-    position: fixed;
-    left: 1.25vw;
-    top: 45vh;
-    z-index: 7;
-    background-color: transparent;
-    color: var(--colorFront);
-    border: 1px solid var(--colorFront);
-    width: 15%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: border 2s, transform 0.2s, background-color 0.5s;
-    cursor: none;
-
-    #points1 {
-        position: absolute;
-        top: 4.6vh;
-        left: 2vw;
-        display: flex;
-        justify-content: right;
-        transition: transform 0.2s;
-
-        #pointLine1 {
-            position: absolute;
-            top: 1px;
-            left: -4vw;
-            height: 1px;
-            width: 7vw;
-            background-color: var(--colorFront);
-            display: block;
-            transition: background-color 2s, width 1s, opacity 1s;
-            opacity: 0.4;
-        }
-
-        #point11 {
-            position: relative;
-            right: 3vw;
-        }
-
-        #point12 {
-            position: relative;
-            right: 1.5vw;
-        }
-
-        #point13 {
-            position: relative;
-            right: 0.3vw;
-        }
-
-        #point14 {
-            position: relative;
-            left: 0.5vw;
-        }
-    }
-
-}  
-#leftButton:hover {
-    transform: scale(1.08);
-
-    #points1 {
-        transform: scale(0.75);
-    }
-}
-#leftButton:active {
-    background-color: rgba(108, 108, 108, 0.404);
-    transition: 0s;
-}
-.buttonBackground {
-    width: 100%;
-    height: 100%;
-    background-color: var(--colorBack);
-    border: none;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: background-color 2s, opacity 0.5s;
-}
-#rightButton {
-    position: fixed;
-    right: 1.25vw;
-    top: 45vh;
-    z-index: 7;
-    background-color: transparent;
-    color: var(--colorFront);
-    border: 1px solid var(--colorFront);
-    width: 15%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: border 2s, transform 0.2s, background-color 0.5s;
-    cursor: none;
-
-        #points2 {
-            position: absolute;
-            top: 4.6vh;
-            right: 2vw;
-            display: flex;
-            transition: transform 0.2s;
-
-            #pointLine2 {
-                position: absolute;
-                top: 1px;
-                right: -8.1vh;
-                height: 1px;
-                width: 7vw;
-                background-color: var(--colorFront);
-                display: inline-block;
-                transition: background-color 2s, width 1s, opacity 1s;
-                opacity: 0.4;
-            }
-
-            #point21 {
-                position: relative;
-                right: 0.5vw;
-            }
-
-            #point22 {
-                position: relative;
-                left: 0.3vw;
-            }
-
-            #point23 {
-                position: relative;
-                left: 1.5vw;
-            }
-
-            #point24 {
-                position: relative;
-                left: 3vw;
-            }
-        }
-
-
-}
-#rightButton:hover {
-    transform: scale(1.08);
-
-    #points2 {
-        transform: scale(0.75);
-    }
-}
-#rightButton:active {
-    background-color: rgba(108, 108, 108, 0.404);
-    transition: 0s;
-}
-
 .disable {
     pointer-events: none;
     cursor: not-allowed;
@@ -1445,37 +1210,52 @@ body {
     transition: background-color 2s;
 }
 
-#cursorCont {
-    position: fixed;
-    left: 0;
-    top: 0;
-    overflow: visible;
-    pointer-events: none;
-    z-index: 999;
+#buttonContainer {
+    position: absolute;
+    width: 100vw;
+    height: 10vh;
+    bottom: 8vh;
+    left: 0px;
+    z-index: 50;
     display: flex;
-    justify-content: center;
     align-items: center;
 
-    #cursor {
-        width: 12px;
-        height: 12px;
-        background-color: var(--colorFront);
-        border-radius: 50%;
-        pointer-events: none;
-        transition: width 0.2s, height 0.2s, background-color 2s, border-radius 0.2s, border 2s;
-        animation-name: 'rotate';
-        animation-timing-function: linear;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-        border: 1px solid var(--colorBack);
-        display: block;
+    #buttonText1 {
+        position: absolute;
+        left: 9vw;
     }
-    @keyframes rotate {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
+
+    #buttonText2 {
+        position: absolute;
+        right: 9vw;
+    }
+
+    #line1 {
+        left: 0vw;
+        justify-content: flex-start;
+    }
+    #line2 {
+        right: 0vw;
+        justify-content: flex-end;
+    }
+    .buttonLine {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 25vw;
+        height: 1px;
+        background-color: var(--colorFront);
+        transition: background-color 2s;
+
+        .point {
+            height: 0.4vh;
+            width: 0.4vh;
+            background-color: var(--colorFront);
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 0.5vh;
+            margin-right: 0.5vh;
+            transition: background-color 2s;
         }
     }
 }
