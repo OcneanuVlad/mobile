@@ -707,7 +707,6 @@ body #projectsContainer #project3 #interactive #topCont #top {
   transition: box-shadow 0.7s, background-color 2s;
 }
 body #pageSelector {
-  border: 1px solid red;
   width: 15vw;
   height: 10.5vh;
   position: absolute;
