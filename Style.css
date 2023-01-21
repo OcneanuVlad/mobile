@@ -706,6 +706,32 @@ body #projectsContainer #project3 #interactive #topCont #top {
   box-shadow: 0 0px 0px 0px var(--colorFront);
   transition: box-shadow 0.7s, background-color 2s;
 }
+body #pageSelector {
+  border: 1px solid red;
+  width: 15vw;
+  height: 10.5vh;
+  position: absolute;
+  bottom: 0vh;
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+body #pageSelector .pageLine {
+  position: relative;
+  top: 1vh;
+  height: 6vh;
+  width: 5px;
+  background-color: var(--colorFront);
+  transition: background-color 2s, height 1s;
+  border-radius: 20%;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+body #pageSelector #pageLine2 {
+  height: 7.5vh;
+}
 body .name {
   position: absolute;
   z-index: 7;
@@ -722,7 +748,7 @@ body .name {
 body .name .ocn {
   margin-right: 1px;
   overflow: hidden;
-  width: 58px;
+  width: 55px;
   transition: width 0.5s;
 }
 body .name .vld {

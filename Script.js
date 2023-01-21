@@ -139,24 +139,39 @@ function handleBars() {
 function handleText() {
     switch (activePage % 3) {
         case -1:
-            leftButton = 'HOME';
-            rightButton = 'ABOUT';
+            document.querySelector('#pageLine3').style.height = "7.5vh";
+            document.querySelector('#pageLine2').style.height = "6vh";
+            document.querySelector('#pageLine1').style.height = "6vh";
+            document.querySelector('#buttonText1').innerHTML = 'HOME';
+            document.querySelector('#buttonText2').innerHTML = 'ABOUT';
             break;
         case 0:
-            leftButton = 'WORK';
-            rightButton = 'HOME';
+            document.querySelector('#pageLine1').style.height = "7.5vh";
+            document.querySelector('#pageLine2').style.height = "6vh";
+            document.querySelector('#pageLine3').style.height = "6vh";
+            document.querySelector('#buttonText1').innerHTML = 'WORK';
+            document.querySelector('#buttonText2').innerHTML = 'HOME';
             break;
         case 1:
-            leftButton = 'ABOUT';
-            rightButton = 'WORK';
+            document.querySelector('#pageLine2').style.height = "7.5vh";
+            document.querySelector('#pageLine3').style.height = "6vh";
+            document.querySelector('#pageLine1').style.height = "6vh";
+            document.querySelector('#buttonText1').innerHTML = 'ABOUT';
+            document.querySelector('#buttonText2').innerHTML = 'WORK';
             break;
         case 2:
-            leftButton = 'HOME';
-            rightButton = 'ABOUT';
+            document.querySelector('#pageLine3').style.height = "7.5vh";
+            document.querySelector('#pageLine2').style.height = "6vh";
+            document.querySelector('#pageLine1').style.height = "6vh";
+            document.querySelector('#buttonText1').innerHTML = 'HOME';
+            document.querySelector('#buttonText2').innerHTML = 'ABOUT';
             break;
         case -2:
-            leftButton = 'WORK';
-            rightButton = 'HOME';
+            document.querySelector('#pageLine1').style.height = "7.5vh";
+            document.querySelector('#pageLine3').style.height = "6vh";
+            document.querySelector('#pageLine2').style.height = "6vh";
+            document.querySelector('#buttonText1').innerHTML = 'WORK';
+            document.querySelector('#buttonText2').innerHTML = 'HOME';
             break;
     }
 }
