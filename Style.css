@@ -346,7 +346,7 @@ body #projectsContainer .project .lines .line {
 }
 body #projectsContainer .project .arrowCont {
   position: fixed;
-  top: 93vh;
+  bottom: 100vh;
   -webkit-animation-name: scroll;
           animation-name: scroll;
   -webkit-animation-duration: 1.5s;
@@ -366,24 +366,24 @@ body #projectsContainer .project .arrowCont .arrow {
 }
 @-webkit-keyframes scroll {
   0% {
-    top: 91vh;
+    top: 85vh;
   }
   50% {
-    top: 93vh;
+    top: 87vh;
   }
   100% {
-    top: 91vh;
+    top: 85vh;
   }
 }
 @keyframes scroll {
   0% {
-    top: 91vh;
+    top: 85vh;
   }
   50% {
-    top: 93vh;
+    top: 87vh;
   }
   100% {
-    top: 91vh;
+    top: 85vh;
   }
 }
 body #projectsContainer .project .section1 {
@@ -543,7 +543,7 @@ body #projectsContainer .project .section2 #connect2 .info .textAnim {
   border-left: 1px solid var(--colorFront);
 }
 body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo {
-  font-size: 210%;
+  font-size: 240%;
   text-align: center;
   position: absolute;
   left: 5vw;
@@ -551,7 +551,7 @@ body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo {
   transition: color 2s;
 }
 body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo1 {
-  font-size: 210%;
+  font-size: 240%;
   text-align: center;
   position: absolute;
   right: 5vw;
@@ -856,8 +856,8 @@ body #pageContainer #about #mePhoto #photoHr2 {
 }
 body #pageContainer #about #description {
   position: absolute;
-  width: 80%;
-  font-size: 300%;
+  width: 60%;
+  font-size: 280%;
   text-align: center;
   bottom: 22vh;
 }

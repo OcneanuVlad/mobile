@@ -1,3 +1,11 @@
+let userAgent = navigator.userAgent;
+if(userAgent.match(/chrome|chromium|safari/i)){
+    let height = "80vh";
+  } else {
+    let height = "95vh";
+  }
+  console.log(navigator.userAgent);
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Main pages navigation
 
@@ -94,24 +102,24 @@ let activated = true;
         switch (activePage % 3) {
             case -1:
                 document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                document.querySelector('#projects').style.height = "95vh";
+                document.querySelector('#projects').style.height = height;
                 activePage = 2;
                 break;
             case 0:
                 document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                document.querySelector('#about').style.height = "95vh";
+                document.querySelector('#about').style.height = height;
                 break;
             case 1:
                 document.querySelector('#home').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                document.querySelector('#home').style.height = "95vh";
+                document.querySelector('#home').style.height = height;
                 break;
             case 2:
                 document.querySelector('#projects').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                document.querySelector('#projects').style.height = "95vh";
+                document.querySelector('#projects').style.height = height;
                 break;
             case -2:
                 document.querySelector('#about').style.transition = "background-color 1.4s, color 1.4s, height 1s";
-                document.querySelector('#about').style.height = "95vh";
+                document.querySelector('#about').style.height = height;
                 activePage = 0;
                 break;
         }
@@ -367,7 +375,7 @@ function Work(index) {
         transition3.removeEventListener('transitionend', secondSwipe);
 
         if (index == -10){
-            document.querySelector('#projects').style.height = "95vh";
+            document.querySelector('#projects').style.height = height;
             document.querySelector('#projectsContainer').style.display = "none";
             setTimeout(() => {
                 activated = true;
