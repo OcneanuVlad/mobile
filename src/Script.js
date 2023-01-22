@@ -1,7 +1,18 @@
 let userAgent = navigator.userAgent;
 let height = "95vh";
 document.querySelector('#home').style.height = "80vh";
-if(navigator.userAgent.match(/safari|Chrome/i)) {
+if(navigator.userAgent.match(/safari/i)) {
+    height = "85vh";
+    document.querySelector('#home').style.height = "85vh";
+    document.querySelector('#home').style.marginBottom = "12.5vh";
+    document.querySelector('#about').style.marginBottom = "12.5vh";
+    document.querySelector('#projects').style.marginBottom = "12.5vh";
+    document.querySelectorAll('.name').forEach(e => {
+        e.style.bottom = "80.5vh";
+    })
+}
+
+if(navigator.userAgent.match(/Chrome/i)) {
     height = "87.5vh";
     document.querySelector('#home').style.height = "87.5vh";
     document.querySelector('#home').style.marginBottom = "10vh";
@@ -10,13 +21,7 @@ if(navigator.userAgent.match(/safari|Chrome/i)) {
     document.querySelectorAll('.name').forEach(e => {
         e.style.bottom = "83vh";
     })
-    document.querySelector('#mePhoto').style.bottom = "68vh";
-    document.querySelector('#description').style.bottom = "15vh";
-    
-    console.log("hei");
 }
-  console.log(navigator.userAgent);
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Main pages navigation
 
