@@ -1,8 +1,7 @@
 let userAgent = navigator.userAgent;
+let height = "95vh";
 if(userAgent.match(/chrome|chromium|safari/i)){
     let height = "80vh";
-  } else {
-    let height = "95vh";
   }
   console.log(navigator.userAgent);
 
