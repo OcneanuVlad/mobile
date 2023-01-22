@@ -2,13 +2,13 @@ let userAgent = navigator.userAgent;
 let height = "95vh";
 document.querySelector('#home').style.height = "80vh";
 if(navigator.userAgent.match(/safari|Chrome/i)) {
-    height = "90vh";
-    document.querySelector('#home').style.height = "90vh";
-    document.querySelector('#home').style.marginBottom = "7.5vh";
-    document.querySelector('#about').style.marginBottom = "7.5vh";
-    document.querySelector('#projects').style.marginBottom = "7.5vh";
+    height = "87.5vh";
+    document.querySelector('#home').style.height = "87.5vh";
+    document.querySelector('#home').style.marginBottom = "10vh";
+    document.querySelector('#about').style.marginBottom = "10vh";
+    document.querySelector('#projects').style.marginBottom = "10vh";
     document.querySelectorAll('.name').forEach(e => {
-        e.style.bottom = "85vh";
+        e.style.bottom = "83vh";
     })
     console.log("hei");
 }

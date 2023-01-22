@@ -828,7 +828,7 @@ body #pageContainer #about #mePhoto {
   justify-content: center;
   overflow: visible;
   flex-direction: column;
-  bottom: 70vh;
+  bottom: 68vh;
 }
 body #pageContainer #about #mePhoto #shadow {
   box-shadow: 7vw 0 3.5vw -1.5vw var(--colorBack) inset, -7vw 0 3.5vw -1.5vw var(--colorBack) inset;
@@ -860,9 +860,9 @@ body #pageContainer #about #mePhoto #photoHr2 {
 body #pageContainer #about #description {
   position: absolute;
   width: 70%;
-  font-size: 310%;
+  font-size: 280%;
   text-align: center;
-  bottom: 18vh;
+  bottom: 15vh;
 }
 body #pageContainer #about #descriptionHr {
   position: absolute;
