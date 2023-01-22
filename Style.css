@@ -857,10 +857,10 @@ body #pageContainer #about #mePhoto #photoHr2 {
   transition: background-color 2s, border 2s;
 }
 body #pageContainer #about #description {
-  width: 70%;
+  width: 80%;
   text-align: center;
   margin-top: 5vh;
-  font-size: 280%;
+  font-size: 230%;
 }
 body #pageContainer #about #descriptionHr {
   margin-top: 2vh;
