@@ -338,6 +338,7 @@ const store = document.querySelector(':root');
 let page = 0;
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#video').playbackRate = 1;
+    document.querySelector('#video').play();
 });
 
 function ColorChange() {
@@ -386,6 +387,8 @@ function Work(index) {
     function secondSwipe() {
         document.querySelector('#projects').style.height = "0vh";
 
+        document.querySelector('#video').pause();
+
         infoElements.forEach( e => {
             e.style.width = "0px";
             e.lastElementChild.firstElementChild.style.width = "0px";
@@ -404,6 +407,7 @@ function Work(index) {
         if (index == -10){
             document.querySelector('#projects').style.height = height;
             document.querySelector('#projectsContainer').style.display = "none";
+            document.querySelector('#video').play();
             setTimeout(() => {
                 activated = true;
             }, 2000);

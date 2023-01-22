@@ -322,6 +322,7 @@ var store = document.querySelector(':root');
 var page = 0;
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#video').playbackRate = 1;
+    document.querySelector('#video').play();
 });
 
 function ColorChange() {
@@ -370,6 +371,8 @@ function Work(index) {
     function secondSwipe() {
         document.querySelector('#projects').style.height = "0vh";
 
+        document.querySelector('#video').pause();
+
         infoElements.forEach(function (e) {
             e.style.width = "0px";
             e.lastElementChild.firstElementChild.style.width = "0px";
@@ -388,6 +391,7 @@ function Work(index) {
         if (index == -10) {
             document.querySelector('#projects').style.height = height;
             document.querySelector('#projectsContainer').style.display = "none";
+            document.querySelector('#video').play();
             setTimeout(function () {
                 activated = true;
             }, 2000);
