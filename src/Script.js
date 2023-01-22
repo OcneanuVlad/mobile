@@ -153,9 +153,9 @@ let activated = true;
             document.querySelector('#spawn21').style.width = "7vw"
             document.querySelector('#spawn22').style.width = "7vw"
             document.querySelector('#spawn11').style.top = "50vh"
-            document.querySelector('#spawn12').style.bottom = "57.5vh"
+            document.querySelector('#spawn12').style.bottom = "42.5vh"
             document.querySelector('#spawn21').style.top = "50vh"
-            document.querySelector('#spawn22').style.bottom = "57.5vh"
+            document.querySelector('#spawn22').style.bottom = "42.5vh"
     }
 
     function handleText() {

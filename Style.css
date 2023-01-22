@@ -508,7 +508,7 @@ body #projectsContainer .project .section2 #connect2 .vertical {
 body #projectsContainer .project .section2 #connect2 .square {
   display: flex;
   width: 70vw;
-  height: 30vh;
+  height: 33vh;
   border-top: 2px solid var(--colorFront);
   border-bottom: 2px solid var(--colorFront);
   border-right: 1px solid var(--colorFront);
@@ -543,7 +543,7 @@ body #projectsContainer .project .section2 #connect2 .info .textAnim {
   border-left: 1px solid var(--colorFront);
 }
 body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo {
-  font-size: 240%;
+  font-size: 220%;
   text-align: center;
   position: absolute;
   left: 5vw;
@@ -551,7 +551,7 @@ body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo {
   transition: color 2s;
 }
 body #projectsContainer .project .section2 #connect2 .info .textAnim .workInfo1 {
-  font-size: 240%;
+  font-size: 220%;
   text-align: center;
   position: absolute;
   right: 5vw;
@@ -810,7 +810,7 @@ body #pageContainer #about {
   position: absolute;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--colorBack);
   flex-direction: column;
   transition: background-color 2s, color 2s, height 1s, opacity 0.6s;
@@ -821,21 +821,20 @@ body #pageContainer #about #mePhoto {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  position: absolute;
   width: 55vw;
   height: 12vh;
   display: flex;
   justify-content: center;
   overflow: visible;
   flex-direction: column;
-  bottom: 75vh;
+  margin-top: 10vh;
 }
 body #pageContainer #about #mePhoto #shadow {
   box-shadow: 7vw 0 3.5vw -1.5vw var(--colorBack) inset, -7vw 0 3.5vw -1.5vw var(--colorBack) inset;
   transition: box-shadow 2s;
-  width: 100.5%;
+  width: 55vw;
   position: absolute;
-  height: 100%;
+  height: 12vh;
 }
 body #pageContainer #about #mePhoto #photoHr1 {
   background-color: var(--colorFront);
@@ -858,26 +857,24 @@ body #pageContainer #about #mePhoto #photoHr2 {
   transition: background-color 2s, border 2s;
 }
 body #pageContainer #about #description {
-  position: absolute;
   width: 70%;
-  font-size: 280%;
   text-align: center;
-  bottom: 22vh;
+  margin-top: 5vh;
+  font-size: 280%;
 }
 body #pageContainer #about #descriptionHr {
-  position: absolute;
+  margin-top: 2vh;
   width: 55vw;
   background-color: var(--colorFront);
   height: 1px;
   border: none;
-  top: 75vh;
   transition: background-color 2s;
 }
 body #pageContainer #about #contact {
-  position: absolute;
-  top: 78vh;
+  margin-top: 2vh;
   display: flex;
   justify-content: center;
+  z-index: 8;
 }
 body #pageContainer #about #contact #gmailLink {
   cursor: none;
