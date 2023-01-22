@@ -74,7 +74,7 @@ body {
         opacity: 0;
         z-index: 50;
         right: 0vw;
-        bottom: 50vh;
+        bottom: 57.5vh;
     }
     #spawn21 {
         top: 50vh;
@@ -90,7 +90,7 @@ body {
         opacity: 0;
         z-index: 50;
         left: 0vw;
-        bottom: 50vh;
+        bottom: 57.5vh;
     }
     #spawn11 {
         top: 50vh;
@@ -253,7 +253,7 @@ body {
                 color: var(--colorFront);
                 z-index: 11;
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 140%;
+                font-size: 120%;
                 cursor: none;
                 font-family: ElMessiri;
             }
@@ -276,7 +276,7 @@ body {
                 align-items: center;
                 border-top: 1px solid var(--colorFront);
                 transition: background-color 0.2s, border 2s, color 2s;
-                font-size: 100%;
+                font-size: 120%;
                 width: 15vw;
                 bottom: 1vh;
                 cursor: none;

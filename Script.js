@@ -15,9 +15,6 @@ if (navigator.userAgent.match(/safari|Chrome/i)) {
 
     console.log("hei");
 }
-if (navigator.userAgent.match(/FBAN|FBAV/i)) {
-    height = "95vh";
-}
 console.log(navigator.userAgent);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,9 +149,9 @@ function handleBars() {
     document.querySelector('#spawn21').style.width = "7vw";
     document.querySelector('#spawn22').style.width = "7vw";
     document.querySelector('#spawn11').style.top = "50vh";
-    document.querySelector('#spawn12').style.bottom = "50vh";
+    document.querySelector('#spawn12').style.bottom = "57.5vh";
     document.querySelector('#spawn21').style.top = "50vh";
-    document.querySelector('#spawn22').style.bottom = "50vh";
+    document.querySelector('#spawn22').style.bottom = "57.5vh";
 }
 
 function handleText() {
@@ -453,7 +450,7 @@ document.querySelector('#projectsContainer').addEventListener('scroll', function
         document.querySelector('#section11').classList.add('sticky');
         document.querySelector('#section11').style.marginTop = "10vh";
         document.querySelector('#section11').style.pointerEvents = "none";
-        document.querySelector('#section12').style.marginTop = "155.5vh";
+        document.querySelector('#section12').style.marginTop = "155vh";
     } else {
         document.querySelector('#section11').classList.remove('sticky');
         document.querySelector('#section11').style.marginTop = "100vh";
@@ -465,7 +462,7 @@ document.querySelector('#projectsContainer').addEventListener('scroll', function
         document.querySelector('#section21').classList.add('sticky');
         document.querySelector('#section21').style.marginTop = "10vh";
         document.querySelector('#section21').style.pointerEvents = "none";
-        document.querySelector('#section22').style.marginTop = "155.5vh";
+        document.querySelector('#section22').style.marginTop = "155vh";
     } else {
         document.querySelector('#section21').classList.remove('sticky');
         document.querySelector('#section21').style.marginTop = "100vh";
@@ -477,7 +474,7 @@ document.querySelector('#projectsContainer').addEventListener('scroll', function
         document.querySelector('#section31').classList.add('sticky');
         document.querySelector('#section31').style.marginTop = "10vh";
         document.querySelector('#section31').style.pointerEvents = "none";
-        document.querySelector('#section32').style.marginTop = "155.5vh";
+        document.querySelector('#section32').style.marginTop = "155vh";
     } else {
         document.querySelector('#section31').classList.remove('sticky');
         document.querySelector('#section31').style.marginTop = "100vh";
