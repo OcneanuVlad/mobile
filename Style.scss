@@ -905,6 +905,7 @@ body {
             top: 78vh;
             display: flex;
             justify-content: center;
+            z-index: 8;
 
             #gmailLink {
                 cursor: none;
