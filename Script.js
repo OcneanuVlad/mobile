@@ -229,6 +229,8 @@ function handleColors() {
 function disableButtons() {
     activated = false;
 
+    document.querySelector('#swipeAnim').style.opacity = "0";
+
     document.querySelectorAll('.buttonLine').forEach(function (e) {
         e.style.transition = "background-color 2s, width 0.4s";
     });
@@ -285,7 +287,6 @@ function checkDirection() {
 }
 
 document.addEventListener('touchstart', function (e) {
-    document.querySelector('#swipeAnim').style.opacity = "0";
     touchstartX = e.changedTouches[0].screenX;
 });
 

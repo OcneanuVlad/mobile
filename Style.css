@@ -705,7 +705,7 @@ body #projectsContainer #project3 #interactive #topCont #top {
 body #swipeAnim {
   position: absolute;
   width: auto;
-  height: 10vh;
+  height: 12vh;
   z-index: 30;
   bottom: 12vh;
   pointer-events: none;
