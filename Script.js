@@ -1,8 +1,30 @@
 var userAgent = navigator.userAgent;
 var height = "95vh";
+var bottom = "42.5vh";
 document.querySelector('#home').style.height = "80vh";
-if (navigator.userAgent.match(/safari|Chrome/i)) {
+if (navigator.userAgent.match(/safari/i)) {
+    bottom = "45vh";
+    height = "85vh";
+    document.querySelector('#spawn11').style.bottom = "45vh";
+    document.querySelector('#spawn12').style.bottom = "45vh";
+    document.querySelector('#spawn21').style.bottom = "45vh";
+    document.querySelector('#spawn22').style.bottom = "45vh";
+    document.querySelector('#home').style.height = "85vh";
+    document.querySelector('#home').style.marginBottom = "12.5vh";
+    document.querySelector('#about').style.marginBottom = "12.5vh";
+    document.querySelector('#projects').style.marginBottom = "12.5vh";
+    document.querySelectorAll('.name').forEach(function (e) {
+        e.style.bottom = "80.5vh";
+    });
+}
+
+if (navigator.userAgent.match(/Chrome/i)) {
     height = "87.5vh";
+    bottom = "42.5vh";
+    document.querySelector('#spawn11').style.bottom = "42.5vh";
+    document.querySelector('#spawn12').style.bottom = "42.5vh";
+    document.querySelector('#spawn21').style.bottom = "42.5vh";
+    document.querySelector('#spawn22').style.bottom = "42.5vh";
     document.querySelector('#home').style.height = "87.5vh";
     document.querySelector('#home').style.marginBottom = "10vh";
     document.querySelector('#about').style.marginBottom = "10vh";
@@ -10,13 +32,7 @@ if (navigator.userAgent.match(/safari|Chrome/i)) {
     document.querySelectorAll('.name').forEach(function (e) {
         e.style.bottom = "83vh";
     });
-    document.querySelector('#mePhoto').style.bottom = "68vh";
-    document.querySelector('#description').style.bottom = "15vh";
-
-    console.log("hei");
 }
-console.log(navigator.userAgent);
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Main pages navigation
 
@@ -149,9 +165,9 @@ function handleBars() {
     document.querySelector('#spawn21').style.width = "7vw";
     document.querySelector('#spawn22').style.width = "7vw";
     document.querySelector('#spawn11').style.top = "50vh";
-    document.querySelector('#spawn12').style.bottom = "42.5vh";
+    document.querySelector('#spawn12').style.bottom = bottom;
     document.querySelector('#spawn21').style.top = "50vh";
-    document.querySelector('#spawn22').style.bottom = "42.5vh";
+    document.querySelector('#spawn22').style.bottom = bottom;
 }
 
 function handleText() {

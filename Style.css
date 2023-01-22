@@ -92,7 +92,7 @@ body #spawn11, body #spawn12 {
   opacity: 0;
   z-index: 50;
   left: 0vw;
-  bottom: 57.5vh;
+  bottom: 42.5vh;
 }
 body #spawn11 {
   top: 50vh;
@@ -860,7 +860,7 @@ body #pageContainer #about #description {
   width: 80%;
   text-align: center;
   margin-top: 5vh;
-  font-size: 230%;
+  font-size: 270%;
 }
 body #pageContainer #about #descriptionHr {
   margin-top: 2vh;
