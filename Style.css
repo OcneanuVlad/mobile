@@ -779,6 +779,7 @@ body #fade {
 body #pageContainer {
   margin: 0vh;
   width: 100vw;
+  height: 100vw;
   position: relative;
   display: flex;
   align-items: center;
@@ -802,6 +803,8 @@ body #pageContainer #about {
   width: 90vw;
   height: 0vh;
   margin: 0px;
+  margin-top: 2.5vh;
+  margin-top: 2.5vh;
   left: 5vw;
   right: 5vw;
   position: absolute;
@@ -825,7 +828,7 @@ body #pageContainer #about #mePhoto {
   justify-content: center;
   overflow: visible;
   flex-direction: column;
-  bottom: 74vh;
+  bottom: 70vh;
 }
 body #pageContainer #about #mePhoto #shadow {
   box-shadow: 7vw 0 3.5vw -1.5vw var(--colorBack) inset, -7vw 0 3.5vw -1.5vw var(--colorBack) inset;
@@ -856,10 +859,10 @@ body #pageContainer #about #mePhoto #photoHr2 {
 }
 body #pageContainer #about #description {
   position: absolute;
-  width: 60%;
-  font-size: 280%;
+  width: 70%;
+  font-size: 310%;
   text-align: center;
-  bottom: 22vh;
+  bottom: 18vh;
 }
 body #pageContainer #about #descriptionHr {
   position: absolute;
@@ -905,6 +908,8 @@ body #pageContainer #home {
   height: 95vh;
   margin-left: 5vw;
   margin-right: 5vw;
+  margin-top: 2.5vh;
+  margin-top: 2.5vh;
   position: absolute;
   justify-content: center;
   align-items: center;
@@ -1051,6 +1056,8 @@ body #pageContainer #projects {
   height: 0vh;
   margin-left: 5vw;
   margin-right: 5vw;
+  margin-top: 2.5vh;
+  margin-top: 2.5vh;
   position: absolute;
   justify-content: center;
   align-items: center;

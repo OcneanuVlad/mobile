@@ -1,8 +1,17 @@
 let userAgent = navigator.userAgent;
 let height = "95vh";
-if(userAgent.match(/chrome|chromium|safari/i)){
-    let height = "80vh";
-  }
+document.querySelector('#home').style.height = "80vh";
+if(navigator.userAgent.match(/safari|Chrome/i)) {
+    height = "90vh";
+    document.querySelector('#home').style.height = "90vh";
+    document.querySelector('#home').style.marginBottom = "7.5vh";
+    document.querySelector('#about').style.marginBottom = "7.5vh";
+    document.querySelector('#projects').style.marginBottom = "7.5vh";
+    document.querySelectorAll('.name').forEach(e => {
+        e.style.bottom = "85vh";
+    })
+    console.log("hei");
+}
   console.log(navigator.userAgent);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -200,7 +209,6 @@ let activated = true;
         } else {
             colorPallete++;
         }
-        console.log(colorPallete);
     }
 
     function disableButtons() {

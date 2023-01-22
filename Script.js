@@ -1,8 +1,16 @@
 var userAgent = navigator.userAgent;
-if (userAgent.match(/chrome|chromium|safari/i)) {
-    var _height = "80vh";
-} else {
-    var _height2 = "95vh";
+var height = "95vh";
+document.querySelector('#home').style.height = "80vh";
+if (navigator.userAgent.match(/safari|Chrome/i)) {
+    height = "90vh";
+    document.querySelector('#home').style.height = "90vh";
+    document.querySelector('#home').style.marginBottom = "7.5vh";
+    document.querySelector('#about').style.marginBottom = "7.5vh";
+    document.querySelector('#projects').style.marginBottom = "7.5vh";
+    document.querySelectorAll('.name').forEach(function (e) {
+        e.style.bottom = "85vh";
+    });
+    console.log("hei");
 }
 console.log(navigator.userAgent);
 
@@ -197,7 +205,6 @@ function handleColors() {
     } else {
         colorPallete++;
     }
-    console.log(colorPallete);
 }
 
 function disableButtons() {
