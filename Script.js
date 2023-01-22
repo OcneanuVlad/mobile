@@ -10,6 +10,9 @@ if (navigator.userAgent.match(/safari|Chrome/i)) {
     document.querySelectorAll('.name').forEach(function (e) {
         e.style.bottom = "83vh";
     });
+    document.querySelector('#mePhoto').style.bottom = "68vh";
+    document.querySelector('#description').style.bottom = "15vh";
+
     console.log("hei");
 }
 console.log(navigator.userAgent);
