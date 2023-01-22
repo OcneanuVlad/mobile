@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="Style.css"/>
 </head>
 <body>
+    <img id="swipeAnim" alt="swipe" src="Elements/swipe.gif">
 
     <div id="pageSelector">
         <div id="pageLine1" class="pageLine"></div>
@@ -22,19 +23,19 @@
     <div id="buttonContainer">
         <div id="buttonLeft">
             <div id="line1" class="buttonLine">
-                <div class="point" style="margin-left: 1.5vw;"></div>
-                <div class="point" style="margin-left: 4vw;"></div>
-                <div class="point" style="margin-left: 6vw;"></div>
-                <div class="point" style="margin-left: 25vw; position: absolute;"></div>
+                <div class="point" style="margin-right: 90%;"></div>
+                <div class="point" style="margin-right: 68%;"></div>
+                <div class="point" style="margin-right: 37%;"></div>
+                <div class="point" style="margin-right: 0%;"></div>
             </div>
             <p id="buttonText1">ABOUT</p>
         </div>
         <div id="ButtonRight">
             <div id="line2" class="buttonLine">
-                <div class="point" style="margin-right: 25vw; position: absolute;"></div>
-                <div class="point" style="margin-right: 6vw;"></div>
-                <div class="point" style="margin-right: 4vw;"></div>
-                <div class="point" style="margin-right: 1.5vw;"></div>
+                <div class="point" style="margin-left: 0%;"></div>
+                <div class="point" style="margin-left: 37%;"></div>
+                <div class="point" style="margin-left: 68%;"></div>
+                <div class="point" style="margin-left: 90%;"></div>
             </div>
             <p id="buttonText2">WORK</p>
         </div>
@@ -55,8 +56,8 @@
     <div id="projectsContainer">
         <div id="denimBack"></div>
         <div id="projectNav">
-            <button onclick="Work(-2)" class="projectButton" id="previous"><p class="leftArrow"><</p><p style="margin: 0; margin-left: 2vw;">PREVIOUS PROJECT</p></button>
-            <button onclick="Work(-1)" class="projectButton" id="next"><p style="margin: 0; margin-right: 2vw;">NEXT PROJECT</p><p class="rightArrow">></p></button>
+            <button onclick="Work(-2)" class="projectButton" id="previous"><p class="leftArrow"><</p><p style="margin: 0; margin-left: 2vw;">PREVIOUS WORK</p></button>
+            <button onclick="Work(-1)" class="projectButton" id="next"><p style="margin: 0; margin-right: 2vw;">NEXT WORK</p><p class="rightArrow">></p></button>
             <button onclick="Work(-10)" id="close"><p>GO BACK</p></button>
         </div>
         <div id="project1" class="project">
@@ -137,7 +138,7 @@
                     <div id="horizontal2"></div>
                     <div id="info1" class="info">
                         <hr id="vertical2">
-                        <div id="square1"s class="square" style="justify-content: flex-end; box-shadow: 50px -50px 0px 0px rgba(0, 0, 0, 0.112);">
+                        <div id="square1"s class="square" style="justify-content: flex-end; box-shadow: 25px -25px 0px 0px rgba(0, 0, 0, 0.112);">
                             <div class="textAnim" style="justify-content: flex-end;">
                                 <p class="workInfo1">Ok, so why is it so important that it was my first ever project? Well, because before this I had an idea of what programming was and how different individual things work, but I'd never attempted to actually create working things with my knowledge until then.</p>
                             </div>
@@ -151,7 +152,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="info2" class="info" style="margin-top: 120vh">
+                    <div id="info2" class="info" style="margin-top: 80vh">
                         <hr id="vertical3">
                         <div id="square2" class="square">
                             <div class="textAnim">
@@ -163,7 +164,7 @@
                 </div>
             </div>
             <p class="download">Download this "demo" and try it for yourself by clicking <a id="firstLink" href="First Experiment.zip" download="First Experiment">here</a>.<br>
-            (You will have to alt-f4 out of the game as it does not have an interface)</p>
+            (For Windows only)</p>
         </div>
         <div id="project2" class="project">
             <img id="title2" src="./Videos/SolariumTitle.png" alt="title">
@@ -257,7 +258,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="info2" class="info" style="margin-top: 120vh">
+                    <div id="info2" class="info" style="margin-top: 80vh">
                         <hr id="vertical3">
                         <div id="square2" class="square">
                             <div class="textAnim">
@@ -268,7 +269,8 @@
                     <hr class="vertical" style="margin-bottom: 10vh;">
                 </div>
             </div>
-            <p class="download">Download this game and try it for yourself by clicking <a id="secondLink" href="Solarium Redemption.zip" download="Solarium Redemption">here</a>.</p>
+            <p class="download">Download this game and try it for yourself by clicking <a id="secondLink" href="Solarium Redemption.zip" download="Solarium Redemption">here</a>.<br>
+            (For Windows only)</p>
         </div>
         <div id="project3" class="project">
             <h1 id="title3">MY UNIVERSE</h1>
@@ -374,7 +376,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="info2" class="info" style="margin-top: 120vh">
+                    <div id="info2" class="info" style="margin-top: 80vh">
                         <hr id="vertical3">
                         <div id="square2" class="square">
                             <div class="textAnim">
@@ -391,8 +393,13 @@
     <div id="fade"></div>
     <div id="pageContainer">
         <div id="about">
-            <h1 class="backText">ABOUT</h1>
-
+            <h1 class="backText">
+                <p>A</p>
+                <p>B</p>
+                <p>O</p>
+                <p>U</p>
+                <p>T</p>
+            </h1>
             <div onclick="location.reload()" class="name" id="name1">
                 <p class="ocn">OCNEANU</p>
                 <p class="vld">VLAD</p>
@@ -486,8 +493,12 @@
             </div>
         </div>
         <div id="projects">
-            <h1 class="backText">WORK</h1>
-
+            <h1 class="backText">
+                <p>W</p>
+                <p>O</p>
+                <p>R</p>
+                <p>K</p>
+            </h1>
             <div onclick="location.reload()" class="name" id="name3">
                 <p class="ocn">OCNEANU</p>
                 <p class="vld">VLAD</p>
@@ -495,76 +506,6 @@
 
             <div id="workContainer">
                 <div id="works">
-                    <div onclick="Work(3)" class="work" id="work3">
-                        <div class="titleShadow"></div>
-                        <h1 id="universeText">MY UNIVERSE</h1>
-                        <div class="imgContainer first">
-                            <img class="img1" loading="eager" src="Videos/2.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/3.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/4.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/5.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/6.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/2.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/3.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/4.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/5.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/6.jpg" alt="photo" >
-                        </div>
-                    </div>
-                    <hr>
-                    <div onclick="Work(2)" class="work" id="work2">
-                        <img id="solariumTitle" src="./Videos/SolariumTitle1.png">
-                        <div class="titleShadow"></div>
-                        <div id="first2" class="imgContainer skew2">
-                            <img class="img1" loading="eager" src="Videos/Solarium1.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium2.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium3.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium4.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium5.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium1.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium2.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium3.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium4.jpg" alt="photo" >
-                        </div>
-                        <div class="imgContainer">
-                            <img class="img1" loading="eager" src="Videos/Solarium5.jpg" alt="photo" >
-                        </div>
-                    </div>
-                    <hr>
                     <div onclick="Work(1)" class="work" id="work1">
                         <div class="titleShadow"></div>
                         <h1 id="experimentText">First Experiment</h1>
@@ -597,6 +538,76 @@
                         </div>
                         <div class="imgContainer">
                             <img class="img1" loading="eager" src="Videos/First5.jpg" alt="photo" >
+                        </div>
+                    </div>
+                    <hr>
+                    <div onclick="Work(2)" class="work" id="work2">
+                        <img id="solariumTitle" src="./Videos/SolariumTitle.png">
+                        <div class="titleShadow" style="width: 55vw;"></div>
+                        <div id="first2" class="imgContainer skew">
+                            <img class="img1" loading="eager" src="Videos/Solarium1.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium2.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium3.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium4.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium5.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium1.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium2.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium3.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium4.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/Solarium5.jpg" alt="photo" >
+                        </div>
+                    </div>
+                    <hr>
+                    <div onclick="Work(3)" class="work" id="work3">
+                        <div class="titleShadow"></div>
+                        <h1 id="universeText">MY UNIVERSE</h1>
+                        <div class="imgContainer first">
+                            <img class="img1" loading="eager" src="Videos/2.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/3.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/4.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/5.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/6.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/2.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/3.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/4.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/5.jpg" alt="photo" >
+                        </div>
+                        <div class="imgContainer">
+                            <img class="img1" loading="eager" src="Videos/6.jpg" alt="photo" >
                         </div>
                     </div>
                 </div>

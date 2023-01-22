@@ -90,7 +90,6 @@ let activated = true;
         document.querySelector('#projects').style.height = "0vh";
         document.querySelector('#about').style.height = "0vh";
         document.querySelector('#home').style.height = "0vh";
-        console.log(activePage)
 
         switch (activePage % 3) {
             case -1:
@@ -194,10 +193,25 @@ let activated = true;
         } else {
             colorPallete++;
         }
+        console.log(colorPallete);
     }
 
     function disableButtons() {
         activated = false;
+
+        document.querySelectorAll('.buttonLine').forEach( e => {
+            e.style.transition = "background-color 2s, width 0.4s";
+        })
+        setTimeout(() => {
+            store.style.setProperty('--width2', '25vw');
+            store.style.setProperty('--width1', '25vw');
+        }, 5);
+        document.querySelector('#buttonText1').style.transition = 'color 2s, opacity 0.5s, left 0.4s';
+        document.querySelector('#buttonText2').style.transition = 'color 2s, opacity 0.5s, right 0.4s';
+        setTimeout(() => {
+            document.querySelector('#buttonText1').style.left = '9vw';
+            document.querySelector('#buttonText2').style.right = '9vw';
+        }, 5);
 
         document.getElementById("work1").classList.add('disable');
         document.getElementById("work2").classList.add('disable');
@@ -211,6 +225,12 @@ let activated = true;
     function activateButtons() {
         activated = true;
 
+        document.querySelectorAll('.buttonLine').forEach( e => {
+            e.style.transition = "background-color 2s";
+        })
+        document.querySelector('#buttonText1').style.transition = 'color 2s, opacity 0.5s';
+        document.querySelector('#buttonText2').style.transition = 'color 2s, opacity 0.5s';
+
         document.getElementById("work1").classList.remove('disable');
         document.getElementById("work2").classList.remove('disable');
         document.getElementById("work3").classList.remove('disable');
@@ -222,21 +242,20 @@ let touchendX = 0
 function checkDirection() {
     if (activated) {
 
-        if (touchendX < touchstartX) {
+        if (touchendX < touchstartX -10) {
             handleRight();
-            handleColors();
             disableButtons();
         }
 
-        if (touchendX > touchstartX) {
+        if (touchendX > touchstartX + 10) {
             handleLeft();
-            handleColors();
             disableButtons();
         }
     }
 }
 
 document.addEventListener('touchstart', e => {
+    document.querySelector('#swipeAnim').style.opacity = "0";
   touchstartX = e.changedTouches[0].screenX
 })
 
@@ -245,9 +264,24 @@ document.addEventListener('touchend', e => {
   checkDirection()
 })
 
+document.addEventListener('touchmove' , e => {
+    if (activated) {
+        if (e.changedTouches[0].screenX > touchstartX) {
+            document.querySelector('#buttonText1').style.left = (9 + (e.changedTouches[0].screenX - touchstartX) / 10).toString() + 'vw';
+            document.querySelector('#buttonText2').style.right = '9vw';
+            store.style.setProperty('--width1', (25 + (e.changedTouches[0].screenX - touchstartX) / 10).toString() + 'vw');
+            store.style.setProperty('--width2', '25vw');
+        } else if (e.changedTouches[0].screenX < touchstartX) {
+            document.querySelector('#buttonText1').style.left = '9vw';
+            document.querySelector('#buttonText2').style.right = (9 + (touchstartX - e.changedTouches[0].screenX) / 10).toString() + 'vw';
+            store.style.setProperty('--width1', '25vw');
+            store.style.setProperty('--width2', (25 + (touchstartX - e.changedTouches[0].screenX) / 10).toString() + 'vw');
+        }
+    }
+})
+
 let colorPallete = 0;
 const pallete = [
-    ['rgb(0,161,154)','rgb(0,161,154)','rgb(235,237,237)','invert(100%) sepia(5%) saturate(100%) hue-rotate(119deg) brightness(93%) contrast(100%)'],
     ['rgb(40,43,41)','rgb(40,43,41)','rgb(166,209,201)','invert(88%) sepia(26%) saturate(261%) hue-rotate(116deg) brightness(91%) contrast(81%)'],
     ['rgb(166,209,201)','rgb(166,209,201)','rgb(232,60,56)','invert(69%) sepia(87%) saturate(6938%) hue-rotate(341deg) brightness(95%) contrast(91%)'],
     ['rgb(244,196,196)','rgb(244,196,196)','rgb(40,43,41)','invert(16%) sepia(5%) saturate(452%) hue-rotate(87deg) brightness(94%) contrast(96%)'],
@@ -256,6 +290,7 @@ const pallete = [
     ['rgb(1, 87, 83)','rgb(0, 70, 67)','rgb(250, 244, 211)','invert(94%) sepia(2%) saturate(2444%) hue-rotate(5deg) brightness(103%) contrast(96%)'],
     ['rgb(143, 126, 247)','rgb(93, 82, 163)','rgb(248, 247, 255)','invert(99%) sepia(93%) saturate(1496%) hue-rotate(180deg) brightness(104%) contrast(116%)'],
     ['rgb(215, 250, 241)','rgb(173, 201, 195)','black','invert(0%) sepia(96%) saturate(7435%) hue-rotate(131deg) brightness(89%) contrast(92%)'],
+    ['rgb(0,161,154)','rgb(0,161,154)','rgb(235,237,237)','invert(100%) sepia(5%) saturate(100%) hue-rotate(119deg) brightness(93%) contrast(100%)'],
     ['rgb(72, 78, 82)','rgb(57, 62, 65)','rgb(246, 247, 235)','invert(99%) sepia(81%) saturate(179%) hue-rotate(23deg) brightness(105%) contrast(93%)']
 ]
 const store = document.querySelector(':root');
@@ -288,6 +323,8 @@ function ColorChange() {
 }
 
 function Work(index) {
+
+    activated = false;
 
     ColorChange();
 
@@ -332,6 +369,9 @@ function Work(index) {
         if (index == -10){
             document.querySelector('#projects').style.height = "95vh";
             document.querySelector('#projectsContainer').style.display = "none";
+            setTimeout(() => {
+                activated = true;
+            }, 2000);
         } else{
             document.querySelector('#projectsContainer').style.display = "flex";
         }
@@ -407,36 +447,36 @@ function Work(index) {
 document.querySelector('#projectsContainer').addEventListener('scroll', () => {
     if (document.querySelector('#verticalTop1').getBoundingClientRect().top < document.querySelector('#detector1').getBoundingClientRect().top) {
         document.querySelector('#section11').classList.add('sticky');
-        document.querySelector('#section11').style.marginTop = "-79vh";
+        document.querySelector('#section11').style.marginTop = "10vh";
         document.querySelector('#section11').style.pointerEvents = "none";
-        document.querySelector('#section12').style.marginTop = "238.5vh";
+        document.querySelector('#section12').style.marginTop = "155.5vh";
     }   else {
         document.querySelector('#section11').classList.remove('sticky');
-        document.querySelector('#section11').style.marginTop = "90vh";
+        document.querySelector('#section11').style.marginTop = "100vh";
         document.querySelector('#section11').style.pointerEvents = "auto";
         document.querySelector('#section12').style.marginTop = "0px";
     }
 
     if (document.querySelector('#verticalTop2').getBoundingClientRect().top < document.querySelector('#detector2').getBoundingClientRect().top) {
         document.querySelector('#section21').classList.add('sticky');
-        document.querySelector('#section21').style.marginTop = "-79vh";
+        document.querySelector('#section21').style.marginTop = "10vh";
         document.querySelector('#section21').style.pointerEvents = "none";
-        document.querySelector('#section22').style.marginTop = "238.5vh";
+        document.querySelector('#section22').style.marginTop = "155.5vh";
     }   else {
         document.querySelector('#section21').classList.remove('sticky');
-        document.querySelector('#section21').style.marginTop = "90vh";
+        document.querySelector('#section21').style.marginTop = "100vh";
         document.querySelector('#section21').style.pointerEvents = "auto";
         document.querySelector('#section22').style.marginTop = "0px";
     }
     
     if (document.querySelector('#verticalTop3').getBoundingClientRect().top < document.querySelector('#detector3').getBoundingClientRect().top) {
         document.querySelector('#section31').classList.add('sticky');
-        document.querySelector('#section31').style.marginTop = "-79vh";
+        document.querySelector('#section31').style.marginTop = "10vh";
         document.querySelector('#section31').style.pointerEvents = "none";
-        document.querySelector('#section32').style.marginTop = "238.5vh";
+        document.querySelector('#section32').style.marginTop = "155.5vh";
     }   else {
         document.querySelector('#section31').classList.remove('sticky');
-        document.querySelector('#section31').style.marginTop = "90vh";
+        document.querySelector('#section31').style.marginTop = "100vh";
         document.querySelector('#section31').style.pointerEvents = "auto";
         document.querySelector('#section32').style.marginTop = "0px";
     }
@@ -450,7 +490,7 @@ document.querySelector('#projectsContainer').addEventListener('scroll', () => {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.style.width = "50vw";
+            entry.target.style.width = "100vw";
             setTimeout(() => {
                 entry.target.lastElementChild.firstElementChild.style.width = "100%";
             }, 1000);
@@ -468,7 +508,7 @@ infoElements.forEach((el) => observer.observe(el));
 const observer2 = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.style.width = "60vw";
+            entry.target.style.width = "80vw";
         }
     });
 });
@@ -496,8 +536,8 @@ descriptions.forEach((el) => descObserver.observe(el));
 
 
 document.querySelector('#color').addEventListener('mouseenter', () => {
-    document.querySelector('#right').style.height = "10vh";
-    document.querySelector('#left').style.height = "10vh";
+    document.querySelector('#right').style.height = "5vh";
+    document.querySelector('#left').style.height = "5vh";
     document.querySelector('#topCont').style.width = "43vw";
         document.querySelector('#top').style.boxShadow = "0 0px 70px 15px var(--colorFront)"
         document.querySelector('#bottom').style.boxShadow = "0 0px 70px 15px var(--colorFront)"
