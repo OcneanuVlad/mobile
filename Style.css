@@ -894,6 +894,12 @@ body #pageContainer #about #contact #instagramLink {
   margin-left: 4vw;
   margin-right: 4vw;
 }
+body #pageContainer #about #contact #linkedinLink {
+  cursor: none;
+  width: 5vw;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
 body #pageContainer #about #contact .contactImg {
   width: auto;
   height: 2.5vh;
